@@ -1,0 +1,83 @@
+.boxshadow(){
+    -webkit-box-shadow:0 0 15px 4px #C0C0C0;
+    box-shadow: 0 0 15px 4px #C0C0C0;
+}
+/*留言部分*/
+#content{
+   height: 400px;
+   background: #fff;
+   padding: 10px 20px;
+   box-sizing: border-box;
+   position: relative;
+   border-radius: 4px;
+   .boxshadow();
+   form{
+       width: 48%;
+       height: 100%;
+       float: left;
+       h3{margin: 10px 0 20px 0;}
+       div.info{
+           height: 40px;
+       }
+       button{
+            width: 100px;
+            float: right;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #FFFFFF;
+       }
+       div.last_text{
+           padding:0 15px;
+       }
+      
+   }
+   #border{
+       display: block;
+       width: 2px;
+       height: 90%;
+       margin: 20px;
+       background: #ccc;
+       float: left;
+   }
+   .right_intro{
+       width: 48%;
+       height:100%;
+       float: right;
+       margin-top: 10px;
+       ul li{
+           height:80px;
+           margin: 20px;
+           span{
+               font-size:32px;
+               color: #333333;
+               padding: 10px 20px;
+               float: left;
+           }
+           div{
+             float: left;  
+             color: #3e3e3e;
+             p.title{
+                 font: 18px "微软雅黑";
+                 margin-bottom: 10px;
+             }
+             p.innertext{
+                 font: 16px "微软雅黑";
+             }
+           }
+           &::after{content: "";display: block;clear: both;}
+       }
+   }
+    &::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+/*版本展示*/
+div.mes_page{
+    border-radius: 6px;
+    margin-top: 30px;
+    background: #fff;
+    padding: 20px;
+    .boxshadow();
+}

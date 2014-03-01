@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+		<meta charset="UTF-8">
+		<title>博客</title>
+		<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="./css/common.css" />
+		<link rel="stylesheet" href="./css/blog.css" />
+		<script src="./js/lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header>
+			<!--navbar navbar-default-->
+			<nav class="navbar navbar-inverse " role="navigation">
+			  <div class="container">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="#">
+			        <img alt="Brand" src="">
+			      </a>
+			    </div>
+			    <ul class="nav nav-pills" role="tablist">
+				 <li role="presentation" ><a href="./index.html"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				  <li role="presentation"><a href="./blog.html"><span class="glyphicon glyphicon-list-alt"></span>My blog</a></li>
+				  <li role="presentation"><a href="./contact.html"><span class="glyphicon glyphicon-leaf
+glyphicon "></span>Contact</a></li>
+				  <li role="presentation"><a href="./aboutme.html"><span class="glyphicon glyphicon-heart"></span>About Me</a></li>
+				  <li role="presentation"><a href="./messages.html"><span class="glyphicon glyphicon-comment"></span>Live Messages</a></li>
+				</ul>
+			 </div>
+			</nav>
+		</header>
+		<section class="container">
+			<article class="panel panel-default">
+			  <div class="panel-heading"><h3 class="panel-title">HTML5介绍</h3></div>
+			  <div class="panel-body">
+			     H5是什么？
+					H5指的不单单是HTML,还是JavaScript，CSS；H5是新一代的HTML，是HTML中的最新版本，目前是前端的前沿技术。
+					组成部分：HTML,Javascript,CSS；HTML5的一个大特点就是，强调了标签的语义，一个语义元素能够清楚的描述其意义给浏览器和开发者。
+			  </div>
+			  <div class="panel-footer">
+			  	<span>作者：sophia</span>
+			  	<span>关键字:HTML5</span>
+			  	<span class="article_time">2016年11月30日</span>
+			  </div>
+			</article>
+			<article class="panel panel-default">
+			  <div class="panel-heading"> <h3 class="panel-title">CSS3 弹性布局</h3></div>
+			  <div class="panel-body">
+			    弹性布局都是在一个大盒子里完成，它里面的小盒子为flex item（伸缩项目）
+主轴长度——横向的那个轴，
+侧轴长度——纵向的那个轴，
+通常认为主轴是x轴，侧轴是y轴，但有时是可以变的。
+主轴起点：默认最左边，方向向右
+侧轴起点：默认最上边，方向向下
+			  </div>
+			  <div class="panel-footer">
+			  	<span>作者：sophia</span>
+			  	<span>关键字:HTML5</span>
+			  	<span class="article_time">2016年11月30日</span>
+			  </div>
+			</article>
+			<!--分页-->
+			  <ul class="pagination">
+			    <li class="disabled"><a href="#">《</a></li>
+			    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+			    <li ><a href="#">2 <span class="sr-only"></span></a></li>
+			    <li ><a href="#">3 <span class="sr-only"></span></a></li>
+			    <li class="disabled"><a href="#">》</a></li>
+			  </ul>
+		</section>
+		<div id="classify">
+			<ul>
+				<li><a href="##">HTML</a></li>
+				<li><a href="##">CSS</a></li>
+				<li><a href="##">JavaScript</a></li>
+				<li><a href="##">Nodejs</a></li>
+			</ul>
+		</div>
+		<!--底部-->
+		<footer>
+			<div class="container">
+				<div class="time">
+					<p class="date"></p>
+					 <p class="clock"></p>
+				</div>
+				<img class="qrcode" src="./images/mmqrcode.png" height="200px"/>
+				<div class="frendlink">
+					<h3>友情链接</h3>
+					<ul>
+						<li>
+							<a href="##">大地飞鸿</a>
+						</li>
+						<li>
+							<a href="##">bootstrap</a>
+						</li>
+						<li>
+							<a href="##">百度</a>
+						</li>
+						<li>
+							<a href="##">Glyphicons</a>
+						</li>
+					</ul>
+				</div>
+				<div class="contact">
+					<h3>互动交流</h3>
+					<ul>
+						<li> <a href=""><span class="glyphicon glyphicon-phone-alt"></span>联系方式</a></li>
+						<li><a href=""><span class="glyphicon glyphicon-th-large"></span>学习交流</a></li>
+						<li><a href=""><span class="glyphicon glyphicon-user"></span>关于我</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="webinfo">
+				<p>&copy;&nbsp;hi1688.top 版权所有</p>
+				<p>蜀ICP备16033338</p>
+			</div>
+		</footer>
+		<script type="text/javascript" src="./js/app/timeclock.js"></script>	
+	</body>
+</html>

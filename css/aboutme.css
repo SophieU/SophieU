@@ -1,0 +1,59 @@
+div#content {
+  height: 800px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  padding: 0;
+}
+div#content aside {
+  width: 20%;
+  height: 100%;
+  background: #353541;
+  float: left;
+}
+div#content aside ul li a {
+  display: block;
+  width: 100%;
+  height: 60px;
+  padding-left: 20px;
+  font: 20px/60px arial;
+  color: #fff;
+}
+div#content aside ul li:hover {
+  background: #D9534F;
+}
+div#content aside ul li:hover a {
+  text-decoration: none;
+}
+div#content section {
+  width: 80%;
+  float: left;
+}
+div#content section div.headbg {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+div#content section div.headbg div.headtext {
+  width: 70%;
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  text-align: center;
+  color: #fff;
+}
+div#content section div.headbg div.headtext p.slogan {
+  font: 48px "微软雅黑";
+  margin-bottom: 20px;
+}
+div#content section div.headbg div.headtext p.intro {
+  font: 14px "微软雅黑";
+  color: #ccc;
+  line-height: 1.5em;
+  margin-bottom: 30px;
+}
+div#content section div.headbg div.headtext button {
+  width: 170px;
+  height: 50px;
+  border-radius: 4px;
+  font-size: 22px;
+}

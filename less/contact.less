@@ -1,0 +1,21 @@
+/*公共阴影*/
+.boxshadow(){
+    -webkit-box-shadow:0 0 15px 4px #C0C0C0;
+    box-shadow: 0 0 15px 4px #C0C0C0;
+}
+#content{
+    box-sizing: border-box;
+    div.row{
+        display: flex;
+        justify-content: center;
+        div{
+            .boxshadow();
+            height: 300px;
+            margin: 30px;
+            &:hover{
+                transition: 0.5s;
+                transform: translateY(-10px);
+            }
+        }
+    }    
+}
