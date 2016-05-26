@@ -11,7 +11,7 @@ React 拥有较高的性能，代码逻辑非常简单，越来越多的人已�
 <!--more-->
 ## 目录
 > - [安装](#安装)
-> - [HelloWorld](#HelloWorld)
+> - [JSX语法](#JSX语法)
 
 * 引用文档：[React教程阿里云大学](https://edu.aliyun.com/lesson_483_5255?spm=5176.10731542.0.0.JAX9ZT#_5255)
 > * **React 特点**
@@ -73,4 +73,39 @@ class App extends Component {
         </p>
       </div>    );  }}
  export default App;
+```
+- 修改后，打开 http://localhost:3000/ （一般自动刷新）
+
+## JSX语法
+> JSX是一种JS的扩展语法（语法糖），JSX本身是一个表达式，通过编译之后变成了常规的`JS对象`，这意味着它可以被当作表达式进行`赋值`或`作为函数的返回值`。
+
+#### JSX作为表达式:
+
+```js
+// 用于赋值
+const element = (
+  <h1>
+    Hello, World！
+  </h1>
+);
+
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+//被函数返回
+function getGreeting(user) {
+  if (user) {
+    return <h1>Hello, {formatName(user)}!</h1>;
+  }
+  return <h1>Hello, Stranger.</h1>;
+}
+```
+- 注意：JSX内部不能使用`if else`语句，但可以使用三元运算
+
+#### JSX属性写法
+    * JSX中属性名用驼峰命名法
+    * JSX属性值可以是字符串，或`{}`包裹的对象
+```js
+const element = <img className="logo" src={user.avatarUrl}></img>;
 ```
