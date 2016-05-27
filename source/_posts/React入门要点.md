@@ -109,3 +109,30 @@ function getGreeting(user) {
 ```js
 const element = <img className="logo" src={user.avatarUrl}></img>;
 ```
+
+#### JSX样式
+- React 推荐使用内联样式。React 会在指定元素数字后自动添加 px 。我们可以使用 camelCase 语法来设置内联样式
+
+```js
+var myStyle={fontSize:100,color:"#ff0"};
+React.render(
+     <h1 style = {myStyle}>你好啊。</h1>,
+    document.getElementById('example')
+)
+```
+
+#### 注释
+- 注释需要写在花括号中，实例如下：
+```js
+ReactDOM.render(
+    <div>
+         <h1>你好啊。</h1>    {/*注释...*/}
+     </div>,
+    document.getElementById('example')
+);
+```
+#### 数组
+- JSX 允许在模板中插入数组，数组会自动展开所有成员：
+```
+
+```
