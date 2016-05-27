@@ -132,7 +132,22 @@ ReactDOM.render(
 );
 ```
 #### 数组
-- JSX 允许在模板中插入数组，数组会自动展开所有成员：
+- JSX 允许在模板中插入数组，`数组会自动展开所有成员`：
+```js
+var arr = [<h1>阿里云大学</h1>,<h2>学的不仅是技术，更是梦想！</h2>,];
+ReactDOM.render(
+  <div>{arr}</div>,
+  document.getElementById('example')
+);
 ```
-
+#### React组件和HTML标签
+- React 的 JSX 使用大、小写的约定来区分本地组件的类和 HTML 标签。因此引用React引用时，`组件命名必须大写`
+```js
+// 渲染HTML标签
+var myDivElement = <div className="foo" />;
+ReactDOM.render(myDivElement, document.getElementById('example'));
+// 渲染React组件
+import MyComponet from './mycomponent.js'
+var myElement = <MyComponent someProperty={true} />;
+ReactDOM.render(myElement, document.getElementById('example'));
 ```
