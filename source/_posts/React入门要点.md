@@ -12,6 +12,7 @@ React 拥有较高的性能，代码逻辑非常简单，越来越多的人已�
 ## 目录
 > - [安装](#安装)
 > - [JSX语法](#JSX语法)
+> - [React组件](#React组件)
 
 * 引用文档：[React教程阿里云大学](https://edu.aliyun.com/lesson_483_5255?spm=5176.10731542.0.0.JAX9ZT#_5255)
 > * **React 特点**
@@ -150,4 +151,18 @@ ReactDOM.render(myDivElement, document.getElementById('example'));
 import MyComponet from './mycomponent.js'
 var myElement = <MyComponent someProperty={true} />;
 ReactDOM.render(myElement, document.getElementById('example'));
+```
+
+## React组件
+- 实例如下：
+```js
+// mycomponent.js
+import React from 'react';
+
+class MyComponent extends React.Component {
+    render(){
+        return (<div>组件一</div>)
+    }
+}
+export default MyComponent;
 ```
