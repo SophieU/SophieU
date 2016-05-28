@@ -154,15 +154,31 @@ ReactDOM.render(myElement, document.getElementById('example'));
 ```
 
 ## React组件
+> 定义组件的方式有多种：
+> 1. `函数式组件`：将JSX以函数返回值的形式返回的函数即为一个函数式组件【相对第二种组件更加简洁，但功能被阉割了，只能渲染一些静态内容】
+> 2. `类组件`：以ES6的class方式定义组件
 - 实例如下：
 ```js
-// mycomponent.js
+// 函数式组件：
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+// 渲染
+const element = <Welcome name="Sara" />;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+// 类组件 ：mycomponent.js
 import React from 'react';
-
 class MyComponent extends React.Component {
     render(){
         return (<div>组件一</div>)
     }
 }
 export default MyComponent;
+// 渲染组件
+
 ```
+#### 合成组件【复合组件】
+- 组件内部引用了其他组件，称为`复合组件`
