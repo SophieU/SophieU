@@ -251,6 +251,7 @@ export default class ItemList extends React.Component{
       itemList:'一些数据',
     }
   }
+  // componentDidMount() 钩子在组件输出被渲染到 DOM 之后运行。
   // 异步获取数据并修改state值
   componentDidMount(){
     fetch('url')
@@ -269,6 +270,7 @@ export default class ItemList extends React.Component{
 - 首先，在组件初始化的时候，通过this.state给组件设定一个初始的state，在第一次render的时候就会用这个数据来渲染组件。
 - 当我们调用`this.setState`方法时，React会更新组件的数据状态`state`，并且重新调用`render`方法，也就是会对组件进行重新渲染。
 - **注意：通过this.state=来初始化state，使用this.setState来修改state，constructor是唯一能够初始化的地方。**
+- 一个组件可以选择将 state(状态) 向下传递，作为其子组件的 props(属性)【单身数据流】
 
 #### setState
 - `this.setState`方法可以接受两个参数，参数1：对象，参数2：函数 
