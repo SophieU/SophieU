@@ -267,3 +267,23 @@ export default class ItemList extends React.Component{
 }
 ```
 - 首先，在组件初始化的时候，通过this.state给组件设定一个初始的state，在第一次render的时候就会用这个数据来渲染组件。
+- 当我们调用`this.setState`方法时，React会更新组件的数据状态`state`，并且重新调用`render`方法，也就是会对组件进行重新渲染。
+- **注意：通过this.state=来初始化state，使用this.setState来修改state，constructor是唯一能够初始化的地方。**
+
+#### setState
+- `this.setState`方法可以接受两个参数，参数1：对象，参数2：函数 
+- 参数1：对象即可改变的state值
+- 参数2：函数会在`setState`调用完成并且组件开始重新渲染时被调用，可以`用来监听渲染是否完成`
+```js
+this.setState({
+  name:'xb'
+},()=>console.log('setState finished'))
+```
+#### 总结State
+> `stat`e的主要作用是用于组件保存、控制以及修改自己的状态，它只能在`constructor`中初始化，它算是组件的私有属性，不可通过外部访问和修改，只能通过组件内部的`this.setState`来修改，修改`state`属性会导致组件的重新渲染。
+
+#### State和Props的区别
+1. state是组件自己管理数据，控制自己的状态，可变；
+2. props是外部传入的数据参数，不可变；
+3. 没有state的叫做无状态组件，有state的叫做有状态组件；
+4. 多用props，少用state。也就是多写无状态组件。
