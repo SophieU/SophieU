@@ -352,3 +352,55 @@ constructor(){
 - 条件渲染：使用`if`或`&&`来判断并渲染正确组件
 - 列表渲染：
 #### 条件渲染
+```js
+// if 条件渲染
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+ReactDOM.render(
+  // 修改为 isLoggedIn={true} 试试:
+  <Greeting isLoggedIn={false} />,
+  document.getElementById('root')
+);
+
+// && 条件渲染 在 {}表达式中
+function Mailbox(props) {
+  const unreadMessages = props.unreadMessages;
+  return (
+    <div>
+      <h1>Hello!</h1>
+      {unreadMessages.length > 0 &&
+        <h2>
+          You have {unreadMessages.length} unread messages.
+        </h2>
+      }
+    </div>
+  );
+}
+
+const messages = ['React', 'Re: React', 'Re:Re: React'];
+ReactDOM.render(
+  <Mailbox unreadMessages={messages} />,
+  document.getElementById('root')
+);
+
+// 三元运算
+render() {
+  const isLoggedIn = this.state.isLoggedIn;
+  return (
+    <div>
+      {isLoggedIn ? (
+        <LogoutButton onClick={this.handleLogoutClick} />
+      ) : (
+        <LoginButton onClick={this.handleLoginClick} />
+      )}
+    </div>
+  );
+}
+```
+- 在 JavaScript 中，` true && expression `总是会评估为 `expression` ，而 false && expression 总是执行为 false 。
