@@ -404,3 +404,52 @@ render() {
 }
 ```
 - 在 JavaScript 中，` true && expression `总是会评估为 `expression` ，而 false && expression 总是执行为 false 。
+
+##### 阻止组件渲染【隐藏组件】
+- 通过在组件中`return null`
+
+在下面的例子中，根据名为warn的 prop 值，呈现 <WarningBanner /> 。如果 prop 值为 false ，则该组件不渲染：
+```js
+// warning组件
+function WarningBanner(props) {
+  if (!props.warn) {
+    return null;
+  }
+
+  return (
+    <div className="warning">
+      Warning!
+    </div>
+  );
+}
+// 父组件
+class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {showWarning: true};
+    this.handleToggleClick = this.handleToggleClick.bind(this);
+  }
+
+  handleToggleClick() {
+    this.setState(state => ({
+      showWarning: !state.showWarning
+    }));
+  }
+
+  render() {
+    return (
+      <div>
+        <WarningBanner warn={this.state.showWarning} />
+        <button onClick={this.handleToggleClick}>
+          {this.state.showWarning ? 'Hide' : 'Show'}
+        </button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Page />,
+  document.getElementById('root')
+);
+```
