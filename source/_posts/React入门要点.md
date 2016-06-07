@@ -453,3 +453,15 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+#### 列表渲染
+- 通过`map`进行列表渲染
+```js
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li>{number}</li>
+);
+ReactDOM.render(
+  <ul>{listItems}</ul>,
+  document.getElementById('root')
+);
+```
