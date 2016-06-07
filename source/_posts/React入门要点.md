@@ -486,3 +486,56 @@ function NumberList(props) {
 ```
 
 ## Form表单
+- 在React中的表单可以分为 `受控组件`和`非受控组件`
+- 在表现形式上看，`受控组件`即为设置了`value`属性值组件，而`非受控组件`为没有value属性的组件，其通过`defaultValue`来设置初始值
+
+#### 受控组件
+- 表单元素如` <input>，<textarea> 和 <select>`通常保持自己的状态，并根据用户输入进行更新。在 React 中，可变状态一般保存在组件的 state(状态) 属性中，并且`只能通过 setState() 更新`。即用户输入值的显示由`setState`的值决定。
+- 如下示例：处理多个受控组件
+```js
+class Reservation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isGoing: true,
+      numberOfGuests: 2
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  render() {
+    return (
+      <form>
+        <label>
+          Is going:
+          <input
+            name="isGoing"
+            type="checkbox"
+            checked={this.state.isGoing}
+            onChange={this.handleInputChange} />
+        </label>
+        <br />
+        <label>
+          Number of guests:
+          <input
+            name="numberOfGuests"
+            type="number"
+            value={this.state.numberOfGuests}
+            onChange={this.handleInputChange} />
+        </label>
+      </form>
+    );
+  }
+}
+```
