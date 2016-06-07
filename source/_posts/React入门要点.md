@@ -539,3 +539,10 @@ class Reservation extends React.Component {
   }
 }
 ```
+- 当value的值为`undefined`或`null`时，表单元素的输入首先被锁定，但在短暂的延迟后可以编辑。
+
+**总结受控组件**
+1. 可以通过初始state中设置表单的默认值;
+2. 每当表单的值发生变化时,调用onChange事件处理器;
+3. 事件处理器通过合成事件对象e拿到改变后的状态,并更新应用的state.
+4. setState触发视图的重新渲染,完成表单组件值得更新
