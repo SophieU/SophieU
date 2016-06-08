@@ -455,13 +455,30 @@ ReactDOM.render(
 ```
 #### 列表渲染
 - 通过`map`进行列表渲染
+- 在列表渲染过程中，通过`Keys`来帮助 React 标识哪个项被修改、添加或者移除了。数组中的每一个元素都应该有一个唯一不变的键(Keys)来标识：
 ```js
 const numbers = [1, 2, 3, 4, 5];
 const listItems = numbers.map((number) =>
-  <li>{number}</li>
+  <li key={number.toString()}>{number}</li>
 );
 ReactDOM.render(
   <ul>{listItems}</ul>,
   document.getElementById('root')
 );
+```
+
+- 在JSX中内嵌`map`
+```js
+function NumberList(props) {
+  const numbers = props.numbers;
+  return (
+    <ul>
+      {numbers.map((number) =>
+        <ListItem key={number.toString()}
+                  value={number} />
+
+      )}
+    </ul>
+  );
+}
 ```
