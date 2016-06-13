@@ -540,9 +540,64 @@ class Reservation extends React.Component {
 }
 ```
 - 当value的值为`undefined`或`null`时，表单元素的输入首先被锁定，但在短暂的延迟后可以编辑。
-
+- react中数据是单向流动的.从示例中,我们能看出来表单的数据来源于组件的state,并通过props传入,这也称为单向数据绑定.然后,我们又通过onChange事件处理器将新的表单数据写回到state,完成了双向数据绑定.
 **总结受控组件**
 1. 可以通过初始state中设置表单的默认值;
 2. 每当表单的值发生变化时,调用onChange事件处理器;
 3. 事件处理器通过合成事件对象e拿到改变后的状态,并更新应用的state.
 4. setState触发视图的重新渲染,完成表单组件值得更新
+
+#### 非受控组件
+- 如果一个表单组件没有value props(单选按钮和复选按钮对应的是 checked props)时,就可以称为非受控组件;
+- 使用defaultValue和defaultChecked来表示组件的默认状态;
+- 通过 defaultValue和defaultChecked来设置组件的默认值,它仅会被渲染一次,在后续的渲染时并不起作用
+```js
+import React, { Component } from 'react';
+
+class UnControlled extends Component {
+    handleSubmit = (e) => {
+        console.log(e);
+        e.preventDefault();
+        console.log(this.name.value);
+    }
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <input type="text" ref={i => this.name = i} defaultValue="BeiJing" />
+                <button type="submit">Submit</button>
+            </form>
+        );
+    }
+}
+
+export default UnControlled;
+```
+#### 受控与非受控的对比
+```js
+// 受控组件
+<input
+    type="text"
+    value={this.state.value}
+    onChange={(e) => {
+        this.setState({
+            value: e.target.value.toUpperCase(),
+        });
+    }}
+/>
+// 非受控组件
+<input
+    type="text"
+    defaultValue={this.state.value}
+    onChange={(e) => {
+        this.setState({
+            value: e.target.value.toUpperCase(),
+        });
+    }}
+/>
+```
+1. 性能上的问题
+> 在受控组件中,每次表单的值发生变化,都会调用一次onChange事件处理器,这确实会带来性能上的的损耗,虽然使用费受控组件不会出现这些问题,但仍然不提倡使用非受控组件,这个问题可以通过Flux/Redux应用架构等方式来达到统一组件状态的目的.
+2. 是否需要事件绑定
+> 使用受控组件需要为每一个组件绑定一个change事件,并且定义一个事件处理器来同步表单值和组件的状态,这是一个必要条件.当然,某些情况可以使用一个事件处理器来处理多个表单域【  `this.setState({[name]: value, });`】
+            
+       
