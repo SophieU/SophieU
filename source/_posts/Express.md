@@ -110,10 +110,13 @@ app.all('/all',functino(req,res,next){
 })
 ```
 - `app.all()`比较特殊，主要用于对所有请求都加载中间件函数
-
-
 - 在项目中，路由都是分模块的，如上，`index`则代表主要首页模块，在`routes/index`文件中，又有多个路由可参考写法。
 
+#### 路由参数（parameters）
+---|---|
+路由|path：/users/:userId/books/:bookId
+请求|URL: http://localhost:3000/users/34/books/8989
+参数获取|req.params: { "userId": "34", "bookId": "8989" }
 ## 静态文件
 - 为了提供诸如图像、CSS 文件和 JavaScript 文件之类的静态文件，可以使用 Express 中的` express.static `内置中间件函数。
 
