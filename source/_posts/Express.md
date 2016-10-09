@@ -92,11 +92,6 @@ $ npm start
 ## Router路由
 
 **路由**：决定了应用如何响应客户端请求，针对请求不同的URI或Path，以及不同的请求方式（get/post），会作出不同的响应
-- Express中定义路由的方式
-
-```js
-app.METHOD(PATH,HANDLER)
-```
 - `app`是express的实例，`METHOD`对应前端请求方式，`PATH`对应前端请求路径，`HANDLER`对应当匹配路由时的响应函数
 
 ```js
@@ -114,12 +109,8 @@ app.all('/all',functino(req,res,next){
     next();
 })
 ```
-- 在`express-generator`生成的项目中，`app.js`为入口文件，其中有一段代码：
+- `app.all()`比较特殊，主要用于对所有请求都加载中间件函数
 
-```js
-var index = require('./routes/index');
-app.use('/', index);
-```
 
 - 在项目中，路由都是分模块的，如上，`index`则代表主要首页模块，在`routes/index`文件中，又有多个路由可参考写法。
 
