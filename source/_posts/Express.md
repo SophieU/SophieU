@@ -100,8 +100,18 @@ app.METHOD(PATH,HANDLER)
 - `app`是express的实例，`METHOD`对应前端请求方式，`PATH`对应前端请求路径，`HANDLER`对应当匹配路由时的响应函数
 
 ```js
+//get请求
 app.get('/next',function(req,res,next){
     res.send('针对next的请求');
+})
+// post请求
+app.post('/set',function(req,res,next){
+    res.send('这是一个post请求')
+})
+//所有请求
+app.all('/all',functino(req,res,next){
+    console.log('进到了/all')
+    next();
 })
 ```
 - 在`express-generator`生成的项目中，`app.js`为入口文件，其中有一段代码：
