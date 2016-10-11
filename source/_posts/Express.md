@@ -158,7 +158,7 @@ app.get('/',function(req,res){
 app.listen(3000)
 ```
 ### 可配置的中间件
-
+- 例如express的`cookieSession`中间件，可用于处理用户session
 ```js
 // my-middleware.js
 module.exports = function(options) {
