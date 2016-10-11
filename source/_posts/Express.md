@@ -156,11 +156,21 @@ app.get('/',function(req,res){
     res.send('Hello U')
 })
 app.listen(3000)
-
+```
 ### 可配置的中间件
 
+```js
+// my-middleware.js
+module.exports = function(options) {
+  return function(req, res, next) {
+    // 基于options选项来执行逻辑
+    next()
+  }
+}
 
-
+//使用
+var mw= requrie('./my-middleware.js');
+app.use(mw(option1:'1',option2:'2'))
 ```
 
 ## 常见问题
