@@ -130,12 +130,44 @@ app.use(express.static('files'))
 app.use('/static', express.static(path.join(__dirname, 'public')))
 ```
 ## 中间件
+- **中间件函数**可以处理`请求对象(req)`，`响应对象(res)`，以及`next`函数。通常中间件是用来对请求或响应进行包装和处理。
+- 示例-- 添加一个 `myLogger`中间件（用于打印日志）和一个`requestTime `中间件用于展示请求时间
 
+```js
+// web应用
+const express = require('express');
+const app = new express();
+
+// myLogger中间件
+var myLogger = function(req,res,next){
+    console.log('LOGGER')
+    next();
+}
+app.use(myLogger); //使用中间件
+
+// requestTime中间件
+var requestTime = function(req,res,next){
+    req.requestTime = Date.now();
+    next();
+}
+app.use(requestTime); //使用中间件
+
+app.get('/',function(req,res){
+    res.send('Hello U')
+})
+app.listen(3000)
+
+### 可配置的中间件
+
+
+
+```
 
 ## 常见问题
 
 #### 1. 如何处理404响应
 - 在Express中，404响应不是错误，所以需要一个针对404的中间件来捕获它
+
 
 ```js
 app.use(function (req, res, next) {
