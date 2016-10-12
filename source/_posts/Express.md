@@ -129,6 +129,8 @@ app.use(express.static('files'))
 // 通常的做法
 app.use('/static', express.static(path.join(__dirname, 'public')))
 ```
+## 中间件
+
 
 ## 常见问题
 
