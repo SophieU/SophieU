@@ -17,6 +17,7 @@ Express是基于`Node.js`平台的极简的经典Web开发框架。[中文官网
 > - [Express应用生成器](#Express应用生成器)
 > - [Router路由](#Router路由)
 > - [静态文件](#静态文件)
+> - [中间件](#中间件)
 > - [常见问题](#常见问题)
 
 ## 安装
@@ -162,5 +163,16 @@ app.get("/", function (req, res, next) {
       res.send(data);
     }
   });
+});
+
+// express生成项目中，默认的处理器
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
 });
 ```
