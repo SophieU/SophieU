@@ -140,3 +140,27 @@ app.use(function (req, res, next) {
 })
 ```
 - 当然，也可以用设置好的404页面通过`res.render`的方式渲染到客户端
+
+#### 2. 设置一个错误处理器
+- express生成的项目中，默认是有捕获错误的中间件的，当然也可以自己写，如下示例：
+- 在异步函数中，必须要使用`next()`来传递错误给express并捕获相应错误
+
+```js
+// 简单的错误处理中间件
+app.use(function (err, req, res, next) {
+  console.error(err.stack)
+  res.status(500).send('Something broke!')
+})
+
+// 异步函数中的错误处理
+app.get("/", function (req, res, next) {
+  fs.readFile("/file-does-not-exist", function (err, data) {
+    if (err) {
+      next(err); // 将错误传递给express
+    }
+    else {
+      res.send(data);
+    }
+  });
+});
+```
