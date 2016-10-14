@@ -132,3 +132,11 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 ## 常见问题
 
 #### 1. 如何处理404响应
+- 在Express中，404响应不是错误，所以需要一个针对404的中间件来捕获它
+
+```js
+app.use(function (req, res, next) {
+  res.status(404).send("Sorry can't find that!")
+})
+```
+- 当然，也可以用设置好的404页面通过`res.render`的方式渲染到客户端
