@@ -96,8 +96,14 @@ app.METHOD(PATH,HANDLER)
 ```
 - `app`是express的实例，`METHOD`对应前端请求方式，`PATH`对应前端请求路径，`HANDLER`对应当匹配路由时的响应函数
 
-```
+```js
 app.get('/next',function(req,res,next){
     res.send('针对next的请求');
 })
 ```
+- 在`express-generator`生成的项目中，`app.js`为入口文件，其中有一段代码：
+```js
+var index = require('./routes/index');
+app.use('/', index);
+```
+- 在项目中，路由都是分模块的，如上，`index`则代表主要首页模块，在`routes/index`文件中，又有多个路由可参考写法。
