@@ -17,6 +17,7 @@ Express是基于`Node.js`平台的极简的经典Web开发框架。[中文官网
 > - [Express应用生成器](#Express应用生成器)
 > - [Router路由](#Router路由)
 > - [静态文件](#静态文件)
+> - [常见问题](#常见问题)
 
 ## 安装
 - 前提：已安装`Node.js`
@@ -103,16 +104,19 @@ app.get('/next',function(req,res,next){
 })
 ```
 - 在`express-generator`生成的项目中，`app.js`为入口文件，其中有一段代码：
+
 ```js
 var index = require('./routes/index');
 app.use('/', index);
 ```
+
 - 在项目中，路由都是分模块的，如上，`index`则代表主要首页模块，在`routes/index`文件中，又有多个路由可参考写法。
 
 ## 静态文件
 - 为了提供诸如图像、CSS 文件和 JavaScript 文件之类的静态文件，可以使用 Express 中的` express.static `内置中间件函数。
 
 - 示例：访问`public`目录下的所有文件
+
 ```js
 app.use(epxress.static('public'))
 
@@ -124,3 +128,7 @@ app.use(express.static('files'))
 // 通常的做法
 app.use('/static', express.static(path.join(__dirname, 'public')))
 ```
+
+## 常见问题
+
+#### 1. 如何处理404响应
