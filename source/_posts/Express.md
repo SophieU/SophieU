@@ -62,3 +62,23 @@ $ express --view=ejs myapp
 # 启动应用[默认是在3000端口启动]
 $ npm start
 ```
+- 通过生成器创建的应用一般都有如下目录结构：
+```
+.
+├── app.js
+├── bin
+│   └── www
+├── package.json
+├── public
+│   ├── images
+│   ├── javascripts
+│   └── stylesheets
+│       └── style.css
+├── routes
+│   ├── index.js
+│   └── users.js
+└── views
+    ├── error.pug
+    ├── index.pug
+    └── layout.pug
+```
