@@ -90,7 +90,14 @@ $ npm start
 
 **路由**：决定了应用如何响应客户端请求，针对请求不同的URI或Path，以及不同的请求方式（get/post），会作出不同的响应
 - Express中定义路由的方式
+
 ```js
 app.METHOD(PATH,HANDLER)
 ```
 - `app`是express的实例，`METHOD`对应前端请求方式，`PATH`对应前端请求路径，`HANDLER`对应当匹配路由时的响应函数
+
+```
+app.get('/next',function(req,res,next){
+    res.send('针对next的请求');
+})
+```
