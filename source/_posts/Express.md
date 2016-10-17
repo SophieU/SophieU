@@ -56,6 +56,9 @@ node app.js
 $ npm install express-generator -g
 # 查看express指令
 $ express -h
+
 # 创建一个以ejs为模板引擎的应用
 $ express --view=ejs myapp
+# 启动应用[默认是在3000端口启动]
+$ npm start
 ```
