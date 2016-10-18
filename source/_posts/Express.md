@@ -50,3 +50,11 @@ node app.js
 
 ## Express应用生成器
 - express提供了用于快速生成一个web应用程序的工具`express-generator`，它可以快速创建项目骨架，并包含多个基本应用模块
+
+```bash
+# 安装
+$ npm install express-generator -g
+# 查看express指令
+$ express -h
+
+```
