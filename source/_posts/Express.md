@@ -56,5 +56,6 @@ node app.js
 $ npm install express-generator -g
 # 查看express指令
 $ express -h
-
+# 创建一个以ejs为模板引擎的应用
+$ express --view=ejs myapp
 ```
