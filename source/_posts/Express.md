@@ -14,6 +14,7 @@ Express是基于`Node.js`平台的极简的经典Web开发框架。[中文官网
 ## 目录
 > - [安装](#安装)
 > - [HelloWorld](#HelloWorld)
+> - [Express应用生成器](#Express应用生成器)
 
 ## 安装
 - 前提：已安装`Node.js`
@@ -46,3 +47,6 @@ app.listen(3000, () => console.log('Example app listening on port 3000!'))
 node app.js
 ```
 - 访问`localhost:3000`可以看到页面显示了`Hello World`，访问其他页面会出现404，这就是一个简单的web应用服务
+
+## Express应用生成器
+- express提供了用于快速生成一个web应用程序的工具`express-generator`，它可以快速创建项目骨架，并包含多个基本应用模块
