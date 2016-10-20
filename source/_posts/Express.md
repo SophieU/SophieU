@@ -45,3 +45,4 @@ app.listen(3000, () => console.log('Example app listening on port 3000!'))
 ```bash
 node app.js
 ```
+- 访问`localhost:3000`可以看到页面显示了`Hello World`，访问其他页面会出现404，这就是一个简单的web应用服务
