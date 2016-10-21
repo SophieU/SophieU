@@ -30,3 +30,18 @@ $ npm install express -S
 ```
 
 ## HelloWorld
+- `myapp`目录下，新建`app.js`作为入口文件
+- 示例：用express创建一个简单的web服务
+```js
+const express = require('express')
+const app = express()
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(3000, () => console.log('Example app listening on port 3000!'))
+
+```
+
+```bash
+node app.js
+```
