@@ -22,5 +22,9 @@ Express是基于`Node.js`平台的极简的经典Web开发框架。[中文官网
 $ mkdir myapp
 $ cd myapp
 
+# 初始化文件
 $ npm init
+
+# 安装
+$ npm install express -S
 ```
