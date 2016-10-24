@@ -12,5 +12,15 @@ Express是基于`Node.js`平台的极简的经典Web开发框架。[中文官网
 <!--more-->
 
 ## 目录
-> 
 > - [安装](#安装)
+> - [HelloWorld](#HelloWorld)
+
+## 安装
+- 前提：已安装`Node.js`
+
+```bash
+$ mkdir myapp
+$ cd myapp
+
+$ npm init
+```
