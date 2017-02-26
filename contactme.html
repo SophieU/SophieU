@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta charset="UTF-8">
+    <title>联系我</title>
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/contactme.css" />
+   
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-inverse " role="navigation">
+		<div class="container">
+		    <ul class="nav nav-pills" role="tablist">
+			  <li role="presentation" ><a href="./index.html"><span class="glyphicon glyphicon-home"></span>Home&nbsp;[主页]</a></li>
+			  <li role="presentation"><a href="./blog.html"><span class="glyphicon glyphicon-list-alt"></span>My blog&nbsp;[博客]</a></li>
+			  <li role="presentation"><a href="./contact.html"><span class="glyphicon glyphicon-leaf
+	glyphicon "></span> Projects&nbsp;[项目展示] </a></li>
+			  <li role="presentation"><a href="./myinfo.html"><span class="glyphicon glyphicon-heart"></span>About Me&nbsp;[简历]</a></li>
+			  <li role="presentation"><a href="./messages.html"><span class="glyphicon glyphicon-comment"></span>Live Messages&nbsp;[留言]</a></li>
+			</ul>
+		 </div>
+	</nav>
+</header>
+<div id="content" class="container">
+    <aside id="about_menu">
+        <ul>
+            <li class="header_img"><img src="./images/me.jpeg" width="100%"/></li>
+            <li class="btn-3"><a href="./myinfo.html">About me</a></li>
+            <li class="btn-3"><a href="./education.html">Education</a></li>
+            <li class="btn-3"><a href="./experience.html">Work Experience</a></li>
+            <li class=" btn-3"><a href="./skills.html">Skills</a></li>
+            <li class="btn-3"><a href="./projects.html">Projects</a></li>
+            <li class="active btn-3"><a href="./contact.html">Contacts</a></li>
+        </ul>
+    </aside>
+    <section >
+        <div class="headbg">
+            <img src="./images/aboutme.jpg" height="400px" width="100%"/>
+            <div class="headtext">
+                <p class="slogan">Lets Make Something Great</p>
+                <p class="intro">我是一名Web前端工程师，为实现更绚丽的网页效果，更良好的用户体验，更生动的内容展示而工作。<br />不忘初心，为梦前持续前行</p>
+                <button type="button" class="btn btn-danger" id="hireme">Hire me</button>
+            </div>
+        </div>
+    </section>
+    <section class="jumbotron" id="contactme">
+        <div class="panel-heading">
+            <h2>联系我</h2>
+            <span class="border"></span>
+        </div>
+        <div class="row">
+            <form  action="/hireme" method="post" class="col-md-6 form-horizontal">
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">姓名</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="姓名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tel" class="col-sm-2 control-label">电话</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" id="tel" name="tel" placeholder="电话">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">邮箱</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12" style="padding-left: 30px">
+                        <textarea class="form-control" id="mescontent" name="mescontent" rows="6" placeholder="备注"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-danger pull-right">发送</button>
+            </form>
+            <div class="col-md-6 right_intro">
+                <ul>
+                    <li>
+                        <span class="glyphicon glyphicon-map-marker"></span>
+                        <div>
+                            <p class="title">Location&nbsp;—&nbsp;我的坐标</p>
+                            <p class="innertext">&emsp;四川&nbsp;·&nbsp;成都 </p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="glyphicon glyphicon-send"></span>
+                        <div>
+                            <p class="title">Email&nbsp;—&nbsp;邮箱</p>
+                            <p class="innertext">&emsp;j.u.sophia@qq.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="glyphicon glyphicon-magnet"></span>
+                        <div>
+                            <p class="title">Else&nbsp;—&nbsp;其他</p>
+                            <p class="innertext">&emsp;QQ：506336826</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="footer.js" type="text/javascript" charset="utf-8"></script>
+ <script src="./js/lib/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./js/lib/html5shiv.min.js"></script>
+<script src="./js/lib/respond.min.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" src="./js/app/all.js"></script>
+</body>
+</html>

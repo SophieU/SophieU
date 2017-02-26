@@ -7,48 +7,41 @@
 		<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="./css/common.css" />
 		<link rel="stylesheet" href="./css/messages.css" />		
-		<script src="./js/lib/jquery.js" type="text/javascript" charset="utf-8"></script>
-		<script src="./bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		
 	</head>
 	<body>
 		<header>
-			<!--navbar navbar-default-->
 			<nav class="navbar navbar-inverse " role="navigation">
-			  <div class="container">
-			    <div class="navbar-header">
-			      <a class="navbar-brand" href="#">
-			        <img alt="Brand" src="">
-			      </a>
-			    </div>
-			    <ul class="nav nav-pills" role="tablist">
-				  <li role="presentation" ><a href="./index.html"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				  <li role="presentation"><a href="./blog.html"><span class="glyphicon glyphicon-list-alt"></span>My blog</a></li>
-				  <li role="presentation"><a href="./contact.html"><span class="glyphicon glyphicon-leaf
-glyphicon "></span>Contact</a></li>
-				  <li role="presentation"><a href="./aboutme.html"><span class="glyphicon glyphicon-heart"></span>About Me</a></li>
-				  <li role="presentation"><a href="./messages.html"><span class="glyphicon glyphicon-comment"></span>Live Messages</a></li>
-				</ul>
-			 </div>
-			</nav>
+		<div class="container">
+		    <ul class="nav nav-pills" role="tablist">
+			  <li role="presentation" ><a href="./index.html"><span class="glyphicon glyphicon-home"></span>Home&nbsp;[主页]</a></li>
+			  <li role="presentation"><a href="./blog.html"><span class="glyphicon glyphicon-list-alt"></span>My blog&nbsp;[博客]</a></li>
+			  <li role="presentation"><a href="./contact.html"><span class="glyphicon glyphicon-leaf
+	glyphicon "></span> Projects&nbsp;[项目展示] </a></li>
+			  <li role="presentation"><a href="./myinfo.html"><span class="glyphicon glyphicon-heart"></span>About Me&nbsp;[简历]</a></li>
+			  <li role="presentation"><a href="./messages.html"><span class="glyphicon glyphicon-comment"></span>Live Messages&nbsp;[留言]</a></li>
+			</ul>
+		 </div>
+	</nav>
 		</header>
 		<div id="content" class="container">
-			<form role="form-horizontal" action="##" method="post">
+			<form role="form-horizontal" action="/newmes" method="post">
 			  <h3>感谢给我留言</h3>
 			  <div class="form-group info">
 			    <label for="name" class="col-sm-2 control-label">您的名字</label>
 			    <div class="col-sm-10">
-				    <input type="text" class="form-control" id="name" placeholder="输入您的名字或者昵称">
+				    <input type="text" class="form-control" id="name" name="name" placeholder="输入您的名字或者昵称">
 			    </div>
 			  </div>
 			  <div class="form-group info">
-			    <label for="email" class="col-sm-2 control-label">邮箱</label>
+			    <label for="contact" class="col-sm-2 control-label">联系方式</label>
 			    <div class="col-sm-10">
-			   		<input type="email" class="form-control" id="email" placeholder="您的邮箱">
+			   		<input type="text" class="form-control" id="contact" name="contact" placeholder="您的联系方式不会对外显示，可放心填写哦">
 	    	    </div>
 			  </div>
 			  <div class="form-group last_text">
-			  	<label for="mes" class="control-label">有什么想对我说的呢？</label>
-			  	<textarea name="messages" class="form-control" id="mes" rows="5" cols="10"></textarea>
+			  	<label for="mescontent" class="control-label">有什么想对我说的呢？</label>
+			  	<textarea class="form-control" id="mescontent" name="mescontent" rows="5" cols="10" style="resize: none;"></textarea>
 			  </div>
 			  <button type="submit" class="btn btn-danger">发表</button>
 			</form>
@@ -58,7 +51,7 @@ glyphicon "></span>Contact</a></li>
 					<li>
 						<span class="glyphicon glyphicon-comment"></span>
 						<div>
-							<p class="title">Location</p>
+							<p class="title">Messages</p>
 							<p class="innertext">324, Golden Tower, Amborkhana, Sylhet</p>
 						</div>
 					</li>
@@ -79,82 +72,56 @@ glyphicon "></span>Contact</a></li>
 				</ul>
 			</div>
 		</div>
-		<div class="mes_page container">
-			<article class="panel panel-default">
-			  <div class="panel-body">
-			   这里是留言内容很多很多
-			  </div>
-			  <div class="panel-footer">
-			  	<span>来自：sophia</span>
-			  	<span class="article_time">时间：2016-11-30 19:06</span>
-			  </div>
-			</article>
-			<article class="panel panel-default">
-			  <div class="panel-body">
-			   这里是留言内容很多很多
-			  </div>
-			  <div class="panel-footer">
-			  	<span>来自：sophia</span>
-			  	<span class="article_time">时间：2016-11-30 19:06</span>
-			  </div>
-			</article>
-			<article class="panel panel-default">
-			  <div class="panel-body">
-			   这里是留言内容很多很多
-			  </div>
-			  <div class="panel-footer">
-			  	<span>来自：sophia</span>
-			  	<span class="article_time">时间：2016-11-30 19:06</span>
-			  </div>
-			</article>
-			<!--分页-->
-		  <ul class="pagination">
-		    <li class="disabled"><a href="#">《</a></li>
-		    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-		    <li ><a href="#">2 <span class="sr-only"></span></a></li>
-		    <li ><a href="#">3 <span class="sr-only"></span></a></li>
-		    <li class="disabled"><a href="#">》</a></li>
-		  </ul>
+		<div class="mes_page container" id="mes_page">
 		</div>
-		<footer>
-			<div class="container">
-				<div class="time">
-					<p class="date"></p>
-					 <p class="clock"></p>
+
+		<!--分页-->
+		<div class="container" id="pagewrapper">
+			<ul id="pagination">
+				<li class="disabled"><a href="#">《</a></li>
+				<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+				<li ><a href="#">2 <span class="sr-only"></span></a></li>
+				<li ><a href="#">3 <span class="sr-only"></span></a></li>
+				<li class="disabled"><a href="#">》</a></li>
+			</ul>
+		</div>
+		<script src="footer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/lib/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/lib/html5shiv.min.js"></script>
+		<script src="./bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/lib/jquery.tmpl.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/lib/jquery.twbsPagination.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="./js/app/all.js"></script>
+		<!--留言内容区-->
+		<script id="mes-tpl" type="text/html">
+			<article class="panel panel-default">
+				<div class="panel-body">{{= content}}</div>
+				<div class="panel-footer">
+					<span>来自：{{= name}}</span>
+					<span class="article_time">时间：{{= date}}</span>
 				</div>
-				<img class="qrcode" src="./images/mmqrcode.png" height="200px"/>
-				<div class="frendlink">
-					<h3>友情链接</h3>
-					<ul>
-						<li>
-							<a href="##">大地飞鸿</a>
-						</li>
-						<li>
-							<a href="##">bootstrap</a>
-						</li>
-						<li>
-							<a href="##">百度</a>
-						</li>
-						<li>
-							<a href="##">Glyphicons</a>
-						</li>
-					</ul>
-				</div>
-				<div class="contact">
-					<h3>互动交流</h3>
-					<ul>
-						<li> <a href=""><span class="glyphicon glyphicon-phone-alt"></span>联系方式</a></li>
-						<li><a href=""><span class="glyphicon glyphicon-th-large"></span>学习交流</a></li>
-						<li><a href=""><span class="glyphicon glyphicon-user"></span>关于我</a></li>
-					</ul>
-				</div>
-			</div>
-			
-			<div class="webinfo">
-				<p>&copy;&nbsp;hi1688.top 版权所有</p>
-				<p>蜀ICP备16033338</p>
-			</div>
-		</footer>
-		<script type="text/javascript" src="./js/app/timeclock.js"></script>	
+			</article>
+		</script>
+		<script>
+            $.get('/mes',function(data,status){
+            	var pageSize=6,
+		        	pageCount=Math.ceil(data.length/pageSize);
+                $("#pagination").twbsPagination({
+                	 totalPages: pageCount,
+			        visiblePages: 5,
+			        first:"第一页",
+			        prev:"上一页",
+			        next:"下一页",
+			        last:"尾页",
+			        onPageClick: function (event, page) {
+		        		var start=(page-1)*pageSize,
+			        		end=start+pageSize;
+			        	var finaldata=data.slice(start,end);
+			        	$("#mes_page").html($("#mes-tpl").tmpl(finaldata));
+			            $('#page-content').text('Page ' + page);
+			        }
+                })
+            })
+		</script>
 	</body>
 </html>
