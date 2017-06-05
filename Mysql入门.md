@@ -231,4 +231,11 @@ create table itsource.t2_innodb(id int) engine=innodb;
 #### 查看表
 - 语法：`show tables [like 表名]`
 
+- 查看建表语句,语法： `show create table 表名`
+- 查看表结构，语法：`desc 表名`
+```bash
+mysql> show tables like user;
+mysql> show create table user;
+mysql> desc user;
+```
 
