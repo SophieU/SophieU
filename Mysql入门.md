@@ -214,9 +214,21 @@ mysql> create table test.students(
     -> );
 ```
 - 每个表，会在当前的库目录下，生成其所需要的文件，都是以表名为文件名，后缀不同的文件组成：
+- **注意**：表名如果与关键字冲突，也需要使用反引号.因此：注意需要将库名与表名独立包裹： `match`.`order`
 
 #### 数据库文件:
 - 在mysql安装目录下，`data`文件夹便存放着创建的数据库，如 mysql\data\test 代表test数据库的文件；
 - 其中：.frm保存的当前表的结构文件！
 - **注意**：不是所有的表生成的文件都是一样的的，取决于表的类型（引擎），引擎不同数据库服务器管理表库数据的结构是不同的，意味着操作不是完全相同！
+```bash
+create table itsource.t1_myisam(id int) engine=myisam;
+create table itsource.t2_innodb(id int) engine=innodb;
+```
+> 其中：
+>>  对于myisam：.frm结构；.myd数据；.myi索引！
+>> 对于innodb：.frm结构；数据和索引在其他的文件：
+
+#### 查看表
+- 语法：`show tables [like 表名]`
+
 
