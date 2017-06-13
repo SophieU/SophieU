@@ -19,7 +19,7 @@ MySQL 是一个关系型数据库管理系统，由瑞典 MySQL AB 公司开发�
 ## 目录
 
 > - [安装](#安装)
-> - [HelloWorld](#HelloWorld)
+> - [MySQL管理](#MySQL管理)
 > - [Express应用生成器](#Express应用生成器)
 > - [Router路由](#Router路由)
 
@@ -98,3 +98,6 @@ mysql -u root -p
 > -p : 告诉服务器将会使用一个密码来登录, 如果所要登录的用户名密码为空, 可以忽略此选项。
 
 >> 若密码存在, 输入密码登录, 不存在则直接按回车登录。登录成功后你将会看到 Welecome to the MySQL monitor... 的提示语。然后命令提示符会一直以 mysq> 加一个闪烁的光标等待命令的输入, 输入 exit 或 quit 退出登录。
+
+## MySQL管理
+#### windows下
