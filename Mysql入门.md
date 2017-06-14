@@ -20,7 +20,7 @@ MySQL 是一个关系型数据库管理系统，由瑞典 MySQL AB 公司开发�
 
 > - [安装](#安装)
 > - [MySQL管理](#MySQL管理)
-> - [Express应用生成器](#Express应用生成器)
+> - [数据库操作](#数据库操作)
 > - [Router路由](#Router路由)
 
 ## 安装
@@ -101,3 +101,28 @@ mysql -u root -p
 
 ## MySQL管理
 #### windows下
+```bash
+# 启动 mysql安装目录下bin目录
+mysqld --console
+# 关闭 cd c:/mysql/bin
+mysqladmin -uroot shutdown
+
+# windows服务的启动关闭
+net start mysql
+net stop mysql
+```
+
+## MySQL 基础指令
+> 服务器、数据库、数据表、记录、字段的关系：
+>>  一台mysql服务器可以管理`多个数据库`！
+>> 一个数据库存在`多张二维表`！
+>> 一张表存在`多条记录（行）`！
+>> 一条记录由`多个字段`组成！
+>> 字段，才是最终的元数据！
+
+因此，如果需要完成对数据的操作：
+1. Step1. 连接数据服务器
+2. Step2. 管理某个数据库
+3. Step3. 操作某个表的具体数据
+
+## 数据库操作
