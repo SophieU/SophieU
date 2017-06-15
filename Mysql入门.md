@@ -156,3 +156,10 @@ create database `test2`
 ##### 查询数据库
 - 语法： `show databases` (支持使用like 对展示的结果进行过滤：`show databases like 'match'`)
 - 注意`databases`复数
+```bash
+# 显示所有数据库
+show databases;
+# 筛选
+show databases like 'test';
+```
+- like后面使用字符串作为过滤原则。mysql中的字符串，使用`单引号`进行包裹！（也是支持双引号，但是双引号有特别的含义，因此不建议使用）
