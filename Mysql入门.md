@@ -118,8 +118,11 @@ net stop mysql
 mysql> alter user root@localhost identified by '123456';
 # 刷新权限
 mysql> flush privileges;
-# 退出重登
+# 退出
 exit;
+# 重登录
+mysql -u root -p
+password: ******
 ```
 
 ## MySQL 基础指令
@@ -136,16 +139,20 @@ exit;
 3. Step3. 操作某个表的具体数据
 
 ## 数据库操作
-### 创建数据库
+- 注意：每一条mysql命令都必须以分号结束`;`
+##### 创建数据库
 `语法：` create database 数据名 [数据库选项]
 ```bash
 # 普通创建
 create database test
 # 更优的创建
 create database `test2`
-
 ```
 - 注意数据库名的处理：
 - 有些词语是mysql的关键字或者保留字，此时可以使用 `反引号 `将库名（库标识符）进行包裹！
 - 建议，所有的标识符，都应该加上反引号！尤其在使用字符串拼凑SQL的时候！
 此时，当使用了反引号后，几乎所有的字符串都可以作为名字出现：
+
+##### 查询数据库
+- 语法： `show databases` (支持使用like 对展示的结果进行过滤：`show databases like 'match'`)
+- 注意`databases`复数
