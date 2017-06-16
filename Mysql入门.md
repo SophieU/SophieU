@@ -155,7 +155,7 @@ create database `test2`
 
 ##### 查询数据库
 - 语法： `show databases` (支持使用like 对展示的结果进行过滤：`show databases like 'match'`)
-- 注意`databases`复数
+- 注意此处的`databases`复数
 ```bash
 # 显示所有数据库
 show databases;
@@ -163,3 +163,21 @@ show databases;
 show databases like 'test';
 ```
 - like后面使用字符串作为过滤原则。mysql中的字符串，使用`单引号`进行包裹！（也是支持双引号，但是双引号有特别的含义，因此不建议使用）
+- 字符串中可以使用 通配符！（通用匹配符号）**% 百分号，匹配任意字符的任意数量**;**_ 下划线，匹配任意字符的一次出现！**
+
+##### 删除数据库
+- 语法：drop database 库名
+##### 修改数据库选项（了解）
+- 语法：alter database 库名 表选项
+##### 容错命令
+在创建和删除数据库时，可以通过`容错命令`来判断是否进行
+- `if not exists` 如果不存在，用在创建时，表示，如果不存在该库时才创建！
+- `if exists` 如果存在，删除时使用，表示如果存在，才执行删除工作
+- 注意：数据库名是严格区分大小写的
+```bash
+# 新增
+create database if not exists test2;
+# 删除
+drop database if exists test;
+```
+
