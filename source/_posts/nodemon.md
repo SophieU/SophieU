@@ -24,6 +24,7 @@ npm install nodemon -D
 
 ## 配置nodemon
 - 新建`nodemon.json`文件默认为nodemon的配置文件，从而进行自定义启动配置
+- 也可以直接在`package.json`中新增`nodemonConfig`字段进行配置
 
 ```json
 {
@@ -42,3 +43,7 @@ npm install nodemon -D
     }
 }
 ```
+> **配置项说明**：
+> 属性|说明
+> ---|---
+> restartable|设置重启模式，
