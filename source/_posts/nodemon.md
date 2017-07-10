@@ -23,3 +23,22 @@ npm install nodemon -D
 ```
 
 ## 配置nodemon
+- 新建`nodemon.json`文件默认为nodemon的配置文件，从而进行自定义启动配置
+
+```json
+{
+    "restartable":"rs",
+    "verbose": true,
+    "ignore":[
+        ".git",
+        ".svn",
+        "node_modules/**/node_modules"
+        ],
+    "execMap": {
+        "js": "node --harmony"
+    },
+    "env":{
+        "NODE_ENV": "development"
+    }
+}
+```
