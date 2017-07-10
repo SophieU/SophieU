@@ -53,3 +53,12 @@ npm install nodemon -D
 > watch|监听哪些文件的变化，当变化时行动重启
 > ext|监控指定的后缀文件名
 
+```json
+"execMap":{
+    "js":"node -harmony"
+}
+```
+- 表示使用`nodemon`代替node
+
+## 启动服务
+- nodemon './bin/www.js'
