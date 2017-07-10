@@ -46,4 +46,10 @@ npm install nodemon -D
 > **配置项说明**：
 > 属性|说明
 > ---|---
-> restartable|设置重启模式，
+> restartable|设置重启模式
+> verbose|设置日志输出模式，true为详细模式
+> ignore|设置忽略文件
+> execMap|设置运行服务的后缀名与对应的命令
+> watch|监听哪些文件的变化，当变化时行动重启
+> ext|监控指定的后缀文件名
+
