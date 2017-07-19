@@ -2,18 +2,23 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>标签: Node - Sophie&#39;s World</title>
+<title>Node Web开发框架-Express - Sophie&#39;s World</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Sophie&#39;s World">
-<meta property="og:url" content="https://sophieu.github.io/SophieU/tags/Node/index.html">
+    <meta name="description" content="Express是基于Node.js平台的极简的经典Web开发框架。中文官网">
+<meta name="keywords" content="Node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node Web开发框架-Express">
+<meta property="og:url" content="https://sophieu.github.io/SophieU/2016/10/25/Express/index.html">
 <meta property="og:site_name" content="Sophie&#39;s World">
+<meta property="og:description" content="Express是基于Node.js平台的极简的经典Web开发框架。中文官网">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-19T06:23:10.352Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sophie&#39;s World">
+<meta name="twitter:title" content="Node Web开发框架-Express">
+<meta name="twitter:description" content="Express是基于Node.js平台的极简的经典Web开发框架。中文官网">
 
 
 
@@ -79,7 +84,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/SophieU/">
             
-                <img src="/SophieU/user/logo.svg" alt="Sophie&#39;s World" height="28">
+                <img src="/SophieU/user/logo.svg" alt="Node Web开发框架-Express" height="28">
             
             </a>
         </div>
@@ -125,71 +130,11 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/SophieU/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Node</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2017-10-24T16:00:00.000Z">2017-10-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/SophieU/categories/后端学习/">后端学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 280 个字)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/SophieU/2017/10/25/nodemon/">nodemon-解决开发时无限npm start的痛点</a>
-            
-        </h1>
-        <div class="content">
-            <ul>
-<li>刚开始学习Node时，每次做了修改，都要重新<code>npm start</code>启动服务才能查看上次修改结果，而<code>nodemon</code>就是为了开发node时进行热更新的一款工具</li></ul>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/SophieU/2017/10/25/nodemon/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-    <div class="card">
     
     <div class="card-image">
-        <a href="/SophieU/2016/10/25/Express/" class="image is-7by1">
+        <span class="image is-7by1">
             <img class="thumbnail" src="/SophieU/images/deer.jpg" alt="Node Web开发框架-Express">
-        </a>
+        </span>
     </div>
     
     <div class="card-content article ">
@@ -214,20 +159,189 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/SophieU/2016/10/25/Express/">Node Web开发框架-Express</a>
+                Node Web开发框架-Express
             
         </h1>
         <div class="content">
             <p>Express是基于<code>Node.js</code>平台的极简的经典Web开发框架。<a href="http://www.expressjs.com.cn/" target="_blank" rel="noopener">中文官网</a></p>
+<a id="more"></a>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><blockquote>
+<ul>
+<li><a href="#安装">安装</a></li>
+<li><a href="#HelloWorld">HelloWorld</a></li>
+<li><a href="#Express应用生成器">Express应用生成器</a></li>
+<li><a href="#Router路由">Router路由</a></li>
+<li><a href="#静态文件">静态文件</a></li>
+<li><a href="#中间件">中间件</a></li>
+<li><a href="#模板引擎">模板引擎</a></li>
+<li><a href="#Express设置代理">Express设置代理</a></li>
+<li><a href="#常见问题">常见问题</a></li>
+</ul>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>前提：已安装<code>Node.js</code></li>
+</ul>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir myapp</span><br><span class="line">$ <span class="hljs-built_in">cd</span> myapp</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 初始化文件[中间会出现一些询问命令按需进行]</span></span><br><span class="line">$ npm init</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 安装</span></span><br><span class="line">$ npm install express -S</span><br></pre></td></tr></table></figure>
+<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><ul>
+<li><code>myapp</code>目录下，新建<code>app.js</code>作为入口文件</li>
+<li>示例：用express创建一个简单的web服务<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>)</span><br><span class="line"><span class="hljs-keyword">const</span> app = express()</span><br><span class="line"></span><br><span class="line">app.get(<span class="hljs-string">'/'</span>, (req, res) =&gt; res.send(<span class="hljs-string">'Hello World!'</span>))</span><br><span class="line"></span><br><span class="line">app.listen(<span class="hljs-number">3000</span>, () =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Example app listening on port 3000!'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure>
+<ul>
+<li>访问<code>localhost:3000</code>可以看到页面显示了<code>Hello World</code>，访问其他页面会出现404，这就是一个简单的web应用服务</li>
+</ul>
+<h2 id="Express应用生成器"><a href="#Express应用生成器" class="headerlink" title="Express应用生成器"></a>Express应用生成器</h2><ul>
+<li>express提供了用于快速生成一个web应用程序的工具<code>express-generator</code>，它可以快速创建项目骨架，并包含多个基本应用模块</li>
+</ul>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 安装</span></span><br><span class="line">$ npm install express-generator -g</span><br><span class="line"><span class="hljs-comment"># 查看express指令</span></span><br><span class="line">$ express -h</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 创建一个以ejs为模板引擎的应用</span></span><br><span class="line">$ express --view=ejs myapp</span><br><span class="line"><span class="hljs-comment"># 启动应用[默认是在3000端口启动]</span></span><br><span class="line">$ npm start</span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过生成器创建的应用一般都有如下目录结构：</li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── app.js</span><br><span class="line">├── bin</span><br><span class="line">│   └── www</span><br><span class="line">├── package.json</span><br><span class="line">├── public</span><br><span class="line">│   ├── images</span><br><span class="line">│   ├── javascripts</span><br><span class="line">│   └── stylesheets</span><br><span class="line">│       └── style.css</span><br><span class="line">├── routes</span><br><span class="line">│   ├── index.js</span><br><span class="line">│   └── users.js</span><br><span class="line">└── views</span><br><span class="line">    ├── error.pug</span><br><span class="line">    ├── index.pug</span><br><span class="line">    └── layout.pug</span><br></pre></td></tr></table></figure>
+<h2 id="Router路由"><a href="#Router路由" class="headerlink" title="Router路由"></a>Router路由</h2><p><strong>路由</strong>：决定了应用如何响应客户端请求，针对请求不同的URI或Path，以及不同的请求方式（get/post），会作出不同的响应</p>
+<ul>
+<li><code>app</code>是express的实例，<code>METHOD</code>对应前端请求方式，<code>PATH</code>对应前端请求路径，<code>HANDLER</code>对应当匹配路由时的响应函数</li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//get请求</span></span><br><span class="line">app.get(<span class="hljs-string">'/next'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res,next</span>)</span>&#123;</span><br><span class="line">    res.send(<span class="hljs-string">'针对next的请求'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="hljs-comment">// post请求</span></span><br><span class="line">app.post(<span class="hljs-string">'/set'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res,next</span>)</span>&#123;</span><br><span class="line">    res.send(<span class="hljs-string">'这是一个post请求'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="hljs-comment">//所有请求</span></span><br><span class="line">app.all(<span class="hljs-string">'/all'</span>,functino(req,res,next)&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'进到了/all'</span>)</span><br><span class="line">    next();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>app.all()</code>比较特殊，主要用于对所有请求都加载中间件函数</li>
+<li>在项目中，路由都是分模块的，如上，<code>index</code>则代表主要首页模块，在<code>routes/index</code>文件中，又有多个路由可参考写法。</li>
+</ul>
+<h4 id="路由参数（parameters）"><a href="#路由参数（parameters）" class="headerlink" title="路由参数（parameters）"></a>路由参数（parameters）</h4><ul>
+<li><a href="http://www.expressjs.com.cn/guide/routing.html" target="_blank" rel="noopener">参考文档</a></li>
+<li>路由路径中，<code>?, +, *, ()</code>可以正则的方式来匹配路径</li>
+<li><code>req.params</code>中可以获取到通过请求<code>url/:param</code>下的参数<code>param</code></li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 1、正则匹配[示例匹配abe或abcde]</span></span><br><span class="line">app.get(<span class="hljs-string">'/ab(cd)?e'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res</span>)</span>&#123;</span><br><span class="line">  res.send(<span class="hljs-string">'ab(cd)?e'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 2、req.params的使用</span></span><br><span class="line">Route path: <span class="hljs-regexp">/users/</span>:userId/books/:bookId</span><br><span class="line">Request URL: http:<span class="hljs-comment">//localhost:3000/users/34/books/8989</span></span><br><span class="line">req.params: &#123; <span class="hljs-string">"userId"</span>: <span class="hljs-string">"34"</span>, <span class="hljs-string">"bookId"</span>: <span class="hljs-string">"8989"</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 3、params的扩展使用，()匹配</span></span><br><span class="line">Route path: <span class="hljs-regexp">/user/</span>:userId(\d+)</span><br><span class="line">Request URL: http:<span class="hljs-comment">//localhost:3000/user/42</span></span><br><span class="line">req.params: &#123;<span class="hljs-string">"userId"</span>: <span class="hljs-string">"42"</span>&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="路由回调"><a href="#路由回调" class="headerlink" title="路由回调"></a>路由回调</h4><ul>
+<li><code>app.get(&#39;url&#39;,callback)</code>：其中callback回调可以是一个函数，也可以是一个<code>函数构成的数组</code>，也可以是<code>数组加函数</code>，详见文档</li>
+<li>route支持链式调用<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">app.route(&apos;/book&apos;)</span><br><span class="line">  .get(function (req, res) &#123;</span><br><span class="line">    res.send(&apos;Get a random book&apos;)</span><br><span class="line">  &#125;)</span><br><span class="line">  .post(function (req, res) &#123;</span><br><span class="line">    res.send(&apos;Add a book&apos;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Response方法"><a href="#Response方法" class="headerlink" title="Response方法"></a>Response方法</h4><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>res.download()</td>
+<td>提供一个文件下载</td>
+</tr>
+<tr>
+<td>res.end()</td>
+<td>终止响应进程</td>
+</tr>
+<tr>
+<td>res.json()</td>
+<td>返回json对向响应</td>
+</tr>
+<tr>
+<td>res.jsonp()</td>
+<td>响应一个jsonp格式的json对向</td>
+</tr>
+<tr>
+<td>res.redirect()</td>
+<td>重定向</td>
+</tr>
+<tr>
+<td>res.render()</td>
+<td>向前端渲染一个模板</td>
+</tr>
+<tr>
+<td>res.send()</td>
+<td>发送通用类型的响应</td>
+</tr>
+<tr>
+<td>res.sendFile()</td>
+<td>以文件流方式发送文件</td>
+</tr>
+<tr>
+<td>res.sendStatus()</td>
+<td>设置响应code，并发送响应</td>
+</tr>
+</tbody>
+</table>
+<h4 id="express-Router-路由模块"><a href="#express-Router-路由模块" class="headerlink" title="express.Router 路由模块"></a>express.Router 路由模块</h4><ul>
+<li>项目中，通常路由是按模块来区分的，而不是全部写在app.js中，如下：<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// index.js</span></span><br><span class="line"><span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);</span><br><span class="line"><span class="hljs-keyword">var</span> router = express.Router();</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 使用中间件</span></span><br><span class="line">router.use(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">timelog</span>(<span class="hljs-params">req,res,next</span>)</span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Time: '</span>, <span class="hljs-built_in">Date</span>.now())</span><br><span class="line">  next()</span><br><span class="line">&#125;)</span><br><span class="line"><span class="hljs-comment">// 路由</span></span><br><span class="line">router.get(<span class="hljs-string">'/'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;</span><br><span class="line">  res.send(<span class="hljs-string">'Birds home page'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">router.get(<span class="hljs-string">'/about'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;</span><br><span class="line">  res.send(<span class="hljs-string">'About birds'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// app.js中</span></span><br><span class="line"><span class="hljs-keyword">var</span> index = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./router/index.js'</span>)</span><br><span class="line">app.use(<span class="hljs-string">'/'</span>,index);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="静态文件"><a href="#静态文件" class="headerlink" title="静态文件"></a>静态文件</h2><ul>
+<li><p>为了提供诸如图像、CSS 文件和 JavaScript 文件之类的静态文件，可以使用 Express 中的<code>express.static</code>内置中间件函数。</p>
+</li>
+<li><p>示例：访问<code>public</code>目录下的所有文件</p>
+</li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">app.use(epxress.static(<span class="hljs-string">'public'</span>))</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 若要使用多个静态资源目录，则多次调用express.static中间件函数</span></span><br><span class="line"><span class="hljs-comment">// '/static'设置前缀地址来访问资源</span></span><br><span class="line">app.use(<span class="hljs-string">'/static'</span>,express.static(<span class="hljs-string">'public'</span>))</span><br><span class="line">app.use(express.static(<span class="hljs-string">'files'</span>))</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 通常的做法</span></span><br><span class="line">app.use(<span class="hljs-string">'/static'</span>, express.static(path.join(__dirname, <span class="hljs-string">'public'</span>)))</span><br></pre></td></tr></table></figure>
+<h2 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h2><ul>
+<li><strong>中间件函数</strong>可以处理<code>请求对象(req)</code>，<code>响应对象(res)</code>，以及<code>next</code>函数。通常中间件是用来对请求或响应进行包装和处理。</li>
+<li>示例– 添加一个 <code>myLogger</code>中间件（用于打印日志）和一个<code>requestTime</code>中间件用于展示请求时间</li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// web应用</span></span><br><span class="line"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> express();</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// myLogger中间件</span></span><br><span class="line"><span class="hljs-keyword">var</span> myLogger = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res,next</span>)</span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'LOGGER'</span>)</span><br><span class="line">    next();</span><br><span class="line">&#125;</span><br><span class="line">app.use(myLogger); <span class="hljs-comment">//使用中间件</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// requestTime中间件</span></span><br><span class="line"><span class="hljs-keyword">var</span> requestTime = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res,next</span>)</span>&#123;</span><br><span class="line">    req.requestTime = <span class="hljs-built_in">Date</span>.now();</span><br><span class="line">    next();</span><br><span class="line">&#125;</span><br><span class="line">app.use(requestTime); <span class="hljs-comment">//使用中间件</span></span><br><span class="line"></span><br><span class="line">app.get(<span class="hljs-string">'/'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res</span>)</span>&#123;</span><br><span class="line">    res.send(<span class="hljs-string">'Hello U'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">app.listen(<span class="hljs-number">3000</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="可配置的中间件"><a href="#可配置的中间件" class="headerlink" title="可配置的中间件"></a>可配置的中间件</h3><ul>
+<li>例如express的<code>cookieSession</code>中间件，可用于处理用户session<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// my-middleware.js</span></span><br><span class="line"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">options</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 基于options选项来执行逻辑</span></span><br><span class="line">    next()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//使用</span></span><br><span class="line"><span class="hljs-keyword">var</span> mw= requrie(<span class="hljs-string">'./my-middleware.js'</span>);</span><br><span class="line">app.use(mw(option1:<span class="hljs-string">'1'</span>,<span class="hljs-attr">option2</span>:<span class="hljs-string">'2'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="第三方中间件"><a href="#第三方中间件" class="headerlink" title="第三方中间件"></a>第三方中间件</h4><ul>
+<li><code>cookie-parser</code>：用于处理<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line">var app = express()</span><br><span class="line">var cookieParser = require(&apos;cookie-parser&apos;)</span><br><span class="line"></span><br><span class="line">// load the cookie-parsing middleware</span><br><span class="line">app.use(cookieParser())</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h2><ul>
+<li>通过<code>app.set(&#39;view engine&#39;, &#39;ejs&#39;)</code>可设置模板引擎</li>
+<li>通过<code>app.set(&#39;views&#39;,&#39;./views&#39;)</code>可设置渲染模板</li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 设置模板</span></span><br><span class="line">app.get(<span class="hljs-string">'/'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;</span><br><span class="line">  res.render(<span class="hljs-string">'index'</span>, &#123; <span class="hljs-attr">title</span>: <span class="hljs-string">'Hey'</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">'Hello there!'</span> &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="Express设置代理"><a href="#Express设置代理" class="headerlink" title="Express设置代理"></a>Express设置代理</h2><ul>
+<li><a href="http://www.expressjs.com.cn/guide/behind-proxies.html" target="_blank" rel="noopener">文档</a></li>
+<li>通过<code>app.set(&#39;trust proxy&#39;,params)</code>来设置代理，params有多种可能，如下：<ul>
+<li>Boolean值：为<code>true</code>时，激活反向代理，默认未激活状态<code>false</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="数据库集成"><a href="#数据库集成" class="headerlink" title="数据库集成"></a>数据库集成</h2><ul>
+<li><a href="http://www.expressjs.com.cn/guide/database-integration.html" target="_blank" rel="noopener">详见文档</a></li>
+</ul>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h4 id="1-如何处理404响应"><a href="#1-如何处理404响应" class="headerlink" title="1. 如何处理404响应"></a>1. 如何处理404响应</h4><ul>
+<li>在Express中，404响应不是错误，所以需要一个针对404的中间件来捕获它</li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res, next</span>) </span>&#123;</span><br><span class="line">  res.status(<span class="hljs-number">404</span>).send(<span class="hljs-string">"Sorry can't find that!"</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>当然，也可以用设置好的404页面通过<code>res.render</code>的方式渲染到客户端</li>
+</ul>
+<h4 id="2-设置一个错误处理器"><a href="#2-设置一个错误处理器" class="headerlink" title="2. 设置一个错误处理器"></a>2. 设置一个错误处理器</h4><ul>
+<li>express生成的项目中，默认是有捕获错误的中间件的，当然也可以自己写，如下示例：</li>
+<li>在异步函数中，必须要使用<code>next()</code>来传递错误给express并捕获相应错误</li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 简单的错误处理中间件</span></span><br><span class="line">app.use(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.error(err.stack)</span><br><span class="line">  res.status(<span class="hljs-number">500</span>).send(<span class="hljs-string">'Something broke!'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 异步函数中的错误处理</span></span><br><span class="line">app.get(<span class="hljs-string">"/"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res, next</span>) </span>&#123;</span><br><span class="line">  fs.readFile(<span class="hljs-string">"/file-does-not-exist"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, data</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (err) &#123;</span><br><span class="line">      next(err); <span class="hljs-comment">// 将错误传递给express</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">      res.send(data);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// express生成项目中，默认的处理器</span></span><br><span class="line">app.use(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// set locals, only providing error in development</span></span><br><span class="line">  res.locals.message = err.message;</span><br><span class="line">  res.locals.error = req.app.get(<span class="hljs-string">'env'</span>) === <span class="hljs-string">'development'</span> ? err : &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// render the error page</span></span><br><span class="line">  res.status(err.status || <span class="hljs-number">500</span>);</span><br><span class="line">  res.render(<span class="hljs-string">'error'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/SophieU/tags/Node/">Node</a>
+                </div>
+            </div>
         </div>
         
         
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/SophieU/2016/10/25/Express/#more">阅读更多</a>
-                </div>
-            </div>
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/SophieU/2017/10/25/nodemon/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">nodemon-解决开发时无限npm start的痛点</span>
+            </a>
         </div>
         
         
@@ -236,8 +350,28 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+	var gitment = new Gitment({
+		id: '2016/10/25/Express/',
+		owner: 'SophieU',
+		repo: 'SophieU',
+		oauth: {
+			client_id: 'd128c819d932a031c164',
+			client_secret: '245678eb7968836a8e0e775d504f28f9bf879dbc',
+		},
+	})
+	gitment.render('comment-container')
+</script>
 
-
+    </div>
+</div>
 </div>
                 
 
@@ -931,7 +1065,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/SophieU/">
                 
-                    <img src="/SophieU/user/logo.svg" alt="Sophie&#39;s World" height="28">
+                    <img src="/SophieU/user/logo.svg" alt="Node Web开发框架-Express" height="28">
                 
                 </a>
                 <p class="is-size-7">

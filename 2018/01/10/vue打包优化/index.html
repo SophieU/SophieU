@@ -2,18 +2,23 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>标签: Node - Sophie&#39;s World</title>
+<title>vue打包优化 - Sophie&#39;s World</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Sophie&#39;s World">
-<meta property="og:url" content="https://sophieu.github.io/SophieU/tags/Node/index.html">
+    <meta name="description" content="通常在使用Vue开发单面应用时，由于第三方库大都是在main.js中进行引用的，而webpack在打包时，会将所引用的第三方库都打包到vendor.js中，导致vendor.js过大。针对这个问题可以进行以下优化：">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue打包优化">
+<meta property="og:url" content="https://sophieu.github.io/SophieU/2018/01/10/vue打包优化/index.html">
 <meta property="og:site_name" content="Sophie&#39;s World">
+<meta property="og:description" content="通常在使用Vue开发单面应用时，由于第三方库大都是在main.js中进行引用的，而webpack在打包时，会将所引用的第三方库都打包到vendor.js中，导致vendor.js过大。针对这个问题可以进行以下优化：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-14T09:16:24.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sophie&#39;s World">
+<meta name="twitter:title" content="vue打包优化">
+<meta name="twitter:description" content="通常在使用Vue开发单面应用时，由于第三方库大都是在main.js中进行引用的，而webpack在打包时，会将所引用的第三方库都打包到vendor.js中，导致vendor.js过大。针对这个问题可以进行以下优化：">
 
 
 
@@ -79,7 +84,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/SophieU/">
             
-                <img src="/SophieU/user/logo.svg" alt="Sophie&#39;s World" height="28">
+                <img src="/SophieU/user/logo.svg" alt="vue打包优化" height="28">
             
             </a>
         </div>
@@ -125,119 +130,130 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-01-09T16:00:00.000Z">2018-01-10</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/SophieU/categories/前端开发/">前端开发</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 分钟 读完 (大约 402 个字)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                vue打包优化
+            
+        </h1>
+        <div class="content">
+            <p>通常在使用Vue开发单面应用时，由于第三方库大都是在main.js中进行引用的，而webpack在打包时，会将所引用的第三方库都打包到vendor.js中，导致vendor.js过大。针对这个问题可以进行以下优化：</p>
+<a id="more"></a>
+<h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><ol>
+<li>使用CDN引用第三方库</li>
+<li>vue-router懒加载</li>
+</ol>
+<h3 id="CDN引用"><a href="#CDN引用" class="headerlink" title="CDN引用"></a>CDN引用</h3><ul>
+<li><p>可以使用的CDN很多，例如：</p>
+<ol>
+<li><a href="https://unpkg.com/#/" target="_blank" rel="noopener">unpkg</a>就是全球好用的CDN<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// https://unpkg.com/包名@version/ ,不加@version的话，则是默认最新版本</span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/vue@2.5.2/dist/vue.min.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>例： 将vue和iview以CDN的方式引用到项目中</p>
+</li>
+</ul>
+<h5 id="步骤一-引用CDN"><a href="#步骤一-引用CDN" class="headerlink" title="步骤一:引用CDN"></a>步骤一:引用CDN</h5><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/vue@2.5.2/dist/vue.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-comment">&lt;!-- 生产环境，改用vue.min.js --&gt;</span></span><br><span class="line"><span class="hljs-comment">&lt;!--&lt;script src="https://unpkg.com/vue@2.5.2/dist/vue.min.js"&gt;&lt;/script&gt;--&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/iview/dist/iview.min.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.bootcss.com/echarts/4.2.0-rc.1/echarts.common.min.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>在引用后，默认<code>Vue</code>，<code>iview</code>是全局变量可以直接拿到，针对iview的一些修改，可以直接用<code>iview</code>变量</li>
+<li>注意： <code>iview</code>使用CDN方式时，其<code>Form</code>组件应使用<code>i-form</code>，而<code>&lt;FormItem&gt;</code>对应<code>&lt;form-item&gt;</code></li>
+<li>例：调用iview的loadingBar,<code>iview.loadingBar.start()</code></li>
+</ul>
+<h5 id="步骤二：修改webpack"><a href="#步骤二：修改webpack" class="headerlink" title="步骤二：修改webpack"></a>步骤二：修改webpack</h5><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// webpack.base.conf.js</span></span><br><span class="line"><span class="hljs-built_in">module</span>.exports=&#123;</span><br><span class="line">    <span class="hljs-comment">//....</span></span><br><span class="line">    externals:&#123;</span><br><span class="line">        <span class="hljs-string">'vue'</span>:<span class="hljs-string">'Vue'</span>,</span><br><span class="line">        <span class="hljs-string">'iview'</span>:<span class="hljs-string">'iView'</span>,</span><br><span class="line">        <span class="hljs-string">'echarts'</span>:<span class="hljs-string">'echarts'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="hljs-comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="vue-router懒加载"><a href="#vue-router懒加载" class="headerlink" title="vue-router懒加载"></a>vue-router懒加载</h3><ul>
+<li>通常我们在写router时，时以下方式</li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> Hello <span class="hljs-keyword">from</span> <span class="hljs-string">'@/components/Hello.vue'</span></span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> router=[&#123;</span><br><span class="line">    path:<span class="hljs-string">'/'</span>,</span><br><span class="line">    name:<span class="hljs-string">'home'</span>,</span><br><span class="line">    component:Hello</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这种方式会将所有组件都打包在一些，导致打包文件很大。</li>
+</ul>
+<h5 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h5><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> router=[&#123;</span><br><span class="line">    path:<span class="hljs-string">'/'</span>,</span><br><span class="line">    name:<span class="hljs-string">'home'</span>,</span><br><span class="line">    component:<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span><span class="hljs-keyword">import</span>(<span class="hljs-string">'@/components/Hello.vue'</span>)</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过vue-router懒加载，你会发现打包后，会有很多js文件生成，这些都是对应不同组件，当匹配到某路由时，才会加载对应js</li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/SophieU/tags/vue/">vue</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/SophieU/2018/02/10/JS模式/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">JavaScript模式【O&#39;Reilly出版】·附网盘链接</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/SophieU/2017/10/25/nodemon/">
+                <span class="level-item">nodemon-解决开发时无限npm start的痛点</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/SophieU/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Node</a></li>
-        </ul>
-        </nav>
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+	var gitment = new Gitment({
+		id: '2018/01/10/vue打包优化/',
+		owner: 'SophieU',
+		repo: 'SophieU',
+		oauth: {
+			client_id: 'd128c819d932a031c164',
+			client_secret: '245678eb7968836a8e0e775d504f28f9bf879dbc',
+		},
+	})
+	gitment.render('comment-container')
+</script>
+
     </div>
 </div>
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2017-10-24T16:00:00.000Z">2017-10-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/SophieU/categories/后端学习/">后端学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 280 个字)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/SophieU/2017/10/25/nodemon/">nodemon-解决开发时无限npm start的痛点</a>
-            
-        </h1>
-        <div class="content">
-            <ul>
-<li>刚开始学习Node时，每次做了修改，都要重新<code>npm start</code>启动服务才能查看上次修改结果，而<code>nodemon</code>就是为了开发node时进行热更新的一款工具</li></ul>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/SophieU/2017/10/25/nodemon/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/SophieU/2016/10/25/Express/" class="image is-7by1">
-            <img class="thumbnail" src="/SophieU/images/deer.jpg" alt="Node Web开发框架-Express">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2016-10-24T16:00:00.000Z">2016-10-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/SophieU/categories/后端学习/">后端学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 分钟 读完 (大约 1835 个字)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/SophieU/2016/10/25/Express/">Node Web开发框架-Express</a>
-            
-        </h1>
-        <div class="content">
-            <p>Express是基于<code>Node.js</code>平台的极简的经典Web开发框架。<a href="http://www.expressjs.com.cn/" target="_blank" rel="noopener">中文官网</a></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/SophieU/2016/10/25/Express/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
 </div>
                 
 
@@ -931,7 +947,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/SophieU/">
                 
-                    <img src="/SophieU/user/logo.svg" alt="Sophie&#39;s World" height="28">
+                    <img src="/SophieU/user/logo.svg" alt="vue打包优化" height="28">
                 
                 </a>
                 <p class="is-size-7">
