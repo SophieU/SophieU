@@ -161,8 +161,31 @@ res.send() | 发送通用类型的响应
 res.sendFile() | 以文件流方式发送文件
 res.sendStatus() | 设置响应code，并发送响应
 
-#### 
+#### express.Router 路由模块
+- 项目中，通常路由是按模块来区分的，而不是全部写在app.js中，如下：
+```js
+// index.js
+var express = require('express');
+var router = express.Router();
 
+// 使用中间件
+router.use(function timelog(req,res,next){
+    console.log('Time: ', Date.now())
+  next()
+})
+// 路由
+router.get('/', function (req, res) {
+  res.send('Birds home page')
+})
+router.get('/about', function (req, res) {
+  res.send('About birds')
+})
+
+
+// app.js中
+var index = require('./router/index.js')
+app.use('/',index);
+```
 ## 静态文件
 - 为了提供诸如图像、CSS 文件和 JavaScript 文件之类的静态文件，可以使用 Express 中的` express.static `内置中间件函数。
 
