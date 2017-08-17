@@ -136,6 +136,16 @@ req.params: {"userId": "42"}
 
 #### 路由回调
 - `app.get('url',callback)`：其中callback回调可以是一个函数，也可以是一个`函数构成的数组`，也可以是`数组加函数`，详见文档
+- route支持链式调用
+```
+app.route('/book')
+  .get(function (req, res) {
+    res.send('Get a random book')
+  })
+  .post(function (req, res) {
+    res.send('Add a book')
+  })
+```
 
 #### Response方法
 
@@ -150,6 +160,8 @@ res.render() | 向前端渲染一个模板
 res.send() | 发送通用类型的响应
 res.sendFile() | 以文件流方式发送文件
 res.sendStatus() | 设置响应code，并发送响应
+
+#### 
 
 ## 静态文件
 - 为了提供诸如图像、CSS 文件和 JavaScript 文件之类的静态文件，可以使用 Express 中的` express.static `内置中间件函数。
