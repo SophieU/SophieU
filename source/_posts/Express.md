@@ -141,7 +141,15 @@ req.params: {"userId": "42"}
 
 方法名|作用
 ---|---
-res.download()|
+res.download()|提供一个文件下载
+res.end()|终止响应进程
+res.json() | 返回json对向响应
+res.jsonp() | 响应一个jsonp格式的json对向
+res.redirect() | 重定向
+res.render() | 向前端渲染一个模板
+res.send() | 发送通用类型的响应
+res.sendFile() | 以文件流方式发送文件
+res.sendStatus() | 设置响应code，并发送响应
 
 ## 静态文件
 - 为了提供诸如图像、CSS 文件和 JavaScript 文件之类的静态文件，可以使用 Express 中的` express.static `内置中间件函数。
