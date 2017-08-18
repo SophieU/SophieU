@@ -19,6 +19,7 @@ Express是基于`Node.js`平台的极简的经典Web开发框架。[中文官网
 > - [静态文件](#静态文件)
 > - [中间件](#中间件)
 > - [模板引擎](#模板引擎)
+> - [Express设置代理](#Express设置代理)
 > - [常见问题](#常见问题)
 
 ## 安装
@@ -267,6 +268,13 @@ app.get('/', function (req, res) {
   res.render('index', { title: 'Hey', message: 'Hello there!' })
 })
 ```
+## Express设置代理
+- [文档](http://www.expressjs.com.cn/guide/behind-proxies.html)
+- 通过`app.set('trust proxy',params)`来设置代理，params有多种可能，如下：
+  - Boolean值：为`true`时，激活反向代理，默认未激活状态`false`
+ 
+## 数据库集成
+- [详见文档](http://www.expressjs.com.cn/guide/database-integration.html)
 
 ## 常见问题
 
