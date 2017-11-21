@@ -56,3 +56,4 @@ Airbrake:real time error monitoring and alerts
 Sentry:Real-time,cross-platform crash reporting and error loggin.
 Moesif API Insights:API debugging and analytics for REST,GraphQL,and Web3 APIs
 LogRocket:Record videos of user sessions with enhanced logging information.
+Rollbar:Real-time,full-stack error monitoring and debugging for developers.
