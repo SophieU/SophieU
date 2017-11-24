@@ -53,3 +53,4 @@ Cloud 66 Skycap:Skycap is a container native CI/CD tool
 CircleCI:Automatically build,test,and deploy Your project in minutes
 Monitoring：Monitor the impact of your code changes,Measure performance,track errors,and analyze your application.
 Airbrake:real time error monitoring and alerts
+Sentry:Real-time,cross-platform crash reporting and error loggin.
