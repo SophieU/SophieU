@@ -46,3 +46,4 @@ Automatically build and test your code as you push it to GitHub,preventing bugs 
 AccessLint:Find accessibility issues in your pull requests
 Travis CI:Test and deploy with confidence
 Buddy: One-click delivery automation for Web Developers
+Percy:Continuous visual testing and reviews for web apps
