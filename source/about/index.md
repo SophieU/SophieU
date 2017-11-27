@@ -48,3 +48,4 @@ Travis CI:Test and deploy with confidence
 Buddy: One-click delivery automation for Web Developers
 Percy:Continuous visual testing and reviews for web apps
 Semaphore: Test and deploy at the push of a button
+AppVeyor:Cloud service for building,testing and deploying Windows apps
