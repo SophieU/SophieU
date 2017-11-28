@@ -45,3 +45,4 @@ Continuous integration:
 Automatically build and test your code as you push it to GitHub,preventing bugs from being deployed to production
 AccessLint:Find accessibility issues in your pull requests
 Travis CI:Test and deploy with confidence
+Buddy: One-click delivery automation for Web Developers
