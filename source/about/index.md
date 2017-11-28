@@ -44,3 +44,4 @@ Codacy:Automated code reviews to help developers ship better software,faster
 Continuous integration:
 Automatically build and test your code as you push it to GitHub,preventing bugs from being deployed to production
 AccessLint:Find accessibility issues in your pull requests
+Travis CI:Test and deploy with confidence
