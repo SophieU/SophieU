@@ -41,3 +41,5 @@ Coveralls:Ensure that new code is fully covered,and see coverage treends emerge.
 codebeat:Code review export on demand.Automated for mobile and web
 ImgBot:A Github app that optimizes your images
 Codacy:Automated code reviews to help developers ship better software,faster
+Continuous integration:
+Automatically build and test your code as you push it to GitHub,preventing bugs from being deployed to production
