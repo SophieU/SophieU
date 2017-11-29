@@ -39,3 +39,4 @@ Code Climate:Autoomated code review for technical debt and test coverage
 Better Code Hub:A shared Definition of Done for code quality
 Coveralls:Ensure that new code is fully covered,and see coverage treends emerge.Works with any CI services
 codebeat:Code review export on demand.Automated for mobile and web
+ImgBot:A Github app that optimizes your images
