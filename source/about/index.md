@@ -37,3 +37,4 @@ Sider:Detect anti-pattern instances and apply projet best practices in your pull
 Codecov:Group,merge,archive and compare coverage reports
 Code Climate:Autoomated code review for technical debt and test coverage
 Better Code Hub:A shared Definition of Done for code quality
+Coveralls:Ensure that new code is fully covered,and see coverage treends emerge.Works with any CI services
