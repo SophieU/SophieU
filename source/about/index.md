@@ -35,3 +35,4 @@ Code quality
 Automate your code review with style,quality,security,and test-coverage checks when you need them.
 Sider:Detect anti-pattern instances and apply projet best practices in your pull requests automatically.Easy and quicck setup
 Codecov:Group,merge,archive and compare coverage reports
+Code Climate:Autoomated code review for technical debt and test coverage
