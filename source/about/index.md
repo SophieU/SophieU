@@ -32,4 +32,4 @@ MyGet: Artifact and Package Repositories:Hosted NuGet,npm,Bower,Maven,PHP Compos
 Cloud 66 for Rails:Build deploy,and maintain your Rails apps on any cloud or server
 Pull Reminders:Slack reminders and metrics for pull requests
 Code quality
-Automate your code review with style
+Automate your code review with style,quality,security,and test-coverage checks when you need them
