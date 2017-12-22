@@ -23,3 +23,4 @@ nobody grows old merely by a number of years
 we grow old by deserting our ideals.
 Years may wrinkle the skin,but to give up enthusiasm wrinkles the soul.
 Worry,fear,self-distrust bows the heart and turns the spirit back to dust.
+whether sixty of sixteen,there is in every human being's heart the lure of wonder,
