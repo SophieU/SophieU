@@ -21,4 +21,5 @@ Youth means a temperamental predominance of courage over timidity, of the appeti
 this often exists in a man of sixty more than a boy of twenty
 nobody grows old merely by a number of years
 we grow old by deserting our ideals.
-Years may wrinkle the skin,but to give up enthusiasm wrinkles the soul
+Years may wrinkle the skin,but to give up enthusiasm wrinkles the soul.
+Worry,fear,self-distrust bows the heart and turns the spirit back to dust.
