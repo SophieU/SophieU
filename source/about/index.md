@@ -19,3 +19,4 @@ it is a matter of will,a auality of the imagination,a vigor of the emotions;
 it is the freshness of the deep springs of life.
 Youth means a temperamental predominance of courage over timidity, of the appetite for adventure over the love of ease.
 this often exists in a man of sixty more than a boy of twenty
+nobody grows old merely by a number of years
