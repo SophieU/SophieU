@@ -17,4 +17,4 @@ Youth is not a time of life,it is a state of mind
 it is not a matter of rosy cheeks,red lips adn supple knees.
 it is a matter of will,a auality of the imagination,a vigor of the emotions;
 it is the freshness of the deep springs of life.
-Youth means a temperamental predominance of courage over timidity, of the appetite for adventure 
+Youth means a temperamental predominance of courage over timidity, of the appetite for adventure over the love of ease
