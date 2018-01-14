@@ -38,13 +38,13 @@ categories: 前端开发
 ```js
 // webpack.base.conf.js
 module.exports={
-    ....
+    //....
     externals:{
         'vue':'Vue',
         'iview':'iView',
         'echarts':'echarts'
     },
-
+    //...
 }
 
 ```
