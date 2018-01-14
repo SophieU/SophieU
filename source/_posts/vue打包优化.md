@@ -22,6 +22,7 @@ categories: 前端开发
 
 * 例： 将vue和iview以CDN的方式引用到项目中
 
+##### 步骤一:引用CDN
 ```html
     <script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
     <!-- 生产环境，改用vue.min.js -->
@@ -32,6 +33,21 @@ categories: 前端开发
 - 在引用后，默认`Vue`，`iview`是全局变量可以直接拿到，针对iview的一些修改，可以直接用`iview`变量
 - 注意： `iview`使用CDN方式时，其`Form`组件应使用`i-form`，而`<FormItem>`对应`<form-item>`
 - 例：调用iview的loadingBar,`iview.loadingBar.start()`
+
+##### 步骤二：修改webpack
+```js
+// webpack.base.conf.js
+module.exports={
+    ....
+    externals:{
+        'vue':'Vue',
+        'iview':'iView',
+        'echarts':'echarts'
+    },
+
+}
+
+```
 
 ### vue-router懒加载
 * 通常我们在写router时，时以下方式
