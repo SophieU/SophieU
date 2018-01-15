@@ -55,3 +55,4 @@ export const router=[{
     component:()=>import('@/components/Hello.vue')
 }]
 ```
+- 通过vue-router懒加载，你会发现打包后，会有很多js文件生成，这些都是对应不同组件，当请求到某路由时，才会加载对应js
