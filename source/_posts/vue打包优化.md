@@ -37,11 +37,21 @@ categories: 前端开发
 * 通常我们在写router时，时以下方式
 
 ```js
-import Hello from '@/components/Hello'
+import Hello from '@/components/Hello.vue'
 export const router=[{
     path:'/',
     name:'home',
     component:Hello
 }]
 ```
-- 这种方式
+- 这种方式会将所有组件都打包在一些，导致打包文件很大。
+
+##### 改进
+
+```js
+export const router=[{
+    path:'/',
+    name:'home',
+    component:()=>import('@/components/Hello.vue')
+}]
+```
