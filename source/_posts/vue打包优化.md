@@ -32,3 +32,16 @@ categories: 前端开发
 - 在引用后，默认`Vue`，`iview`是全局变量可以直接拿到，针对iview的一些修改，可以直接用`iview`变量
 - 注意： `iview`使用CDN方式时，其`Form`组件应使用`i-form`，而`<FormItem>`对应`<form-item>`
 - 例：调用iview的loadingBar,`iview.loadingBar.start()`
+
+### vue-router懒加载
+* 通常我们在写router时，时以下方式
+
+```js
+import Hello from '@/components/Hello'
+export const router=[{
+    path:'/',
+    name:'home',
+    component:Hello
+}]
+```
+- 这种方式
