@@ -13,4 +13,21 @@ categories: 前端开发
 2. vue-router懒加载
 
 ### CDN引用
+* 可以使用的CDN很多，例如：
+    1. [unpkg](https://unpkg.com/#/)就是全球好用的CDN
+    ```html
+    // https://unpkg.com/包名@version/ ,不加@version的话，则是默认最新版本
+    <script src="https://unpkg.com/vue@2.5.2/dist/vue.min.js"></script>
+    ```
 
+* 例： 将vue和iview以CDN的方式引用到项目中
+
+```html
+    <script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
+    <!-- 生产环境，改用vue.min.js -->
+    <!--<script src="https://unpkg.com/vue@2.5.2/dist/vue.min.js"></script>-->
+    <script src="https://unpkg.com/iview/dist/iview.min.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/4.2.0-rc.1/echarts.common.min.js"></script>
+```
+- 在引用后，默认`Vue`，`iview`是全局变量可以直接拿到，针对iview的一些修改，可以直接用`iview`变量
+- 注意： `iview`使用CDN方式时，其`Form`组件应使用`i-form`，而`<FormItem>`对应`<form-item>`
