@@ -9,4 +9,8 @@ categories: 前端开发
 <!--more-->
 
 ## 优化方案
+1. 使用CDN引用第三方库
+2. vue-router懒加载
+
+### CDN引用
 
