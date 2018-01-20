@@ -13,6 +13,7 @@ categories: 读书笔记
 ## 目录
 - [PDF地址](#PDF地址)
 - [基本技巧](#基本技巧)
+- [字面量和构造函数](#字面量和构造函数)
 
 ## PDF地址
 - 网盘地址：https://pan.baidu.com/s/1Kwgim2OQL86hSGjZftTR4Q  
@@ -81,5 +82,6 @@ while(i--){//xxx}
 */
 var reverse = function (input) {return output;}
 ```
-
 * 在正式发布时，精简代码
+
+## 字面量和构造函数
