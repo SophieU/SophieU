@@ -81,3 +81,5 @@ while(i--){//xxx}
 */
 var reverse = function (input) {return output;}
 ```
+
+* 在正式发布时，精简代码
