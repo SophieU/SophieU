@@ -75,5 +75,9 @@ while(i--){//xxx}
 ```js
 /**
 * 翻转一个字符串
+* 
+* @param {String} 输入需要翻转的字符串
+* @return {String} 翻转后的字符串
 */
+var reverse = function (input) {return output;}
 ```
