@@ -57,3 +57,6 @@ while(i--){//xxx}
     3. 分隔开函数中各个参数的逗号之后 ： `myFun = function(a, b, c)`
     4. 在函数声明的大括号之前 : `function myFun() {}`
     5. 在匿名函数表达式之后 ： `var myFun = function () {}`
+
+#### 命名约定
+1. 构造函数的首字母大写
