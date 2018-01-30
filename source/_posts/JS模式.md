@@ -51,5 +51,7 @@ while(i--){//xxx}
 * **避免使用隐式类型转换**：为避免隐式类型转换导致的混乱，在使用比较廒时，应该使用`===`或`!===`来对数值和类型进行比较
 * 避免使用`eval()`
 * **parseInt()数值约定**：在使用parseInt时，最好不要忽略第二个参数（进制），因为带val第一位是0时，其会被当做一个八进制数进行处理【例如处理09这种月份日期时】，最佳实践：`parseInt(num,10)`
+* **空格的使用** ：
+    1. 在for循环的各个部分的分号后，建议添加空格，`for(var i=0, max=4; i<max; i++){}`
 
 - et adfaslfjkalsdfasdfafsdfasfdasdfasfqerqwerqwerqwe
