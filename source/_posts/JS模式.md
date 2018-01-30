@@ -52,4 +52,4 @@ while(i--){//xxx}
 * 避免使用`eval()`
 * **parseInt()数值约定**：在使用parseInt时，最好不要忽略第二个参数（进制），因为带val第一位是0时，其会被当做一个八进制数进行处理【例如处理09这种月份日期时】，最佳实践：`parseInt(num,10)`
 
-- et adfaslfjkalsdfasdf
+- et adfaslfjkalsdfasdfafsdfasfdasdfasfqerqwerqwerqwe
