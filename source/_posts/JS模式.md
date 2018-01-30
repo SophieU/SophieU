@@ -54,6 +54,6 @@ while(i--){//xxx}
 * **空格的使用** ：
     1. 在for循环的各个部分的分号后，建议添加空格，`for(var i=0, max=4; i<max; i++){}`
     2. 在限定数组项的逗号后面： `var a = [ 1, 2, 3]`
-    3. 分隔
+    3. 分隔开函数中各个参数的逗号之后 ： `myFun = function(a, b, c)`
 
 - et adfaslfjkalsdfasdfafsdfasfdasdfasfqerqwerqwerqwe
