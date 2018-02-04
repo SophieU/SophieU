@@ -36,8 +36,8 @@ categories: 读书笔记
 
 #### 编码时的建议
 
-* 单一的var模式：在函数内部，将变量的定义放在函数头部,便于维护，提高代码要读性。
-* 对for循环的建议：
+* **单一的var模式**：在函数内部，将变量的定义放在函数头部,便于维护，提高代码要读性。
+* **对for循环的建议**：
     1. 逐步减至0，这样通常更快，因为同0比较比同数组的长度比较，或者同非0数组比较更有效率。
     2. 实践证明，while循环速度更快
     
@@ -46,4 +46,5 @@ var i,arr=[];
 // 改进：使用while循环
 while(i--){//xxx}
 ```
-* 对for...in循环的建议： `for...in`又称为`枚举`,用于处理对象。在遍历对象属性来过滤遇到原型链的属性时，可通过`obj.hasOwnProperty|Object.property.hasOwnProperty.call(xxx)`来检测key是否为对象本身属性。
+* **对for...in循环的建议**： `for...in`又称为`枚举`,用于处理对象。在遍历对象属性来过滤遇到原型链的属性时，可通过`obj.hasOwnProperty|Object.property.hasOwnProperty.call(xxx)`来检测key是否为对象本身属性。
+* **不要增加内置的原型**
