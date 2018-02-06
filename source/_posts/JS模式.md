@@ -46,4 +46,3 @@ var i,arr=[];
 // 改进：使用while循环
 while(i--){//xxx}
 ```
-* 尽量少的使用
