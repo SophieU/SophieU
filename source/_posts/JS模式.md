@@ -46,3 +46,4 @@ var i,arr=[];
 // 改进：使用while循环
 while(i--){//xxx}
 ```
+* 对for...in循环的建议： `for...in`又称为`枚举`，在使用枚举时，可通过`Object.hasOwnProperty`来检测key是否为对象本身属性。
