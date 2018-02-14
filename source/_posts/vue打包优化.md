@@ -19,3 +19,6 @@ categories: 前端开发
     - /repair/region/list
 * 一生约电话搜索
     - /repair/order/user/list
+* 账户角色下拉
+    - /role/list
+
