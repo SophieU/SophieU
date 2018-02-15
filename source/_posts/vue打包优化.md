@@ -15,3 +15,7 @@ categories: 前端开发
     - /repair/station/select/list
 * 获取组织列表下拉（包含 网点和组织）
     - /common/departmentList
+* 服务区域
+    - /repair/region/list
+* 一生约电话搜索
+    - /repair/order/user/list
