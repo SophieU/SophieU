@@ -1,11 +1,13 @@
 # Version of the Icarus theme that is currently used
 version: 2.0.0
 # Path or URL to the website's icon
-favicon: /images/favicon.ico
+# favicon: /images/favicon.ico
+favicon: /user/favicon.ico
 # Path or URL to RSS atom.xml
 rss: 
 # Path or URL to the website's logo to be shown on the left of the navigation bar or footer
-logo: /images/logo.svg
+# logo: /images/logo.svg
+logo: /user/logo.svg
 
 # Open Graph metadata (https://hexo.io/docs/helpers.html#open-graph)
 open_graph:
@@ -153,6 +155,6 @@ providers:
     # Name or URL of the JavaScript and/or stylesheet CDN provider
     cdn: jsdelivr
     # Name or URL of the webfont CDN provider
-    fontcdn: google
+    # fontcdn: google
     # Name or URL of the webfont Icon CDN provider
     iconcdn: fontawesome
