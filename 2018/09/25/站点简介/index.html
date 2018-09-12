@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://tylingsoft.com/img/mdm/icon.png">
 <meta property="og:image" content="http://tylingsoft.com/img/mdm/icon.png">
-<meta property="og:updated_time" content="2018-11-12T08:15:05.297Z">
+<meta property="og:updated_time" content="2018-09-16T08:22:45.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MarkDown语法汇总">
 <meta name="twitter:description" content="本文主要记录Markdown相关编写语法以及Hexo博客编写语法">
@@ -27,7 +27,7 @@
 
 
 
-<link rel="icon" href="/SophieU/images/favicon.ico">
+<link rel="icon" href="/SophieU/user/favicon.ico">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
@@ -87,7 +87,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/SophieU/">
             
-                <img src="/SophieU/images/logo.svg" alt="MarkDown语法汇总" height="28">
+                <img src="/SophieU/user/logo.svg" alt="MarkDown语法汇总" height="28">
             
             </a>
         </div>
@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 662 个字)
+                    4 分钟 读完 (大约 655 个字)
                 </span>
                 
             </div>
@@ -192,16 +192,74 @@
 <p>图片: <img src="http://tylingsoft.com/img/mdm/icon.png" alt="Alt"></p>
 <p>带尺寸的图片: <img src="http://tylingsoft.com/img/mdm/icon.png" width="20px" height="20px"></p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">链接: [Sophie&apos;s World](https://sophieu.github.io/SophieU/).</span><br><span class="line">图片: ![Alt](http://tylingsoft.com/img/mdm/icon.png)</span><br><span class="line">带尺寸的图片: &lt;img src=&quot;http://tylingsoft.com/img/mdm/icon.png&quot; width=&quot;20px&quot; height=&quot;20px&quot;/&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="如何插入一段漂亮的代码片"><a href="#如何插入一段漂亮的代码片" class="headerlink" title="如何插入一段漂亮的代码片"></a>如何插入一段漂亮的代码片</h2><p>去<a href="https://mp.csdn.net/configure" target="_blank" rel="noopener">博客设置</a>页面，选择一款你喜欢的代码片高亮样式，下面展示同样高亮的 <code>代码片</code>.<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// An highlighted block</span></span><br><span class="line"><span class="hljs-keyword">var</span> foo = <span class="hljs-string">'bar'</span>;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```javascript</span><br><span class="line">// An highlighted block</span><br><span class="line">var foo = &apos;bar&apos;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">## 生成一个适合你的列表</span><br><span class="line"></span><br><span class="line">- 项目</span><br><span class="line">  - 项目</span><br><span class="line">    - 项目</span><br><span class="line"></span><br><span class="line">1. 项目1</span><br><span class="line">2. 项目2</span><br><span class="line">3. 项目3</span><br><span class="line"></span><br><span class="line">- [ ] 计划任务</span><br><span class="line">- [x] 完成任务</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 创建一个表格</span><br><span class="line">一个简单的表格是这么创建的：</span><br><span class="line"></span><br><span class="line">项目 | Value</span><br><span class="line">---- | -----</span><br><span class="line">电脑  | $1600</span><br><span class="line">手机  | $12</span><br><span class="line">导管  | $1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 设定内容居中、居左、居右</span><br><span class="line">使用`:---------:`居中</span><br><span class="line">使用`:----------`居左</span><br><span class="line">使用`----------:`居右</span><br><span class="line"></span><br><span class="line">| 第一列       | 第二列         | 第三列        |</span><br><span class="line">|:-----------:| -------------:|:-------------|</span><br><span class="line">| 第一列文本居中 | 第二列文本居右  | 第三列文本居左 | </span><br><span class="line"></span><br><span class="line">## 创建一个自定义列表</span><br><span class="line"></span><br><span class="line">* 目录1</span><br><span class="line">  + 缩进一</span><br><span class="line">  + 缩进二</span><br></pre></td></tr></table></figure>
-<ul>
-<li>目录1<ul>
-<li>缩进一</li>
-<li>缩进二<br><code>`</code></li>
+<h2 id="如何插入一段漂亮的代码片"><a href="#如何插入一段漂亮的代码片" class="headerlink" title="如何插入一段漂亮的代码片"></a>如何插入一段漂亮的代码片</h2><p>去<a href="https://mp.csdn.net/configure" target="_blank" rel="noopener">博客设置</a>页面，选择一款你喜欢的代码片高亮样式，下面展示同样高亮的 <code>代码片</code></p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// An highlighted block</span></span><br><span class="line"><span class="hljs-keyword">var</span> foo = <span class="hljs-string">'bar'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="生成一个适合你的列表"><a href="#生成一个适合你的列表" class="headerlink" title="生成一个适合你的列表"></a>生成一个适合你的列表</h2><ul>
+<li>项目<ul>
+<li>项目<ul>
+<li>项目</li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<ol>
+<li>项目1</li>
+<li>项目2</li>
+<li>项目3</li>
+</ol>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 计划任务</li>
+<li style="list-style: none"><input type="checkbox" checked> 完成任务</li>
+</ul>
+<h2 id="创建一个表格"><a href="#创建一个表格" class="headerlink" title="创建一个表格"></a>创建一个表格</h2><p>一个简单的表格是这么创建的：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电脑</td>
+<td>$1600</td>
+</tr>
+<tr>
+<td>手机</td>
+<td>$12</td>
+</tr>
+<tr>
+<td>导管</td>
+<td>$1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="设定内容居中、居左、居右"><a href="#设定内容居中、居左、居右" class="headerlink" title="设定内容居中、居左、居右"></a>设定内容居中、居左、居右</h3><p>使用<code>:---------:</code>居中<br>使用<code>:----------</code>居左<br>使用<code>----------:</code>居右</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">第一列</th>
+<th style="text-align:right">第二列</th>
+<th style="text-align:left">第三列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">第一列文本居中</td>
+<td style="text-align:right">第二列文本居右</td>
+<td style="text-align:left">第三列文本居左</td>
+</tr>
+</tbody>
+</table>
+<h2 id="创建一个自定义列表"><a href="#创建一个自定义列表" class="headerlink" title="创建一个自定义列表"></a>创建一个自定义列表</h2><ul>
+<li>目录1<ul>
+<li>缩进一</li>
+<li>缩进二</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 目录1</span><br><span class="line">  + 缩进一</span><br><span class="line">  + 缩进二</span><br></pre></td></tr></table></figure>
 <h2 id="如何创建一个注脚"><a href="#如何创建一个注脚" class="headerlink" title="如何创建一个注脚"></a>如何创建一个注脚</h2><p>一个具有注脚的文本。<a href="注脚的解释">^2</a></p>
 
         </div>
@@ -608,7 +666,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/SophieU/">
                 
-                    <img src="/SophieU/images/logo.svg" alt="MarkDown语法汇总" height="28">
+                    <img src="/SophieU/user/logo.svg" alt="MarkDown语法汇总" height="28">
                 
                 </a>
                 <p class="is-size-7">
