@@ -80,5 +80,5 @@ theme: icarus
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/SophieU/ReadingNotes.git
+  repo: https://github.com/SophieU/SophieU.git
   branch: gh-pages
