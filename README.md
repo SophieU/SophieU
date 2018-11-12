@@ -4,3 +4,5 @@
 
 ## 注意
 - icarus地址：https://github.com/ppoffice/hexo-theme-icarus.git。`换PC开发时，需要单独clone`。
+
+:panda_face: :sparkles: :camel: :boom: :pig:
