@@ -10,6 +10,14 @@
 <body>
 <div id="app">
     <i-button @click="show">Click me!</i-button>
+    <i-form>
+        <i-form-item label="test">
+            <i-input value="11"/>
+        </i-form-item>
+        <FormItem>
+                <i-input value="22"/>
+        </FormItem>
+    </i-form>
     <Modal v-model="visible" title="Welcome">Welcome to iView</Modal>
 </div>
 <script>
