@@ -113,20 +113,7 @@ app.all('/all',functino(req,res,next){
 - 在项目中，路由都是分模块的，如上，`index`则代表主要首页模块，在`routes/index`文件中，又有多个路由可参考写法。
 
 #### 路由参数（parameters）
-<table>
-    <tr>
-        <td>路由</td>
-        <td>path：/users/:userId/books/:bookId</td>
-    </tr>
-    <tr>
-        <td>请求</td>
-        <td>URL: http://localhost:3000/users/34/books/8989</td>
-    </tr>
-    <tr>
-        <td>参数获取</td>
-        <td>req.params: { "userId": "34", "bookId": "8989" }</td>
-    </tr>
-</table>
+
 
 ## 静态文件
 - 为了提供诸如图像、CSS 文件和 JavaScript 文件之类的静态文件，可以使用 Express 中的` express.static `内置中间件函数。
