@@ -113,7 +113,21 @@ app.all('/all',functino(req,res,next){
 - 在项目中，路由都是分模块的，如上，`index`则代表主要首页模块，在`routes/index`文件中，又有多个路由可参考写法。
 
 #### 路由参数（parameters）
+- [参考文档](http://www.expressjs.com.cn/guide/routing.html)
+- 路由路径中，` ?, +, *, ()`可以正则的方式来匹配路径
+- `req.params`中可以获取到通过请求`url/:param`下的参数`param`
 
+```js
+// 1、正则匹配[示例匹配abe或abcde]
+app.get('/ab(cd)?e',function(req,res){
+  res.send('ab(cd)?e')
+})
+
+// 2、req.params的使用
+Route path: /users/:userId/books/:bookId
+Request URL: http://localhost:3000/users/34/books/8989
+req.params: { "userId": "34", "bookId": "8989" }
+```
 
 ## 静态文件
 - 为了提供诸如图像、CSS 文件和 JavaScript 文件之类的静态文件，可以使用 Express 中的` express.static `内置中间件函数。
