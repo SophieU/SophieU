@@ -127,7 +127,21 @@ app.get('/ab(cd)?e',function(req,res){
 Route path: /users/:userId/books/:bookId
 Request URL: http://localhost:3000/users/34/books/8989
 req.params: { "userId": "34", "bookId": "8989" }
+
+// 3、params的扩展使用，()匹配
+Route path: /user/:userId(\d+)
+Request URL: http://localhost:3000/user/42
+req.params: {"userId": "42"}
 ```
+
+#### 路由回调
+- `app.get('url',callback)`：其中callback回调可以是一个函数，也可以是一个`函数构成的数组`，也可以是`数组加函数`，详见文档
+
+#### Response方法
+
+方法名|作用
+---|---
+res.download()|
 
 ## 静态文件
 - 为了提供诸如图像、CSS 文件和 JavaScript 文件之类的静态文件，可以使用 Express 中的` express.static `内置中间件函数。
