@@ -18,6 +18,7 @@ Express是基于`Node.js`平台的极简的经典Web开发框架。[中文官网
 > - [Router路由](#Router路由)
 > - [静态文件](#静态文件)
 > - [中间件](#中间件)
+> - [模板引擎](#模板引擎)
 > - [常见问题](#常见问题)
 
 ## 安装
@@ -246,7 +247,7 @@ var mw= requrie('./my-middleware.js');
 app.use(mw(option1:'1',option2:'2'))
 ```
 #### 第三方中间件
-- `cookie-parser`
+- `cookie-parser`：用于处理
 ```
 var express = require('express')
 var app = express()
@@ -254,6 +255,17 @@ var cookieParser = require('cookie-parser')
 
 // load the cookie-parsing middleware
 app.use(cookieParser())
+```
+
+## 模板引擎
+- 通过`app.set('view engine', 'ejs')`可设置模板引擎
+- 通过`app.set('views','./views')`可设置渲染模板
+
+```js
+// 设置模板
+app.get('/', function (req, res) {
+  res.render('index', { title: 'Hey', message: 'Hello there!' })
+})
 ```
 
 ## 常见问题
