@@ -245,6 +245,16 @@ module.exports = function(options) {
 var mw= requrie('./my-middleware.js');
 app.use(mw(option1:'1',option2:'2'))
 ```
+#### 第三方中间件
+- `cookie-parser`
+```
+var express = require('express')
+var app = express()
+var cookieParser = require('cookie-parser')
+
+// load the cookie-parsing middleware
+app.use(cookieParser())
+```
 
 ## 常见问题
 
