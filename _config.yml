@@ -13,8 +13,9 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://sophieu.github.io/SophieU
-root: /SophieU/
+# url: https://sophieu.github.io
+url: https://sophieu.github.io
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -80,5 +81,5 @@ theme: icarus
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/SophieU/SophieU.git
+  repo: https://github.com/SophieU/sophieu.github.io.git
   branch: gh-pages
