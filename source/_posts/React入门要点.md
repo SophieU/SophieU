@@ -187,3 +187,53 @@ export default MyComponent;
 
 ## Props属性
 - **Props是只读的**：无论你用函数或类的方法来声明组件, 它都无法修改其自身 props.
+- props只是用于传值，所以props基本上也就是从服父级组件向子组件传递的数据。
+- 组件中，通过`this.props.xxx`来获取传入的属性值
+```js
+//父组件
+import Say from './say.js';
+import React from 'react';
+export default class Hello extends React.Component{
+    render(){
+        return (<Say name="Sophie"/>)
+    }
+}
+// Say组件
+import React from 'react';
+export default class Say extends React.Component{
+    render(){
+        return (<div>Hello,{this.props.name}</div>)
+    }
+}
+```
+
+#### 默认参数
+- 在组件中，我们最好为props中的参数设置一个defaultProps，并且制定它的类型。
+```js
+export default class Say extends React.Component{
+    render(){
+        return (<div>Hello,{this.props.name}</div>)
+    }
+}
+// 默认值
+Say.defaultProps = {
+  name: 'Hello Props',
+};
+// 值类型
+Say.propTypes = {
+  name: PropTypes.string,
+};
+
+```
+- 关于`propTypes`，可以声明为以下几种类型：
+```js
+optionalArray: PropTypes.array,
+optionalBool: PropTypes.bool,
+optionalFunc: PropTypes.func,
+optionalNumber: PropTypes.number,
+optionalObject: PropTypes.object,
+optionalString: PropTypes.string,
+optionalSymbol: PropTypes.symbol,
+```
+#### 总结Props
+> `props`是一个从外部传进组件的参数，主要作为就是从父组件向子组件传递数据，它具有`可读性`和`不变性`，只能通过外部组件主动传入新的props来重新渲染子组件，否则子组件的props以及展现形式不会改变。
