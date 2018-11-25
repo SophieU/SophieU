@@ -15,6 +15,7 @@ React 拥有较高的性能，代码逻辑非常简单，越来越多的人已�
 > - [React组件](#React组件)
 > - [Props属性](#Props属性)
 > - [State状态](#State状态)
+> - [处理事件](#处理事件)
 
 * 引用文档：[React教程阿里云大学](https://edu.aliyun.com/lesson_483_5255?spm=5176.10731542.0.0.JAX9ZT#_5255)
 > * **React 特点**
@@ -289,3 +290,62 @@ this.setState({
 2. props是外部传入的数据参数，不可变；
 3. 没有state的叫做无状态组件，有state的叫做有状态组件；
 4. 多用props，少用state。也就是多写无状态组件。
+
+## 处理事件
+- React 事件使用`驼峰命名`，而不是全部小写。
+- 通过 JSX , 你传递一个函数作为事件处理程序，而不是一个字符串。
+- 在React中只能通过`preventDefault `来组件默认行为，而不能通过`return false`
+
+```js
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // 这个绑定是必要的，使`this`在回调中起作用
+    this.handleClick = this.handleClick.bind(this);
+  }
+// 事件作为类上的一个方法被定义
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Toggle />,
+  document.getElementById('root')
+);
+```
+#### 绑定this
+-  在 JavaScript 中，类方法默认没有 绑定的.如果你忘记绑定 this.handleClick 并将其传递给onClick，那么在直接调用该函数时，this 会是 undefined 。
+- 几种绑定this指定的语法：
+    1. 使用`箭头函数`来定义事件处理函数
+    2. 使用`bind`
+```js
+// 箭头函数定义
+handleClick=（)=>{...}
+// bind
+constructor(){
+    super();
+    this.state={};
+    this.handleClick=this.handleClick.bind(this);
+}
+```
+
+#### 传参
+```js
+<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+```
+
+## 渲染
