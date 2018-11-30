@@ -2,239 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ff42666-8ae3-4ca6-bd39-95c7ba941582" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Tim.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scaffolds/draft.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scaffolds/page.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scaffolds/post.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Express.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/JS模式.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/React入门要点.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/nodemon.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/vue打包优化.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/站点简介.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/about/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/images/city.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/images/deer.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/images/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/images/sleep.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/user/avatar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/user/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/user/favicon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/user/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/user/thumbnail.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus-config/_config.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus-config/source/css/insight.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus-config/source/css/search.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus-config/source/css/style.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus-config/source/images/avatar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus-config/source/images/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus-config/source/images/favicon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus-config/source/images/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus-config/source/images/thumbnail.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus-config/source/js/back-to-top.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus-config/source/js/insight.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus-config/source/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/.github/ISSUE_TEMPLATE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/common/ConfigGenerator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/common/ConfigValidator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/common/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/filters/highlight.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/generators/categories.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/generators/category.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/generators/insight.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/generators/tags.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/helpers/cdn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/helpers/config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/helpers/layout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/helpers/override.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/helpers/page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/helpers/site.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/specs/article.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/specs/comment.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/specs/config.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/specs/footer.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/specs/icon_link.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/specs/meta.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/specs/navbar.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/specs/plugins.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/specs/providers.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/specs/search.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/specs/share.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/specs/widgets.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/tasks/check_config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/tasks/check_deps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/includes/tasks/welcome.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/languages/en.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/languages/es.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/languages/fr.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/languages/id.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/languages/ja.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/languages/ko.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/languages/pt-BR.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/languages/ru.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/languages/tr.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/languages/zh-CN.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/languages/zh-TW.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/archive.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/categories.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/category.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/comment/changyan.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/comment/disqus.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/comment/facebook.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/comment/gitment.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/comment/isso.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/comment/livere.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/comment/valine.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/common/article.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/common/footer.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/common/head.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/common/navbar.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/common/paginator.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/common/scripts.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/common/widget.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/index.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/layout.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/page.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/plugin/animejs.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/plugin/back-to-top.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/plugin/baidu-analytics.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/plugin/gallery.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/plugin/google-analytics.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/plugin/hotjar.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/plugin/mathjax.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/plugin/outdated-browser.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/plugin/progressbar.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/post.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/search/baidu.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/search/google-cse.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/search/insight.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/share/addthis.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/share/addtoany.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/share/bdshare.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/share/sharejs.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/share/sharethis.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/tag.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/tags.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/widget/archive.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/widget/category.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/widget/links.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/widget/profile.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/widget/recent_posts.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/widget/tag.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/widget/tagcloud.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/layout/widget/toc.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/scripts/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/css/back-to-top.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/css/insight.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/css/progressbar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/css/search.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/css/style.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/images/avatar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/images/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/images/favicon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/images/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/images/thumbnail.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/js/animation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/js/back-to-top.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/js/gallery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/js/insight.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/icarus/source/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/Gruntfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/_config.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/de.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/default.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/es.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/fr.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/ja.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/ko.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/nl.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/no.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/pt.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/ru.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/zh-CN.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/zh-TW.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/after-footer.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/archive-post.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/archive.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/article.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/footer.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/gauges-analytics.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/google-analytics.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/head.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/header.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/mobile-nav.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/post/category.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/post/date.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/post/gallery.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/post/nav.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/post/tag.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/post/title.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/sidebar.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_widget/archive.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_widget/category.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_widget/recent_posts.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_widget/tag.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_widget/tagcloud.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/archive.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/category.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/index.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/layout.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/page.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/post.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/tag.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/scripts/fancybox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_extend.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/archive.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/article.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/comment.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/footer.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/header.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/highlight.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/mobile.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/sidebar-aside.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/sidebar-bottom.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/sidebar.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_util/grid.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_util/mixin.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_variables.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/images/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/style.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/blank.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/fancybox_loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/fancybox_loading@2x.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/fancybox_overlay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/fancybox_sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/fancybox_sprite@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/helpers/fancybox_buttons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/helpers/jquery.fancybox-buttons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/helpers/jquery.fancybox-buttons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/helpers/jquery.fancybox-media.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/helpers/jquery.fancybox-thumbs.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/helpers/jquery.fancybox-thumbs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/jquery.fancybox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/jquery.fancybox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/jquery.fancybox.pack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/js/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/refs/fancy.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -255,22 +23,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="6" />
+          <entry key="js" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="6" />
+          <entry key="JavaScript" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="424" />
+          <entry key="js" value="447" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="424" />
+          <entry key="JavaScript" value="447" />
         </counts>
       </usages-collector>
     </session>
@@ -289,14 +57,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/context/theme-button.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+            <state relative-caret-position="324">
+              <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/page/refs/fancy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -317,6 +94,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/lazy.js" />
+        <option value="$PROJECT_DIR$/src/page/refs/fancy.js" />
       </list>
     </option>
   </component>
@@ -343,8 +121,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="1" />
+    <option name="x" value="579" />
+    <option name="y" value="52" />
     <option name="width" value="1844" />
     <option name="height" value="1014" />
   </component>
@@ -373,13 +151,6 @@
               <item name="SophieU" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SophieU" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SophieU" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="context" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -415,15 +186,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1543800748731</updated>
-      <workItem from="1543800751065" duration="2007000" />
+      <workItem from="1543800751065" duration="3149000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2007000" />
+    <option name="totallyTimeSpent" value="3149000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1844" height="1014" extended-state="0" />
+    <frame x="400" y="41" width="1844" height="1014" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
@@ -482,11 +253,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/context/theme-button.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        <state relative-caret-position="324">
+          <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/refs/fancy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
         </state>
       </provider>
     </entry>
