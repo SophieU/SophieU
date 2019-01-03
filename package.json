@@ -1,0 +1,31 @@
+{
+  "name": "sophieu",
+  "version": "1.0.0",
+  "description": "learning next",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SophieU/SophieU.git"
+  },
+  "keywords": [
+    "next",
+    "react"
+  ],
+  "author": "sophie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SophieU/SophieU/issues"
+  },
+  "homepage": "https://github.com/SophieU/SophieU#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
