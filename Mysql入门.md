@@ -56,3 +56,31 @@ character-set-server=utf8
 # 创建新表时将使用的默认存储引擎
 default-storage-engine=INNODB
 ```
+
+##### 3、初次启动下 MySQL 数据库：
+
+```bash
+# 以管理员身份打开 cmd 命令行工具，切换目录到mysql安装目录下的bin目录
+cd F:\Program Files\mysql-8.0.13>bin
+# 初始化数据库
+mysqld --initialize --console
+```
+>  执行完成后，会输出 root 用户的初始默认密码，其中：`APWCY5ws&hjQ`就是初始密码，后续登录需要用到，你也可以在登陆后修改密码。
+```
+2016-08-25T02:35:05.464644Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: APWCY5ws&hjQ
+```
+> 将mysql安装为windows服务
+```bash
+# 还是在bin目录下
+mysqld install
+# 启动mysql
+net start mysql
+
+# 提示
+F:\Program Files\mysql-8.0.13\bin>net start mysql
+MySQL 服务正在启动 ...
+MySQL 服务已经启动成功。
+```
+
+##### 4、登录 MySQL
+当 MySQL 服务已经运行时, 我们可以通过 MySQL 自带的客户端工具登录到 MySQL 数据库中, 首先打开命令提示符, 输入以下格式的命名:
