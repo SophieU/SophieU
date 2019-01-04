@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var config = require('config-lite')(__dirname);
+import chalk from 'chalk';
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -43,8 +45,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3000, () => {
-    console.log('success start')
+app.listen(config.port, () => {
+    console.log(chalk.green(`成功监听端口：${config.port}`))
 });
 
 module.exports = app;
