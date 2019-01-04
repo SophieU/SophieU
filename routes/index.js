@@ -1,10 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var path = require('path');
+'use strict';
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.sendFile("index.html");
-});
+import home from './home';
+import users from './users';
 
-module.exports = router;
+export default app=>{
+  app.use('/',home);
+  app.use('/users',users);
+}

@@ -5,13 +5,32 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var config = require('config-lite')(__dirname);
 import chalk from 'chalk';
+import router from './routes/index';
 
-var index = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
-// view engine setup
+//配置路由
+router(app);
+
+//配置响应头
+app.all('*',(req,res,next)=>{
+  const {origin, Origin, referer, Referer} = req.headers;
+  const allowOrigin = origin || Origin || referer ||Referer || '*';
+
+  res.header("Access-Control-Allow-Origin",allowOrigin);
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  res.header("Access-Control-Allow-Credentials", true); //可以带cookies
+  res.header("X-Powered-By", 'Express');
+  if(req.methods=='OPTIONS'){
+    res.sendStatus(200);
+  }else{
+    next();
+  }
+})
+
+// 设置模板引擎
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
