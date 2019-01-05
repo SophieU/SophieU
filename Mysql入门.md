@@ -46,7 +46,7 @@ default-character-set=utf8
 # 设置3306端口
 port = 3306
 # 设置mysql的安装目录
-basedir=C:\\web\\mysql-8.0.11
+basedir=F:\Program Files\mysql-8.0.11
 # 设置 mysql数据库的数据的存放目录，MySQL 8+ 不需要以下配置，系统自己生成即可，否则有可能报错
 # datadir=C:\\web\\sqldata
 # 允许最大连接数
