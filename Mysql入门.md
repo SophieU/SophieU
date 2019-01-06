@@ -17,11 +17,23 @@ MySQL 是一个关系型数据库管理系统，由瑞典 MySQL AB 公司开发�
 
 
 ## 目录
+
 > - [安装](#安装)
 > - [HelloWorld](#HelloWorld)
 > - [Express应用生成器](#Express应用生成器)
 > - [Router路由](#Router路由)
 
-## 安装 
+## 安装
+所有平台的 MySQL 下载地址为： [MySQL 下载](https://dev.mysql.com/downloads/mysql/) 。 挑选你需要的 MySQL Community Server 版本及对应的平台。
+- 注意：安装过程我们需要通过开启管理员权限来安装，否则会由于权限不足导致无法安装。
 
-#### Linux平台下安装
+#### Windows平台下安装
+
+##### 1、下载
+- windows下载地址：https://dev.mysql.com/downloads/mysql/
+![进入下载](http://www.runoob.com/wp-content/uploads/2014/03/20DBD7BA-A653-4AE3-887E-2A16E6EBB2E3.png)
+
+- 下载完后，我们将 zip 包解压到相应的目录，这里我将解压后的文件夹放在 D:\web\mysql-8.0.11 下。
+
+##### 2、新建配置文件
+
