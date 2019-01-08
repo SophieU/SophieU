@@ -100,7 +100,7 @@ mysql -u root -p
 >> 若密码存在, 输入密码登录, 不存在则直接按回车登录。登录成功后你将会看到 Welecome to the MySQL monitor... 的提示语。然后命令提示符会一直以 mysq> 加一个闪烁的光标等待命令的输入, 输入 exit 或 quit 退出登录。
 
 ## MySQL管理
-#### windows下
+#### windows下启动与关闭
 ```bash
 # 启动 mysql安装目录下bin目录
 mysqld --console
@@ -110,6 +110,16 @@ mysqladmin -uroot shutdown
 # windows服务的启动关闭
 net start mysql
 net stop mysql
+```
+#### 重置初始密码
+- 在首次进入mysql命令工具中时，任何操作它都会提示：`You must reset your password using ALTER USER statement before executing this statement.`表示 需要先重置初始密码
+```bash
+# 更新密码
+mysql> alter user root@localhost identified by '123456';
+# 刷新权限
+mysql> flush privileges;
+# 退出重登
+exit;
 ```
 
 ## MySQL 基础指令
@@ -126,3 +136,16 @@ net stop mysql
 3. Step3. 操作某个表的具体数据
 
 ## 数据库操作
+### 创建数据库
+`语法：` create database 数据名 [数据库选项]
+```bash
+# 普通创建
+create database test
+# 更优的创建
+create database `test2`
+
+```
+- 注意数据库名的处理：
+- 有些词语是mysql的关键字或者保留字，此时可以使用 `反引号 `将库名（库标识符）进行包裹！
+- 建议，所有的标识符，都应该加上反引号！尤其在使用字符串拼凑SQL的时候！
+此时，当使用了反引号后，几乎所有的字符串都可以作为名字出现：
