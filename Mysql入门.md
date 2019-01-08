@@ -229,7 +229,7 @@ create table itsource.t2_innodb(id int) engine=innodb;
 >> 对于innodb：.frm结构；数据和索引在其他的文件：
 
 #### 查看表
-- 语法：`show tables [like 表名]`
+- 语法：`show tables [like '表名']`
 
 - 查看建表语句,语法： `show create table 表名`
 - 查看表结构，语法：`desc 表名`
@@ -238,4 +238,22 @@ mysql> show tables like user;
 mysql> show create table user;
 mysql> desc user;
 ```
-
+#### 删除表
+语法：`drop table [if exists] 表名`
+#### 修改表
+- 修改表选项——语法：`alter table 表名 选项=新值`
+- 重命名表——语法：`rename table 旧表名 to 新表名`(如果采用 库名.表名的修改语法，导致将A库表，移动到B库中！)
+- 添加字段——语法：`alter table 表名 add column 字段定义 位置`
+- 删除字段——语法：` alter table 表名 drop column 字段名`
+- 修改字段定义同时改名： `语法：alter table 表名 change column 旧字段名 新字段定义（名字，类型，属性） 位置`
+- 字段只修改定义： `语法：alter table 表名 modify column 字段名 新的定义(类型，属性)`
+```bash
+# 修改选项
+alter table test engine=innodb;
+# 重命名
+rename table user to newuser;
+# 移动
+rename table test.user to sys.user;
+# 添加字段
+alter table newuser add column job varchar(10) after name;
+```
