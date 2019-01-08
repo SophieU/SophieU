@@ -245,7 +245,7 @@ mysql> desc user;
 - 重命名表——语法：`rename table 旧表名 to 新表名`(如果采用 库名.表名的修改语法，导致将A库表，移动到B库中！)
 - 添加字段——语法：`alter table 表名 add column 字段定义 位置`
 - 删除字段——语法：` alter table 表名 drop column 字段名`
-- 修改字段定义同时改名： `语法：alter table 表名 change column 旧字段名 新字段定义（名字，类型，属性） 位置`
+- 修改并重新定义字段： `语法：alter table 表名 change column 旧字段名 新字段定义（名字，类型，属性） 位置`
 - 字段只修改定义： `语法：alter table 表名 modify column 字段名 新的定义(类型，属性)`
 ```bash
 # 修改选项
@@ -256,4 +256,10 @@ rename table user to newuser;
 rename table test.user to sys.user;
 # 添加字段
 alter table newuser add column job varchar(10) after name;
+# 删除字段 
+alter table newuser drop column job;
+# 修改并重新定义
+alter table newuser change column age userage varchar first;
+# 只修改字段定义
+alter table newusr modify column userage int after name;
 ```
