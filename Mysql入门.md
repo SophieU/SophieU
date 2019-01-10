@@ -139,6 +139,20 @@ password: ******
 2. Step2. 管理某个数据库
 3. Step3. 操作某个表的具体数据
 
+#### 关键词
+- show: 显示数据库、表
+- create: 创建数据库、表
+- drop:删除数据库、表
+- alter:修改数据库、表
+
+> 将SQL操作的目标不同，分成不同的语言：`SQL = DDL + DML`。
+>> DDL，数据定义语言！数据结构的操作（操作库和操作表）
+>> - `create`，`drop`，`show`，`alter`
+>> - alter table add column， drop column，change column，modify column
+
+>> - DML，数据的管理语言
+>> - 数据的操作： Insert（增）， delete（删），update（改），select（查）
+
 ## 数据库操作
 - 注意：每一条mysql命令都必须以分号结束`;`
 ##### 创建数据库
@@ -269,3 +283,73 @@ alter table newusr modify column userage int after name;
 #### 增加
 - 语法：`insert into 表名 (字段列表) values (值列表)`
 - 其中，可以省略字段名列表部分，前提是，字段值必须要一一对应。（数量和顺序都一致）
+- 标准写法：**将字段名使用反引号 包裹！**
+```bash
+# 完整写法
+insert into user(name,age,gender) values('ming',18,'man');
+# 简单写法
+insert into user values('hong',17,'woman');
+```
+#### 查询
+- 语法 `select 字段列表 from 表名 [where 条件表达式]`
+- 字段列表，应该使用逗号分隔的一个个的字段名。特别的使用*表示所有字段！条件可以被省略，表示默认成立，意味着会检索到所有数据！
+- 注意：条件表达式，是指所有可以获得值的语句！
+- 在mysql中的sql，关系表达式返回的是0或者1，mysql没有布尔型数据，其中1表示真，0表示假！
+```bash
+# 查询所有数据
+mysql> select * from users;
++--------+------+--------+
+| name   | age  | gender |
++--------+------+--------+
+| sophie |   18 | woman  |
+| ju     |   19 | man    |
++--------+------+--------+
+2 rows in set (0.00 sec)
+
+# 查询单个字段 
+mysql> select age from users;
++------+
+| age  |
++------+
+|   18 |
+|   19 |
++------+
+2 rows in set (0.00 sec)
+
+# 筛选
+mysql> select * from users where gender='woman';
++--------+------+--------+
+| name   | age  | gender |
++--------+------+--------+
+| sophie |   18 | woman  |
++--------+------+--------+
+1 row in set (0.00 sec)
+```
+#### 删除 delete
+- 语法：`delete from 表名 [where 条件]`
+- 有where子句时，删除匹配的记录。没有where子句则删除该表所有数据。
+- 注意 =（等于） 在mysql的sql中是关系运算符！
+```bash
+# 删除name='ju';
+mysql> delete from users where name='ju';
+Query OK, 1 row affected (0.42 sec)
+
+```
+#### 修改 
+- 语法：`update 表名 set 字段=值, 字段=值 [where 条件表达式];`
+```bash
+# 修改
+mysql> update users set age=20 where name='la';
+Query OK, 1 row affected (0.51 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from users;
++--------+------+--------+
+| name   | age  | gender |
++--------+------+--------+
+| sophie |   18 | woman  |
+| la     |   20 | man    |
+| haha   |   17 | woman  |
++--------+------+--------+
+3 rows in set (0.00 sec)
+```
