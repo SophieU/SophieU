@@ -353,3 +353,44 @@ mysql> select * from users;
 +--------+------+--------+
 3 rows in set (0.00 sec)
 ```
+
+## 常用的数据类型
+- 数字型、字符串型、日期时间型、其他。（MySQL的数据类型主要分为三大类型：数字型、字符串型、日期时间型。）
+#### 数字型
+- `整型`：int。有不同长度的整型，默认是4个字节，
+- `小数型`：float：单精度，占4字节，存储数小,double：双精度，占8字节，数很大。【所有浮点数，保存的都是近似值，而不是精确值，不能拿浮点数做精确比较】【在定义浮点数时，需要指明有效数位,小数数位】
+- `字符串类型`： char(M)定长字符串M为最大字符数，varchar(M)可变字符串M为最大字符串。
+- `文本内容text`：
+- `日期时间`： 
+    - datetime: 典型格式YYYY-MM-DD HH：II：SS
+    - timestamp:时间戳，节省资源，范围在1970-2038年
+> 如何选择数据类型？
+> 在能够满足功能的前提下，尽量使用占用空间小或者计算容易的！
+
+```
+数据表操作：
+create table student(
+id int primary key auto_increment,
+name varchar(10),
+gender char(2)
+)engine=myisam;
+
+show tables;
+desc student;
+drop table student;
+alter table student change column name username varchar(20) after id;
+
+记录操作：
+insert into student(id,username,gender) values (1,'刘备','男');
+insert into student(id,username,gender) values (2,'张飞','男');
+
+select * from student
+select * from student where username='刘备';
+select * from student where id >1;
+
+update student set gender='女' where username='张飞';
+update student set username='花木兰' where id=2;
+
+delete from student where id=2;
+delete from student;
+```
