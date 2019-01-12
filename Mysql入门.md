@@ -23,6 +23,7 @@ MySQL 是一个关系型数据库管理系统，由瑞典 MySQL AB 公司开发�
 > - [数据库操作](#数据库操作)
 > - [表操作](#表操作)
 > - [记录操作](#记录操作)
+> - [常用的数据类型](#常用的数据类型)
 
 ## 安装
 所有平台的 MySQL 下载地址为： [MySQL 下载](https://dev.mysql.com/downloads/mysql/) 。 挑选你需要的 MySQL Community Server 版本及对应的平台。
@@ -367,6 +368,36 @@ mysql> select * from users;
 > 如何选择数据类型？
 > 在能够满足功能的前提下，尽量使用占用空间小或者计算容易的！
 
+## 字段属性
+- `null`属性：表示是否允许值为空（null可以为空，not null不允许为空）[注：默认是允许为空，当没有写 null或者not null 相当于null！]
+
+```bash
+create table test(
+    allow_null int null,
+    not_allow int not null
+);
+```
+- `default`属性：当为记录增加数据时，如果没有指定字段的值，Mysql会使用该字段的默认值来填充该字段！
+- 特殊的关键字：`current_timestamp`，在定义时间戳类型的字段上使用，表示，该字段的默认值为当前时间戳！
+```bash
+create table test(
+    name varchar(10) default 'zhangsan',
+    times1 timestamp default current_timestamp
+);
+```
+- `primary key`主键：要求建立在列字段的值都是唯一的值！在该字段上，建立一个要求，要求在插入数据（更新）对，字段的唯一性做检查，**在语法上严格规定，某个字段内的所有值，不能重复！**【如果字段的值是唯一的，那么就可以使用该字段，来唯一地确定当前表内的某个记录！】
+- `auto_increment`自动增长，每当增加一个条记录，**自动生成一个序列号！自动增长依赖于主键！**如果一个字段是主键，可以将其定义成整型，并设置自动增长的属性，这样可以为该字段生成不重复的唯一的ID标识！
+```bash
+create table test2(
+    id int primary key auto_increment,
+    name varchar(10) not null,
+    age int default 10
+);
+```
+## 总结 
+- 在windows下操作mysql可以使用Navicat图形化操作工具
+
+- 常用数据库操作
 ```
 数据表操作：
 create table student(
