@@ -23,10 +23,56 @@ MySQL 是一个关系型数据库管理系统，由瑞典 MySQL AB 公司开发�
 > - [数据库操作](#数据库操作)
 > - [表操作](#表操作)
 > - [记录操作](#记录操作)
-
+NjEcoYFlw4)V
 ## 安装
 所有平台的 MySQL 下载地址为： [MySQL 下载](https://dev.mysql.com/downloads/mysql/) 。 挑选你需要的 MySQL Community Server 版本及对应的平台。
 - 注意：安装过程我们需要通过开启管理员权限来安装，否则会由于权限不足导致无法安装。
+#### Linux平台下安装
+以腾讯云服务器为例[参考文章](https://blog.csdn.net/z13615480737/article/details/78906598)：
+- 远程到腾讯云服务器（推荐使用PuttY进行远程访问）
+- 安装：
+```bash
+# 下载安装包
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+# 执行安装包（-ivh安装显示安装进度）
+rpm -ivh mysql-community-release-el7-5.noarch.rpm
+# yum安装server
+yum install mysql-server
+```
+- 配置my.cnf (在root目录下，`vim etc/my.cnf`)  
+```bash
+[mysqld]
+#
+# Remove leading # and set to the amount of RAM for the most important data
+# cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.
+# innodb_buffer_pool_size = 128M
+#
+# Remove leading # to turn on a very important data integrity option: logging
+# changes to the binary log between backups.
+# log_bin
+#
+# Remove leading # to set options mainly useful for reporting servers.
+# The server defaults are faster for transactions and fast SELECTs.
+# Adjust sizes as needed, experiment to find the optimal values.
+# join_buffer_size = 128M
+# sort_buffer_size = 2M
+# read_rnd_buffer_size = 2M
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+server_id = 1
+expire_logs_days = 3
+ 
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+ 
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid
+```
+- 启动mysql服务:`service mysqld restart`
+- 查看随机密码： `grep "password" /var/log/mysqld.log`
+- 登录mysql: `mysql -u root -p xxx` -首次登录密码为上一步的随机码
+- 修改初始密码
+
 
 #### Windows平台下安装
 
