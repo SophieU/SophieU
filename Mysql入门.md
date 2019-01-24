@@ -23,7 +23,12 @@ MySQL 是一个关系型数据库管理系统，由瑞典 MySQL AB 公司开发�
 > - [数据库操作](#数据库操作)
 > - [表操作](#表操作)
 > - [记录操作](#记录操作)
+<<<<<<< HEAD
 NjEcoYFlw4)V
+=======
+> - [常用的数据类型](#常用的数据类型)
+
+>>>>>>> 6dcdbce0181f93ae4db2a314e11e7841f3e593e4
 ## 安装
 所有平台的 MySQL 下载地址为： [MySQL 下载](https://dev.mysql.com/downloads/mysql/) 。 挑选你需要的 MySQL Community Server 版本及对应的平台。
 - 注意：安装过程我们需要通过开启管理员权限来安装，否则会由于权限不足导致无法安装。
@@ -185,6 +190,20 @@ password: ******
 2. Step2. 管理某个数据库
 3. Step3. 操作某个表的具体数据
 
+#### 关键词
+- show: 显示数据库、表
+- create: 创建数据库、表
+- drop:删除数据库、表
+- alter:修改数据库、表
+
+> 将SQL操作的目标不同，分成不同的语言：`SQL = DDL + DML`。
+>> DDL，数据定义语言！数据结构的操作（操作库和操作表）
+>> - `create`，`drop`，`show`，`alter`
+>> - alter table add column， drop column，change column，modify column
+
+>> - DML，数据的管理语言
+>> - 数据的操作： Insert（增）， delete（删），update（改），select（查）
+
 ## 数据库操作
 - 注意：每一条mysql命令都必须以分号结束`;`
 ##### 创建数据库
@@ -315,6 +334,7 @@ alter table newusr modify column userage int after name;
 #### 增加
 - 语法：`insert into 表名 (字段列表) values (值列表)`
 - 其中，可以省略字段名列表部分，前提是，字段值必须要一一对应。（数量和顺序都一致）
+<<<<<<< HEAD
 
 ## 远程登录云服务器上的mysql
 在服务器上安装了mysql后如果要远程通过本地计算机访问服务器上的mysql，需要以下几步：
@@ -327,3 +347,146 @@ alter table newusr modify column userage int after name;
 -  本地下载安装好workbench后打开
 - workbench默认只有一个连接本地mysql的实例，可以点“+”新增，
     - 地址:`服务器公网IP`，用户名：`上面设置的用户名`，密码：`上面设置的密码`。 
+=======
+- 标准写法：**将字段名使用反引号 包裹！**
+```bash
+# 完整写法
+insert into user(name,age,gender) values('ming',18,'man');
+# 简单写法
+insert into user values('hong',17,'woman');
+```
+#### 查询
+- 语法 `select 字段列表 from 表名 [where 条件表达式]`
+- 字段列表，应该使用逗号分隔的一个个的字段名。特别的使用*表示所有字段！条件可以被省略，表示默认成立，意味着会检索到所有数据！
+- 注意：条件表达式，是指所有可以获得值的语句！
+- 在mysql中的sql，关系表达式返回的是0或者1，mysql没有布尔型数据，其中1表示真，0表示假！
+```bash
+# 查询所有数据
+mysql> select * from users;
++--------+------+--------+
+| name   | age  | gender |
++--------+------+--------+
+| sophie |   18 | woman  |
+| ju     |   19 | man    |
++--------+------+--------+
+2 rows in set (0.00 sec)
+
+# 查询单个字段 
+mysql> select age from users;
++------+
+| age  |
++------+
+|   18 |
+|   19 |
++------+
+2 rows in set (0.00 sec)
+
+# 筛选
+mysql> select * from users where gender='woman';
++--------+------+--------+
+| name   | age  | gender |
++--------+------+--------+
+| sophie |   18 | woman  |
++--------+------+--------+
+1 row in set (0.00 sec)
+```
+#### 删除 delete
+- 语法：`delete from 表名 [where 条件]`
+- 有where子句时，删除匹配的记录。没有where子句则删除该表所有数据。
+- 注意 =（等于） 在mysql的sql中是关系运算符！
+```bash
+# 删除name='ju';
+mysql> delete from users where name='ju';
+Query OK, 1 row affected (0.42 sec)
+
+```
+#### 修改 
+- 语法：`update 表名 set 字段=值, 字段=值 [where 条件表达式];`
+```bash
+# 修改
+mysql> update users set age=20 where name='la';
+Query OK, 1 row affected (0.51 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from users;
++--------+------+--------+
+| name   | age  | gender |
++--------+------+--------+
+| sophie |   18 | woman  |
+| la     |   20 | man    |
+| haha   |   17 | woman  |
++--------+------+--------+
+3 rows in set (0.00 sec)
+```
+
+## 常用的数据类型
+- 数字型、字符串型、日期时间型、其他。（MySQL的数据类型主要分为三大类型：数字型、字符串型、日期时间型。）
+#### 数字型
+- `整型`：int。有不同长度的整型，默认是4个字节，
+- `小数型`：float：单精度，占4字节，存储数小,double：双精度，占8字节，数很大。【所有浮点数，保存的都是近似值，而不是精确值，不能拿浮点数做精确比较】【在定义浮点数时，需要指明有效数位,小数数位】
+- `字符串类型`： char(M)定长字符串M为最大字符数，varchar(M)可变字符串M为最大字符串。
+- `文本内容text`：
+- `日期时间`： 
+    - datetime: 典型格式YYYY-MM-DD HH：II：SS
+    - timestamp:时间戳，节省资源，范围在1970-2038年
+> 如何选择数据类型？
+> 在能够满足功能的前提下，尽量使用占用空间小或者计算容易的！
+
+## 字段属性
+- `null`属性：表示是否允许值为空（null可以为空，not null不允许为空）[注：默认是允许为空，当没有写 null或者not null 相当于null！]
+
+```bash
+create table test(
+    allow_null int null,
+    not_allow int not null
+);
+```
+- `default`属性：当为记录增加数据时，如果没有指定字段的值，Mysql会使用该字段的默认值来填充该字段！
+- 特殊的关键字：`current_timestamp`，在定义时间戳类型的字段上使用，表示，该字段的默认值为当前时间戳！
+```bash
+create table test(
+    name varchar(10) default 'zhangsan',
+    times1 timestamp default current_timestamp
+);
+```
+- `primary key`主键：要求建立在列字段的值都是唯一的值！在该字段上，建立一个要求，要求在插入数据（更新）对，字段的唯一性做检查，**在语法上严格规定，某个字段内的所有值，不能重复！**【如果字段的值是唯一的，那么就可以使用该字段，来唯一地确定当前表内的某个记录！】
+- `auto_increment`自动增长，每当增加一个条记录，**自动生成一个序列号！自动增长依赖于主键！**如果一个字段是主键，可以将其定义成整型，并设置自动增长的属性，这样可以为该字段生成不重复的唯一的ID标识！
+```bash
+create table test2(
+    id int primary key auto_increment,
+    name varchar(10) not null,
+    age int default 10
+);
+```
+## 总结 
+- 在windows下操作mysql可以使用Navicat图形化操作工具
+
+- 常用数据库操作
+```
+数据表操作：
+create table student(
+id int primary key auto_increment,
+name varchar(10),
+gender char(2)
+)engine=myisam;
+
+show tables;
+desc student;
+drop table student;
+alter table student change column name username varchar(20) after id;
+
+记录操作：
+insert into student(id,username,gender) values (1,'刘备','男');
+insert into student(id,username,gender) values (2,'张飞','男');
+
+select * from student
+select * from student where username='刘备';
+select * from student where id >1;
+
+update student set gender='女' where username='张飞';
+update student set username='花木兰' where id=2;
+
+delete from student where id=2;
+delete from student;
+```
+>>>>>>> 6dcdbce0181f93ae4db2a314e11e7841f3e593e4
