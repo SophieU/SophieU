@@ -12,12 +12,15 @@ Nginx是一个轻量级的HTTP服务框架
 yum -y install gcc gcc-c++ autoconf pcre-devel make automake
 yum -y install wget httpd-tools vim
 ```
-#### 建立目录
-根据本人喜好建立如下目录：
-步骤如下(此步骤根据自己喜欢建立)：
-1. 进入系统后，在目录下建立了一个`myNginx`的文件夹。
-2. 进入 `myNginx`文件夹 ,命令是 `cd myNginx`
-3. 分别使用mkdir建立 app,backup,download,logs,work文件夹。
+## 目录
+- [Nginx环境搭建](#Nginx环境搭建)
+- [查询与配置](#查询与配置)
+- [操作nginx](#操作nginx)
+- [Nginx反向代理的设置](#Nginx反向代理的设置)
+- [自定义错误页](#自定义错误页)
+- [访问权限设置](#访问权限设置)
+- [Nginx设置虚拟主机](#Nginx设置虚拟主机)
+- [Nginx适配PC或移动设备](#Nginx适配PC或移动设备)
 
 ## Nginx环境搭建
 #### 安装
@@ -32,7 +35,7 @@ yum install -y nginx
 3. Nginx默认目录:`whereis nginx`
 
 > 以下是Nginx的默认路径：
-> (1) Nginx配置路径：/etc/nginx/
+> (1) Nginx配置路径【常用】：`/etc/nginx/`
 > (2) PID目录：/var/run/nginx.pid
 > (3) 错误日志：/var/log/nginx/error.log
 > (4) 访问日志：/var/log/nginx/access.log
@@ -84,6 +87,7 @@ server {
     server_name  localhost;  //配置域名
     #charset koi8-r;     
     #access_log  /var/log/nginx/host.access.log  main;
+    # 权限设置
     location / {
         root   /usr/share/nginx/html;     #服务默认启动目录
         index  index.html index.htm;    #默认访问文件
@@ -160,6 +164,7 @@ netstat -tlnp
 
 ## Nginx反向代理的设置
 我们现在的web模式基本的都是标准的CS结构，即Client端到Server端。那代理就是在Client端和Server端之间增加一个提供特定功能的服务器，这个服务器就是我们说的代理服务器。
+- 关键词：`location`，`proxy_pass`
 
 - **正向代理**：如翻墙工具就是一个典型的正向代理工具。代理服务器proxy代理客户端去访问服务器
 ![正向代理](http://jspang.com/static/upload/20181024/wxDZWDrFC_o9Xf5e2j-mRc2g.png)
@@ -175,7 +180,7 @@ netstat -tlnp
 - **功能性**：反向代理的主要用途是为多个服务器提供负债均衡、缓存等功能。负载均衡就是一个网站的内容被部署在若干服务器上，可以把这些机子看成一个集群，那Nginx可以将接收到的客户端请求“均匀地”分配到这个集群中所有的服务器上，从而实现服务器压力的平均分配，也叫负载均衡。
 
 #### 举例
-- 如将访问HTTP的首页代理到http://www.baidu.com去（即当访问公网IP时，会跳转到baidu）
+- 如将访问HTTP的首页（假如是：http://mywebsite.com）代理到http://www.baidu.com去（即当访问公网http://mywebsite.com时，会跳转到baidu）
 ```bash
 server {
      listen 80;
@@ -185,3 +190,139 @@ server {
     }
 }
 ```
+#### 其它反向代理指令
+
+反向代理还有些常用的指令，我在这里给大家列出：
+- proxy_set_header :在将客户端请求发送给后端服务器之前，更改来自客户端的请求头信息。
+- proxy_connect_timeout:配置Nginx与后端代理服务器尝试建立连接的超时时间。
+- proxy_read_timeout : 配置Nginx向后端服务器组发出read请求后，等待相应的超时时间。
+- proxy_send_timeout：配置Nginx向后端服务器组发出write请求后，等待相应的超时时间。
+- proxy_redirect :用于修改后端服务器返回的响应头中的Location和Refresh。
+
+## 自定义错误页
+在上面的配置中可以看到一行：`error_page 500 502 503 504 /50x.html`,即当访问出现500等错误时，就会返回50x.html。nginx对外访问的文件夹为：`/usr/share/nginx/html`。因此，如果要自定义页面或者以后上传网站页面都放在这个目录下。
+- 这里推荐使用`WinSCP`来进行FTP文件上传。[下载地址](https://winscp.net/eng/docs/lang:chs)
+
+> 示例：添加一个404错误页
+- 首先：准备好一个要显示的404.html
+- 配置nginx.conf的errorPage
+```bash
+# 进入配置目录
+cd etc/nginx
+# 打开nginx.conf默认配置
+vim nginx.conf
+# 修改配置
+error_page 500 502 503 504 /50x.html;
+# 新增的error_page配置。注意加分号
+error_page 404 /404.html;
+```
+- 重启nginx
+```bash
+nginx -s quit
+nginx
+```
+
+> 此外，404错误也可以配置指向到另一个网址
+```bash
+# 修改配置【Esc  :wq保存】
+vim nginx.conf
+error_page 404 http://baidu.com;
+# 保存重启
+nginx -s quit
+nginx
+```
+
+## 访问权限设置
+`location`选项为nginx.conf中用于配置权限的属性。
+```bash
+# 默认的配置
+location / {
+    root html;
+    index index.html index.htm;
+    # 新增一项禁止访问(下面禁止某一IP访问)
+    deny 181.214.193.17 
+    # 允许访问(下面允许所有访问)
+    allow all;
+}
+```
+- 注意：上面的配置优先从上到下匹配，若deny在allow前面则先匹配它
+```bash
+location / {
+    deny all;
+    # 下面allow这项将不会起作用，因为前一行deny all
+    allow 181.124.193.15;
+}
+```
+- `deny`：禁止访问,设置后访问基设置的内容，将出现403 forbidden错误
+- `allow`:允许访问
+```bash
+ # = 用于精确匹配
+location =/img { 
+    allow all;
+}
+# 正则匹配 ~
+locatin ~\.php$ { # 以.php结尾的都不让访问
+    deny all;
+}
+```
+## Nginx设置虚拟主机
+虚拟主机是指在一台物理主机服务器上划分出多个磁盘空间，每个磁盘空间都是一个虚拟主机，每台虚拟主机都可以对外提供Web服务，并且互不干扰。在外界看来，虚拟主机就是一台独立的服务器主机，这意味着用户能够利用虚拟主机把多个不同域名的网站部署在同一台服务器上，而不必再为建立一个网站单独购买一台服务器，既解决了维护服务器技术的难题，同时又极大地节省了服务器硬件成本和相关的维护费用。
+- 配置虚拟主机可以`基于端口号`、`基于IP`和`基于域名`
+#### 1. 基于端口号配置虚拟主机
+原理：Nginx监听多个端口，根据不同的端口号，来区分不同的网站。可以直接在`etc/nginx/nginx.conf`文件里配置
+
+- `vim nginx.conf`进入到配置页【先在/usr/share/nginx/html中创建8001文件夹并放入index.html】
+```bash
+# 新增一个server块
+server {
+    listen 8001;    # 监听端口号
+    server_name localhost;  #配置匹配的域名
+    root /usr/share/nginx/html/html8001;  #配置匹配的资源路径
+    index index.html;  # 配置首页
+}
+```
+- 保存后重启nginx。
+- `curl http://localhost:8001`访问8001端口内容会返回对应html。(或者外部通过： `服务器公网IP：8001` 来访问)
+
+#### 2. 基于IP配置虚拟主机
+基于IP和基于端口的配置几乎一样，只是把server_name选项，配置成IP就可以了。
+```bash
+server{
+    listen 80;
+    server_name 112.74.164.244;
+    root /usr/share/nginx/html/html8001;
+    index index.html;
+}
+```
+- 一般买的云服务器默认只有一个公网IP的，所以这种方法暂时用不到。
+
+#### 3. 基于域名配置虚拟主机
+实际应用中，访问网站都是用的域名，而一台服务器上可以提供对多个网站的访问，而不同网站的域名需要进行配置。
+在nginx.conf中，配置server，其中server_name对应的就是你的域名，
+
+- 例：设置不同的域名（或一个域名下多个二级域名）的访问。
+    - `sub.mysite.com `: 这个域名映射到html下某一文件夹8001下的首页。
+    - `mysite.com`:这个域名映射到默认的Nginx首页位置。
+    - 前提需要解析好对应的域名，使域名对应主机IP
+```bash
+# 配置nginx.conf
+server {
+    listen  80;
+    server_name   mysite.com;
+    location / {
+        root  /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+}
+server {
+    listen  80;
+    server_name  sub.mysite.com;
+    location / {
+        root  /usr/share/nginx/html/8001;
+        index  index.html index.htm;
+    }
+}
+```
+
+## Nginx适配PC或移动设备
+现在很多网站都是有了PC端和H5站点的，因为这样就可以根据客户设备的不同，显示出体验更好的，不同的页面了。虽然用*自适应*前端样式也可以实现，但从复杂性和易用性上都不如分开编写的好，如淘宝，京东这些大型网站就都没有采用自适应，而是用分开制作的方式。
