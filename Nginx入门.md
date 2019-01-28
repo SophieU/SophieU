@@ -1,4 +1,10 @@
-# 简介
+---
+title: Nginx入门教程
+date: 2018-08-07
+tag: Nginx
+categories: 后端学习
+---
+## 简介
 Nginx是一个轻量级的HTTP服务框架
 优点：
 - 支持海量高并发
@@ -21,6 +27,8 @@ yum -y install wget httpd-tools vim
 - [访问权限设置](#访问权限设置)
 - [Nginx设置虚拟主机](#Nginx设置虚拟主机)
 - [Nginx适配PC或移动设备](#Nginx适配PC或移动设备)
+- [Nginx的Gzip压缩配置](#Nginx的Gzip压缩配置)
+- [CentOS下安装Node](#CentOS下安装Node)
 
 ## Nginx环境搭建
 #### 安装
@@ -326,3 +334,63 @@ server {
 
 ## Nginx适配PC或移动设备
 现在很多网站都是有了PC端和H5站点的，因为这样就可以根据客户设备的不同，显示出体验更好的，不同的页面了。虽然用*自适应*前端样式也可以实现，但从复杂性和易用性上都不如分开编写的好，如淘宝，京东这些大型网站就都没有采用自适应，而是用分开制作的方式。
+- **Nginx适配PC或移动设备的作用在于: Nginx会根据访问对向是PC还是移动设备，而程现不同的访问地址，对应着不同端的显示界面。**（例如，电脑进入淘宝时，返回的是PC网页 www.taobao.com，若开启开发者模式的手机端调试，刷新后，网站会变成 h5.m.taobao.com）。
+- 关键点：Nginx提供了`if`语句，并有`$http_user_agent`变量作为客户端的userAgent
+```bash
+server {
+    listen 80;
+    server_name  www.kingdou.com;
+    location / {
+        root  /usr/share/nginx/pc;
+        if ($http_user_agent ~* 'Android|webOS|iPhone|iPod|BlackBerry') {
+                root    /usr/share/nginx/mobile;
+        }
+        index   index.html;
+    }
+}
+```
+
+## Nginx的Gzip压缩配置
+Gzip是网页的一种网页压缩技术，经过gzip压缩后，页面大小可以变为原来的30%甚至更小。更小的网页会让用户浏览的体验更好，速度更快。gzip网页压缩的实现需要浏览器和服务器的支持。
+![gzip](http://jspang.com/static/upload/20181028/Kt1ecAV6mSyPKRL1JG9Tot_Q.png)
+从上图可以清楚的明白，gzip是需要服务器和浏览器同事支持的。当浏览器支持gzip压缩时，会在请求消息中包含Accept-Encoding:gzip,这样Nginx就会向浏览器发送经过gzip后的内容，同时在相应信息头中加入Content-Encoding:gzip，声明这是gzip后的内容，告知浏览器要先解压后才能解析输出。
+#### gzip的配置项
+- `gzip` : 用于开启或关闭gzip模块
+- `gzip_buffers`: 设置系统获取几个单位的缓存用于存储gzip的压缩结果数据流。
+- `gzip_comp_level`: gzip压缩比，压缩级别是1-9，1的压缩级别最低，9的压缩级别最高。压缩级别越高压缩率越大，压缩时间越长。
+- `gzip_disable`: 通过该指令对一些特定的User-Agent不使用压缩功能。
+- `gzip_min_length` :设置允许压缩的页面最小字节数，页面字节数从相应消息头的Content-length中进行获取。
+- `gzip_http_version`: 识别HTTP协议版本，其值可以是1.1.或1.0.
+- `gzip_proxied `: 用于设置启用或禁用从代理服务器上收到相应内容gzip压缩。
+- `gzip_vary`:用于在响应消息头中添加Vary：Accept-Encoding,使代理服务器根据请求头中的Accept-Encoding识别是否启用gzip压缩。
+#### 示例
+```
+http {
+    ...
+    gzip  on;
+    gzip_types  text/plain  application/javascript  text/css;
+    ... 
+}
+```
+- `gzip on`是启用gizp模块，`gzip_types`是用于在客户端访问网页时，对文本、JavaScript 和CSS文件进行压缩输出。
+- 浏览器开发者模式中，可以看到HTTP响应头信息中`Content-Encoding`为gzip类型。
+
+## CentOS下安装Node
+```bash
+# 1、获取资源
+cd /usr/local/src
+wget  https://npm.taobao.org/mirrors/node/v10.13.0/node-v10.13.0.tar.gz
+# 2、解压
+tar xvf node-v10.13.0.tar.gz
+# 3、进入解压后node文件夹开始编译
+cd node-v10.13.0/
+./configure
+make
+
+# 4、安装Node
+make install
+# 5、验证是否正确安装
+node -v
+```
+注意：
+- 第3步编译过程中若报错：` C++ Compiler too old, need g++ 4.9.4 or clang++ 3.4.2 (CXX=g++)`，那需要先升级一下 gcc，编译正常的话请忽略直接跳至第五步开始安装,通过`gcc -v`查看版本
