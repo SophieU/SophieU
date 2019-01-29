@@ -23,12 +23,8 @@ MySQL 是一个关系型数据库管理系统，由瑞典 MySQL AB 公司开发�
 > - [数据库操作](#数据库操作)
 > - [表操作](#表操作)
 > - [记录操作](#记录操作)
-<<<<<<< HEAD
-NjEcoYFlw4)V
-=======
 > - [常用的数据类型](#常用的数据类型)
 
->>>>>>> 6dcdbce0181f93ae4db2a314e11e7841f3e593e4
 ## 安装
 所有平台的 MySQL 下载地址为： [MySQL 下载](https://dev.mysql.com/downloads/mysql/) 。 挑选你需要的 MySQL Community Server 版本及对应的平台。
 - 注意：安装过程我们需要通过开启管理员权限来安装，否则会由于权限不足导致无法安装。
