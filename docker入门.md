@@ -107,8 +107,60 @@ For more examples and ideas, visit:
 难点：nginx是一个持久运行的窗口，前台挂起&后台运行
 - `docker ps`：查看正在运行的docker程序 
 - `docker run -d xxx`：后台运行docker
+- `docker exec [OPTIONS]`:进行容器中运行某一命令，通过`docker exec --help`查看参数命令, -t分配一个伪终端用于操作容器
+- `docker stop ID`：ID为对应窗口ID
+
 
 ```bash
-
+# 1. 下载nginx镜像
+ docker pull hub.c.163.com/library/nginx:latest
+# 2. 查看下载的镜像
+docker images
+# 3. 后台运行docker
+docker run -d hub.c.163.com/library/nginx
+297937c6331b1ed9244969192e8ba49cd1052f2ffeb355fe0f67268185ae779d # 运行成功后的程序ID
+# 4. 进入容器中并运行命令(xxx为容器ID，可以不用写全，写部分它会自动查，bash表示进入命令操作窗口)
+docker exec -it xxx bash
+# 5. 进入容器成功后：
+[root@297937c6331b:/ ] ls
+bin   dev  home  lib32	libx32	mnt  proc  run	 srv  tmp  var
+boot  etc  lib	 lib64	media	opt  root  sbin  sys  usr
+# 6. 查看nginx目录 which nginx
+[root@297937c6331b:/ ]  which nginx
+# 7. 查看当前运行的进程
+[root@297937c6331b:/ ]  ps -ef
+# 8. 退出容器
+[root@297937c6331b:/ ]  exit
+# 9. 停止运行窗口(xxx对应ID)
+docker stop xxx
 
 ```
+- 上面第5位中进入到的窗口其实就是进入到了一个linux系统中，因为nginx是运行在linux系统下的
+- 7步：可能出现ps报错ps command not found，这是因为nginx镜像没有打包ps命令，可能先安装`apt-get update`&&`apt-get install procps`
+
+#### 在浏览器中访问Docker中的Nginx
+- Docker网络模式：network space
+    - Bridge    ：端口映射，会有单独的网卡连接主机网卡,有独立的IP
+    - Host  ：容器不会获得一个独立的network namespace，而是与宿主机共用一个，不会虚拟出单独的网卡
+    - None  : 无网络
+- 默认使用的是bridge模式
+![docker网络模式](https://img-blog.csdn.net/20180605082731554?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM1OTMwMjU5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+- 主要命令：
+    - docker run --help 查看命令参数
+        - 其中`-p`为开放容器某一端口到主机
+        - 其中`-P`开放容器所有端口到该机
+    - `docker run -d -p 8080:80 imagesName`:    其中8080对应主机端口，80开放的是容器端口
+
+```bash
+# 1. 运行并开放容器某一端口
+docker run -d -p 8080:80 hub.c.163.com/library/nginx
+# 2. 查看容器端口是否开放成功
+netstat -na|grep 8080
+# 查看结果
+tcp6       0      0 :::8081                 :::*                    LISTEN  
+```
+- 若上面端口开放成功，通过访问 `公网IP：8080`若浏览器中显示 welcome to nginx表示端口开放成功
+
+## 制作自己的镜像
+
