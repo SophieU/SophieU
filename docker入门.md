@@ -60,9 +60,9 @@ Server: Docker Engine - Community
 
 ## Hello world镜像
 - 命令：
-    - **docker pull[OPTIONS]Name[:TAG]** ——摘取镜像，option:参数，tag版本
+    - **docker pull[OPTIONS] Name[:TAG]** ——摘取镜像，option:参数，tag版本
     - **docker images[OPTIONS][REPOSITORY[:TAG]]**——用于查看本机镜像，options参数，repository仓库地址，tag版本
-    - **docker run [OPTIONS]IMAGE[:TAG][COMMAND][ARG...]**——运行镜像，command运行时要执行的命令，ARG命令所依赖的参数
+    - **docker run [OPTIONS] IMAGE[:TAG][COMMAND][ARG...]**——运行镜像，command运行时要执行的命令，ARG命令所依赖的参数
 
 1. 下载镜像
 ```bash
