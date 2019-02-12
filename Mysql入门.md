@@ -458,8 +458,14 @@ insert into user values('hong',17,'woman');
 - 在windows下操作mysql可以使用Navicat图形化操作工具
 
 - 常用数据库操作
-```
-数据表操作：
+```bash
+# 数据库操作：
+show databases;
+create database myname;
+drop database if exists myname;
+alter database myname newname;
+
+# 数据表操作：
 create table student(
 id int primary key auto_increment,
 name varchar(10),
@@ -471,7 +477,7 @@ desc student;
 drop table student;
 alter table student change column name username varchar(20) after id;
 
-记录操作：
+# 记录操作：
 insert into student(id,username,gender) values (1,'刘备','男');
 insert into student(id,username,gender) values (2,'张飞','男');
 
