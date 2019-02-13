@@ -330,27 +330,7 @@ alter table newusr modify column userage int after name;
 #### 增加
 - 语法：`insert into 表名 (字段列表) values (值列表)`
 - 其中，可以省略字段名列表部分，前提是，字段值必须要一一对应。（数量和顺序都一致）
-<<<<<<< HEAD
 
-## 远程登录云服务器上的mysql
-在服务器上安装了mysql后如果要远程通过本地计算机访问服务器上的mysql，需要以下几步：
-- 工具：mysql workbench，[官网可下载](https://dev.mysql.com/downloads/workbench/)
-- 设置权限
-    - 例如，让用户名为myuser使用密码为mypassword从任何主机连接到mysql服务器
-
-        `GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword' WITH GRANT OPTION;`
-    - 刷新权限`FLUSH   PRIVILEGES;`
--  本地下载安装好workbench后打开
-- workbench默认只有一个连接本地mysql的实例，可以点“+”新增，
-    - 地址:`服务器公网IP`，用户名：`上面设置的用户名`，密码：`上面设置的密码`。 
-=======
-- 标准写法：**将字段名使用反引号 包裹！**
-```bash
-# 完整写法
-insert into user(name,age,gender) values('ming',18,'man');
-# 简单写法
-insert into user values('hong',17,'woman');
-```
 #### 查询
 - 语法 `select 字段列表 from 表名 [where 条件表达式]`
 - 字段列表，应该使用逗号分隔的一个个的字段名。特别的使用*表示所有字段！条件可以被省略，表示默认成立，意味着会检索到所有数据！
@@ -454,6 +434,26 @@ create table test2(
     age int default 10
 );
 ```
+
+## 远程登录云服务器上的mysql
+在服务器上安装了mysql后如果要远程通过本地计算机访问服务器上的mysql，需要以下几步：
+- 工具：mysql workbench，[官网可下载](https://dev.mysql.com/downloads/workbench/)
+- 设置权限
+    - 例如，让用户名为myuser使用密码为mypassword从任何主机连接到mysql服务器
+
+        `GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword' WITH GRANT OPTION;`
+    - 刷新权限`FLUSH   PRIVILEGES;`
+-  本地下载安装好workbench后打开
+- workbench默认只有一个连接本地mysql的实例，可以点“+”新增，
+    - 地址:`服务器公网IP`，用户名：`上面设置的用户名`，密码：`上面设置的密码`。 
+- 标准写法：**将字段名使用反引号 包裹！**
+```bash
+# 完整写法
+insert into user(name,age,gender) values('ming',18,'man');
+# 简单写法
+insert into user values('hong',17,'woman');
+```
+
 ## 总结 
 - 在windows下操作mysql可以使用Navicat图形化操作工具
 
@@ -485,4 +485,3 @@ update student set username='花木兰' where id=2;
 delete from student where id=2;
 delete from student;
 ```
->>>>>>> 6dcdbce0181f93ae4db2a314e11e7841f3e593e4
