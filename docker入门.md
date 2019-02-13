@@ -163,5 +163,3 @@ tcp6       0      0 :::8081                 :::*                    LISTEN
 - 若上面端口开放成功，通过访问 `公网IP：8080`若浏览器中显示 welcome to nginx表示端口开放成功
 
 ## 制作自己的镜像
-
-happy new year
