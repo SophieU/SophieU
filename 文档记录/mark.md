@@ -12,4 +12,5 @@
 
 document.cookie
 
-script标签的type属性有两值：text/javascript , application/javascript 当其值不为其中的一个时，script不会识别也不会执行其内容，但其仍然存在于DOM文档中，可以通过document节点来访问到
+script标签的type属性有两值：text/javascript , application/javascript 当其值不为其中的一个时，script不会识别也不会执行其内容，但其仍然存在于DOM文档中，可以通过document节点来访问到    
+事件属性
