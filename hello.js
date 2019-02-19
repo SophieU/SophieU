@@ -1,1 +1,1 @@
-console.log(void 1)
+undefined NaN '' 0 false null -0
