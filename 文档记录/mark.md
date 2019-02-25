@@ -6,3 +6,4 @@
 5. 服务器通过设置set-cookie来添加cookie发送到浏览器
 6. cookie的属性有：
 - Expires，Max-Age(若同时设置了Expires和Max-Age那Age优先生效 )
+- Domain,Path _____ Domain指定浏览器发出Http请求时，哪些域名要附带这个Cookie，如果没有指定 域名，浏览器默认会将其设为当前URL的一级域名 ， Path是请求路径的开关一部分，头信息里会带上这个Cookie，如path为/根路径，那域名下的所有子文件都能带该Cookie
