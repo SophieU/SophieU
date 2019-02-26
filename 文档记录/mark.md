@@ -3,4 +3,4 @@
 2. 大小4Kb
 3. 自动发送到服务器
 4. document.cookie查看当前网页的cookie
-5. 服务器
+5. 服务器通过设置set-cookie来添加cookie发送到浏览器
