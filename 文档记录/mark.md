@@ -16,3 +16,5 @@ script标签的type属性有两值：text/javascript , application/javascript �
 事件属性
 工作原理
 DOMContentLoaded
+
+浏览器= 渲染引擎 + JS引擎
