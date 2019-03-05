@@ -1,6 +1,1 @@
-var Ob={
-    key1:'hello',
-    key2: 'hehe',
-    key3:'lala'
-}
-console.log(Object.keys(Ob));
+console.log(2**4)无可无不可af
