@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            padding:0;
+            margin:0;
+        }
+        .modal{
+            position: fixed;
+            border: 1px solid #ddd;
+            width:80%;
+            top:50%;
+            left:50%;
+            max-height:800px;
+            overflow:scroll;
+            transform:translate(-50%,-50%);
+            background:#f5f5f5;
+            z-index: 11;
+            display: none;
+            max-height: 300px;
+        }
+        .modal_open {
+            position: fixed;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li>显示原型prototype,隐式原型__proto__</li>
+        <li><button onclick="toggleModal('open')">打开modal</button></li>
+
+        <li>显示原型prototype,隐式原型__proto__</li>
+    </ul>
+    <div class="modal">
+        <h1>这是弹窗内容</h1>
+        <ul>
+            <li>超长弹窗</li>
+            <li>超长弹窗</li>
+            <li>超长弹窗</li>
+            <li>超长弹窗</li>
+            <li>超长弹窗</li>
+            <li>超长弹窗</li>
+            <li>超长弹窗</li>
+            <li>超长弹窗</li>
+            <li>超长弹窗</li>
+            <li>超长弹窗</li>
+        </ul>
+        <div>
+            <button onclick="toggleModal()">关闭</button>
+        </div>
+    </div>
+    <script>
+        var ModalHelper = (function (bodyClass) {
+                var scrollTop;
+                return {
+                    afterOpen: function () {
+                        scrollTop = document.scrollingElement.scrollTop ||
+                            document.documentElement.scrollTop ||
+                            document.body.scrollTop;
+                        document.body.classList.add(bodyClass);
+                        document.body.style.top = -scrollTop + 'px';
+                        console.log(scrollTop)
+                    },
+                    beforeClose: function () {
+                        document.body.classList.remove(bodyClass);
+                        document.scrollingElement.scrollTop = document.documentElement.scrollTop = document.body.scrollTop = scrollTop;
+                    }
+                };
+            })('modal_open');
+
+           
+        function toggleModal(type){
+            var modal = document.querySelector('.modal');
+            if(type==='open'){
+                modal.style.display = 'block';
+           ModalHelper.afterOpen()
+
+            }else{
+                 modal.style.display = 'none';
+             ModalHelper.beforeClose()
+
+            }
+        }
+    </script>
+</body>
+</html>
