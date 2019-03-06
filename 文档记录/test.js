@@ -1,1 +1,1 @@
-console.log(2**4)无可无不可af
+console.log(2**4)
