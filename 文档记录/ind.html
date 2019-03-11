@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>这是一个iframe的内容</h1>
+    <script>
+       var request = window.indexedDB.open('person1');
+        console.log(request)
+       
+        request.onupgradeneeded=function(event){
+            window.db = event.target.result;
+            var objectStore = db.createObjectStore('person1',{keyPath:'id'});
+            objectStore.createIndex('name','name',{unique:false});
+            objectStore.createIndex('age','age',{unique:false});
+            function add(){
+                 var request = window.db.transaction(['person1'],'readwrite')
+                                .objectStore('person1')
+                                 .add({id:1,name:'张三',age:24});
+                request.onsuccess=function(event){
+                    console.log('写入成功')
+                }
+                request.onerror=function(event){
+                    console.log('写入失败')
+                }
+            }
+            add();
+            function read(){
+                var transaction = db.transaction(['person1']);
+                var objectStore = transaction.objectStore('person1');
+                var request = objectStore.get(0);
+
+                request.onerror = function(event) {
+                    console.log('事务失败');
+                };
+
+                request.onsuccess = function( event) {
+                    if (request.result) {
+                        console.log('Name: ' + request.result.name);
+                        console.log('Age: ' + request.result.age);
+                    } else {
+                        console.log('未获得数据记录');
+                    }
+                };
+            }
+            read();
+        }
+
+    </script>
+</body>
+</html>

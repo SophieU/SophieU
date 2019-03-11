@@ -31,50 +31,7 @@
     </style>
 </head>
 <body>
-    <ul>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li>显示原型prototype,隐式原型__proto__</li>
-        <li><button onclick="toggleModal('open')">打开modal</button></li>
-
-        <li>显示原型prototype,隐式原型__proto__</li>
-    </ul>
+   <!-- <iframe src="./ind.html" frameborder="0"></iframe> -->
     <div class="modal">
         <h1>这是弹窗内容</h1>
         <ul>
@@ -94,37 +51,47 @@
         </div>
     </div>
     <script>
-        var ModalHelper = (function (bodyClass) {
-                var scrollTop;
-                return {
-                    afterOpen: function () {
-                        scrollTop = document.scrollingElement.scrollTop ||
-                            document.documentElement.scrollTop ||
-                            document.body.scrollTop;
-                        document.body.classList.add(bodyClass);
-                        document.body.style.top = -scrollTop + 'px';
-                        console.log(scrollTop)
-                    },
-                    beforeClose: function () {
-                        document.body.classList.remove(bodyClass);
-                        document.scrollingElement.scrollTop = document.documentElement.scrollTop = document.body.scrollTop = scrollTop;
+        var request = window.indexedDB.open('person');
+        console.log(request)
+        request.onupgradeneeded=function(event){
+            window.db = event.target.result;
+            var objectStore = db.createObjectStore('person',{keyPath:'id'});
+            objectStore.createIndex('name','name',{unique:false});
+            objectStore.createIndex('age','age',{unique:false});
+            function add(){
+                 var request = window.db.transaction(['person'],'readwrite')
+                                .objectStore('person')
+                                 .add({id:1,name:'张三',age:24});
+                request.onsuccess=function(event){
+                    console.log('写入成功')
+                }
+                request.onerror=function(event){
+                    console.log('写入失败')
+                }
+            }
+            add();
+            function read(){
+                var transaction = db.transaction(['person']);
+                var objectStore = transaction.objectStore('person');
+                var request = objectStore.get(0);
+
+                request.onerror = function(event) {
+                    console.log('事务失败');
+                };
+
+                request.onsuccess = function( event) {
+                    if (request.result) {
+                        console.log('Name: ' + request.result.name);
+                        console.log('Age: ' + request.result.age);
+                    } else {
+                        console.log('未获得数据记录');
                     }
                 };
-            })('modal_open');
-
-           
-        function toggleModal(type){
-            var modal = document.querySelector('.modal');
-            if(type==='open'){
-                modal.style.display = 'block';
-           ModalHelper.afterOpen()
-
-            }else{
-                 modal.style.display = 'none';
-             ModalHelper.beforeClose()
-
             }
+            read();
         }
+
+        
     </script>
 </body>
 </html>
