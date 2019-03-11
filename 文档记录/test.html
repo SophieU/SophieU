@@ -51,47 +51,9 @@
         </div>
     </div>
     <script>
-        var request = window.indexedDB.open('person');
-        console.log(request)
-        request.onupgradeneeded=function(event){
-            window.db = event.target.result;
-            var objectStore = db.createObjectStore('person',{keyPath:'id'});
-            objectStore.createIndex('name','name',{unique:false});
-            objectStore.createIndex('age','age',{unique:false});
-            function add(){
-                 var request = window.db.transaction(['person'],'readwrite')
-                                .objectStore('person')
-                                 .add({id:1,name:'张三',age:24});
-                request.onsuccess=function(event){
-                    console.log('写入成功')
-                }
-                request.onerror=function(event){
-                    console.log('写入失败')
-                }
-            }
-            add();
-            function read(){
-                var transaction = db.transaction(['person']);
-                var objectStore = transaction.objectStore('person');
-                var request = objectStore.get(0);
-
-                request.onerror = function(event) {
-                    console.log('事务失败');
-                };
-
-                request.onsuccess = function( event) {
-                    if (request.result) {
-                        console.log('Name: ' + request.result.name);
-                        console.log('Age: ' + request.result.age);
-                    } else {
-                        console.log('未获得数据记录');
-                    }
-                };
-            }
-            read();
-        }
-
-        
+      var a={a:1} ;
+      var b={a:1};
+      console.log(a==b)
     </script>
 </body>
 </html>
