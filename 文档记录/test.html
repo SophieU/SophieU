@@ -6,54 +6,128 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        html,body{
-            padding:0;
-            margin:0;
+        body{
+            background: #000;
         }
-        .modal{
-            position: fixed;
-            border: 1px solid #ddd;
-            width:80%;
-            top:50%;
-            left:50%;
-            max-height:800px;
-            overflow:scroll;
-            transform:translate(-50%,-50%);
-            background:#f5f5f5;
-            z-index: 11;
-            display: none;
-            max-height: 300px;
+        .flex-wrapper{
+            background: #000;
+            display: flex;
         }
-        .modal_open {
-            position: fixed;
-            height: 100%;
+        .flex-box{
+            display: flex;
+            width:150px;
+            height: 150px;
+            background: #fff;
+            border-radius: 6px;
+            margin: 20px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .flex-item{
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            background: #000;
+        }
+        .box1{
+            justify-content: center;
+            align-items:center;
+        }
+        .box2{
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .box2 .flex-item:last-child{
+            align-self: flex-end;
+        }
+        .box3{
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .box3 .flex-item:nth-child(2){
+            align-self: center;
+        }
+        
+        .box3 .flex-item:nth-child(3){
+            align-self: flex-end;
+        }
+        .box4{
+           flex-direction: column;
+           justify-content: space-between;
+        }
+        
+        .box4 .center-wrap{
+            display: flex;
+            justify-content:space-between;
+        }
+        .box5 .center-wrap:nth-child(2){
+            display: flex;
+            justify-content: center;
         }
     </style>
 </head>
 <body>
-   <!-- <iframe src="./ind.html" frameborder="0"></iframe> -->
-    <div class="modal">
-        <h1>这是弹窗内容</h1>
-        <ul>
-            <li>超长弹窗</li>
-            <li>超长弹窗</li>
-            <li>超长弹窗</li>
-            <li>超长弹窗</li>
-            <li>超长弹窗</li>
-            <li>超长弹窗</li>
-            <li>超长弹窗</li>
-            <li>超长弹窗</li>
-            <li>超长弹窗</li>
-            <li>超长弹窗</li>
-        </ul>
-        <div>
-            <button onclick="toggleModal()">关闭</button>
+    <div class="flex-wrapper">
+        <div class="flex-box box1">
+            <div class="flex-item"></div>
         </div>
+        
+        <div class="flex-box box2">
+            <div class="flex-item"></div>
+            <div class="flex-item"></div>
+        </div>
+        
+        <div class="flex-box box3">
+            <div class="flex-item"></div>
+            <div class="flex-item"></div>
+            <div class="flex-item"></div>
+        </div>
+        
+        <div class="flex-box box4">
+            <div class="center-wrap">
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+            </div>
+            
+            <div class="center-wrap">
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+            </div>
+        </div>
+        <div class="flex-box box4 box5">
+            <div class="center-wrap">
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+            </div>
+            
+            <div class="center-wrap">
+                <div class="flex-item"></div>
+            </div>
+            
+            <div class="center-wrap">
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+            </div>
+        </div>
+        
+        <div class="flex-box box4">
+            <div class="center-wrap">
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+            </div>
+            
+            <div class="center-wrap">
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+            </div>
+            
+            <div class="center-wrap">
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+            </div>
+        </div>
+        
     </div>
-    <script>
-      var a={a:1} ;
-      var b={a:1};
-      console.log(a==b)
-    </script>
 </body>
 </html>
