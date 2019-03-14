@@ -1,0 +1,17 @@
+<div id="myDiv" style="background-color: lightblue;width: 0;height: 20px;line-height: 20px;">0%</div>
+<button id="btn">run</button>
+<script>
+var timer;
+btn.onclick = function(){
+    clearInterval(timer);
+    myDiv.style.width = '0';
+    timer = setInterval(function(){
+        if(parseInt(myDiv.style.width) < 500){
+            myDiv.style.width = parseInt(myDiv.style.width) + 5 + 'px';
+            myDiv.innerHTML =     parseInt(myDiv.style.width)/5 + '%';    
+        }else{
+            clearInterval(timer);
+        }        
+    },16);
+}
+</script>

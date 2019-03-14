@@ -27,6 +27,7 @@
         // 这样就能保证点击按钮后的 interval 间隔内
         // 如果用户还点击了的话，就不会执行 fn 函数
         timeout = setTimeout(() => {
+            console.log(this)
           fn.call(this, arguments);
         }, 1000);
       };
