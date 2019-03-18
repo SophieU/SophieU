@@ -38,4 +38,13 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+let webSocketServer = require('ws').Server;
+let wsServer = new webSocketServer({ port: 3001 });
+wsServer.on('connection', function (socket) {
+  console.log('客户端连接成功')
+  socket.on('message', function (message) {
+    socket.send('服务器回应：' + new Date());
+  })
+})
+
 module.exports = app;

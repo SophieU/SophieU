@@ -1,17 +1,38 @@
-<div id="myDiv" style="background-color: lightblue;width: 0;height: 20px;line-height: 20px;">0%</div>
-<button id="btn">run</button>
-<script>
-var timer;
-btn.onclick = function(){
-    clearInterval(timer);
-    myDiv.style.width = '0';
-    timer = setInterval(function(){
-        if(parseInt(myDiv.style.width) < 500){
-            myDiv.style.width = parseInt(myDiv.style.width) + 5 + 'px';
-            myDiv.innerHTML =     parseInt(myDiv.style.width)/5 + '%';    
-        }else{
-            clearInterval(timer);
-        }        
-    },16);
-}
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="input">
+        <p id="output"></p>
+    </div>
+    <script>
+
+        var input = document.getElementById('input');
+        var p = document.getElementById('output');
+        const newObj = new Proxy({"text":"c"},{
+            get:function(target,key,receiver){
+                console.log(target,key,receiver);
+                return Reflect.get(target, key, receiver);
+            },
+            set:function(target,key,value,receiver){
+               console.log(Reflect.get(target, key, receiver))
+                if(key==='text'){
+                    input.value=value;
+                    output.innerText = value;
+                }
+                return Reflect.set(target, key, value, receiver);
+            }    
+        })
+        input.addEventListener('keyup',function(event){
+            newObj.text=event.target.value;
+        })
+        input.value=newObj.text;
+    </script>
+</body>
+</html>
