@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        let mountains = [
+                { name: "Monte Falco", height: 1658, place: "Parco Foreste Casentinesi" },
+                { name: "Monte Falterona", height: 1654, place: "Parco Foreste Casentinesi" },
+                { name: "Poggio Scali", height: 1520, place: "Parco Foreste Casentinesi" },
+                { name: "Pratomagno", height: 1592, place: "Parco Foreste Casentinesi" },
+                { name: "Monte Amiata", height: 1738, place: "Siena" }
+            ];
+        function createTable(data,el){
+            var tempObj = data[0];
+            var head = createTableHeader(tempObj);
+            var body = createTableBody(data);
+            var table = document.createElement('table');
+            table.appendChild(head);
+            table.appendChild(body);
+            el.appendChild(table);
+        }
+        function createTableHeader(data){
+            var tr = document.createElement('tr');
+            var thead = document.createElement('thead');
+            for(key in data){
+                var th = document.createElement('th');
+                th.innerText=key;
+                tr.appendChild(th);
+            }
+            thead.appendChild(tr);
+            return thead;
+        }
+        function createTableBody(data){
+            var tbody = document.createElement('tbody');
+            for(item of data){
+               var tr = document.createElement('tr');
+               for(prop in item){
+                    var td = document.createElement('td');
+                    td.innerText=item[prop]
+                    tr.appendChild(td);
+               }
+               tbody.appendChild(tr);
+            }
+            return tbody;
+        }
+        var el = document.getElementById('app');
+        createTable(mountains,el)
+    </script>
+</body>
+</html>

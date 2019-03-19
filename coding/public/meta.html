@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-sale=1.0,minimun-scale=1.0,user-scalable=no">
+    <title>Document</title>
+    <style>
+        body,html{
+            padding:0;
+            margin:0;
+            background:#f5f5f5;
+            overflow:auto;
+        }
+        #box{
+            width:6.4rem;
+            height:6.4rem;
+            background:#ff0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="box"></div>
+    </div>
+    <script>
+        (function(doc,win){
+            var resizeEvt = 'orientationchange' in window? 'orientationchange':'resize';
+            var sizeCalc = function(){
+                var clientW = doc.documentElement.clientWidth;
+                if(!clientW) return;
+                var fontSize = 100 * (clientW/750) +'px';
+                doc.documentElement.style.fontSize=fontSize;
+            }
+            win.addEventListener('pageshow',sizeCalc,false);
+            win.addEventListener(resizeEvt,sizeCalc,false);
+            doc.addEventListener('DOMContentLoaded',sizeCalc,false);
+        })(document,window)
+       
+    </script>
+</body>
+</html>

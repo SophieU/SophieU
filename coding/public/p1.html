@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Socket连接</h1>
+        <span id="p1"></span>
+    </div>
+    <script>
+       var p1 = document.getElementById('p1');
+       //1. 创建链接
+       var socket = new WebSocket('ws://localhost:3001')
+    // 2. 发送消息 
+    socket.onopen=function(){
+        console.log('创立连接成功')
+        socket.send('hello u');
+    }
+    // 3. 接收消息 
+    socket.onmessage=function(e){
+        var data = e.data;
+        p1.innerHTML=data;
+        console.log('收到服务器响应')
+    }
+    </script>
+</body>
+</html>
