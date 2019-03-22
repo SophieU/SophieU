@@ -1,1 +1,1 @@
-null undefined boolean string number symbol
+console.log(NaN typeof Number)
