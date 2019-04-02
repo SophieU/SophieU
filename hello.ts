@@ -1,6 +1,7 @@
-function test(x: number, y: number): number{
-    return x + y;
-}
-let test: (x: number, y: number): number = function (x: number, y: number): number{
-    return x + y;
+function getLen(input: string | number): number{
+    if ((<string>input).length) {
+        return (<string>input).length;
+    } else {
+        return input.toString().length;
+    }
 }
