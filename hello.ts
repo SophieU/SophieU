@@ -1,15 +1,7 @@
-let myname: string = 'xadfa';
-let num: number = 123;
-let yes: boolean = true;
-
-interface my {
+let myname: string = 'xadf';
+interface My{
     name: string;
     age: number;
     gender?: string;
     [propName: string]: any;
-}
-
-let tom:my = {
-    name: 'tom',
-    age:25
 }
