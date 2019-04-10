@@ -5,3 +5,9 @@ interface My{
     gender?: string;
     [propName: string]: any;
 }
+let tom: My = {
+    name: 'tom',
+    age: 12,
+    gender: 'man',
+    job:'engener'
+}
