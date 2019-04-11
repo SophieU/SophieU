@@ -1,3 +1,7 @@
-var myname = 'xadfa';
-var num = 123;
-var yes = true;
+var myname = 'xadf';
+var tom = {
+    name: 'tom',
+    age: 12,
+    gender: 'man',
+    job: 'engener'
+};
