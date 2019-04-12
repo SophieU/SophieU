@@ -1,1 +1,1 @@
-let arr:number[]=[1,2,3]
+let arr:any[]=[1,2,3,'4']
