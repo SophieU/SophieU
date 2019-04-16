@@ -5,4 +5,6 @@ let yes: boolean = true;
 interface my {
     name: string;
     age: number;
+    gender?: string;
+    [propName: string]: any;
 }
