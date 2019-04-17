@@ -8,3 +8,8 @@ interface my {
     gender?: string;
     [propName: string]: any;
 }
+
+let tom:my = {
+    name: 'tom',
+    age:25
+}
