@@ -11,24 +11,22 @@
         <h1>WebSocket</h1>
     </div>
     <script>
-        if(window.WebSocket){
-            var ws = new WebSocket('ws://localhost:8001');
-            console.log(ws)
-            ws.onopen=function(e){
-                console.log('连接建立成功')
-                ws.send('what is yourname')
-            }
-            ws.onclose = function(e){
-                console.log('服务器关闭')
-            }
-            ws.onerror=function(){
-                console.log('连接出错')
-            }
-            ws.onmessage = function(e){
-                var msg = "message:"+e.data;
-                console.log(msg)
-            }
-        }    
+       if(window.WebSocket){
+           var ws = new WebSocket('ws://localhost:8001');
+           ws.onopen=function(){
+               console.log('成功打开连接')
+               ws.send('what is your name?')
+           }
+           ws.onmessage = function(e){
+               console.log("msg:"+e.data)
+           }
+           ws.onclose=function(){
+               console.log("关闭连接")
+           }
+           ws.onerror=function(){
+               console.log("连接异常")
+           }
+       }
     </script>
 </body>
 </html>

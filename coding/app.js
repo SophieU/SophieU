@@ -40,6 +40,18 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-
+var websocket = WS.createServer(function (conn) {
+  conn.on('text', function (str) {
+    console.log("msg:"+str)
+    conn.sendText("my name is sophia");
+  })
+  conn.on('close', function (code, reason) {
+    console.log("关闭连接")
+   })
+  conn.on("error", function (code, reason) {
+     console.log("异常关闭")
+     console.log(reason)
+   })
+}).listen(8001)
 
 module.exports = app;
