@@ -40,18 +40,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-let websocket = WS.createServer(function(connect){
-  connect.on('text', function (str) {
-    console.log("message:" + str)
-    connect.sendText("My name is wandou");
-  })
-  connect.on('close', function (code, reason) {
-    console.log("关闭连接")
-  });
-  connect.on('error', function (code, reason) {
-    console.log("异常关闭")
-  });
-}).listen(8001)
-console.log("websocket 建立完毕")
 
 module.exports = app;
