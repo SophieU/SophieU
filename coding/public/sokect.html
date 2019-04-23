@@ -14,6 +14,16 @@
                 console.log('连接建立成功')
                 ws.send('what is yourname')
             }
+            ws.onclose = function(e){
+                console.log('服务器关闭')
+            }
+            ws.onerror=function(){
+                console.log('连接出错')
+            }
+            ws.onmessage = function(e){
+                let mssage = "message:"+e.data;
+                console.log(message)
+            }
         }    
     </script>
 </body>
