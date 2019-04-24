@@ -3,11 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var WS = require('nodejs-websocket');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,13 +40,18 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-let webSocketServer = require('ws').Server;
-let wsServer = new webSocketServer({ port: 3001 });
-wsServer.on('connection', function (socket) {
-  console.log('客户端连接成功')
-  socket.on('message', function (message) {
-    socket.send('服务器回应：' + new Date());
+let websocket = WS.createServer(function(connect){
+  connect.on('text', function (str) {
+    console.log("message:" + str)
+    connect.sendText("My name is wandou");
   })
-})
+  connect.on('close', function (code, reason) {
+    console.log("关闭连接")
+  });
+  connect.on('error', function (code, reason) {
+    console.log("异常关闭")
+  });
+}).listen(8001)
+console.log("websocket 建立完毕")
 
 module.exports = app;
