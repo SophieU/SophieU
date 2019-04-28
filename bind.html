@@ -8,28 +8,6 @@
 </head>
 <body>
     <button id="btn">按钮</button>
-    <script>
-        // 实现bind
-        Function.prototype.newBind = function (target){
-            var self = this; //指向被bind的原函数
-            var args = [].slice.call(arguments,1);
-            var f = function (){
-                var _args = [].slice.call(arguments,0);
-               self.apply(target,args.concat(_args)); 
-            }
-            f.prototype = new self();
-            return f;
-        }
-        function A (a,b){
-           console.log(this);
-           console.log(a,b)
-        }
-        var obj = {
-            name:'hello'
-        }
-        var B = A.newBind(obj);
-        // B('1','2');
-        console.log(new B().constructor) // Func A
-    </script>
+    <script src="./bind.js"></script>
 </body>
 </html>
