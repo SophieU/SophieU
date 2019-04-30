@@ -13,13 +13,11 @@
         Function.prototype.newBind = function (target){
             var self = this; //指向被bind的原函数
             var args = [].slice.call(arguments,1);
-            var temp = function (){};
             var f = function (){
                 var _args = [].slice.call(arguments,0);
                self.apply(target,args.concat(_args)); 
             }
-            temp.prototype = self.prototype;
-            f.prototype = new temp();
+            f.prototype = new self();
             return f;
         }
         function A (a,b){
@@ -30,7 +28,7 @@
             name:'hello'
         }
         var B = A.newBind(obj);
-        B('1','2');
+        // B('1','2');
         console.log(new B().constructor) // Func A
     </script>
 </body>
