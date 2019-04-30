@@ -5,27 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    #test{
+        position: fixed;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: auto;
+    }
+    </style>
 </head>
 <body>
+    <input type="text" id="input">
     <div>
-        <h1>Socket连接</h1>
-        <span id="p1"></span>
+       <ul id="test">
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+           <li>节流函数</li>
+       </ul>
     </div>
     <script>
-       var p1 = document.getElementById('p1');
-       //1. 创建链接
-       var socket = new WebSocket('ws://localhost:3001')
-    // 2. 发送消息 
-    socket.onopen=function(){
-        console.log('创立连接成功')
-        socket.send('hello u');
-    }
-    // 3. 接收消息 
-    socket.onmessage=function(e){
-        var data = e.data;
-        p1.innerHTML=data;
-        console.log('收到服务器响应')
-    }
+     window.onload=function () {
+         var input = document.getElementById('input'),
+            test = document.getElementById('test');
+        input.addEventListener('keyup',debounce(()=>console.log('防抖中。。。')));
+        test.addEventListener('scroll',throttle(()=>console.log('节流中。。。')));
+     }
+   /*
+   * debounce :防抖函数
+     @params {function} fn 触发的回调函数
+   */
+     function debounce(fn){
+         var timer = null;
+         return function (){
+             clearTimeout(timer);
+             timer = setTimeout(()=>{
+                 fn.call(this);
+             },1000)
+         }
+     }
+     /*
+        throttle    节流函数 
+        @params {function}  fn 触发的回调函数
+     */
+     function throttle(fn){
+        var canRun = true;
+        return function(){
+            if(!canRun) return;
+            canRun = false;
+            setTimeout(()=>{
+                fn.call(this);
+                canRun=true;
+            },1000)
+        }
+     }
     </script>
+
 </body>
 </html>
