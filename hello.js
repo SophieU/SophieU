@@ -1,7 +1,3 @@
-var Animal = /** @class */ (function () {
-    function Animal(name) {
-        this.name = name;
-    }
-    return Animal;
-}());
-var a = new Animal('Jack');
+var myname = 'xadfa';
+var num = 123;
+var yes = true;
