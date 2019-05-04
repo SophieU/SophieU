@@ -11,15 +11,27 @@
     <script>
         // 实现bind
         Function.prototype.newBind = function (target){
-            console.log(this)
+            var self = this; //指向被bind的原函数
+            var args = [].slice.call(arguments,1);
+            var temp = function (){};
+            var f = function (){
+                var _args = [].slice.call(arguments,0);
+               self.apply(target,args.concat(_args)); 
+            }
+            temp.prototype = self.prototype;
+            f.prototype = new temp();
+            return f;
         }
-        function A (){
-            console.log('aaa')
+        function A (a,b){
+           console.log(this);
+           console.log(a,b)
         }
         var obj = {
             name:'hello'
         }
-        var B = A.newBind(obj)
+        var B = A.newBind(obj);
+        B('1','2');
+        console.log(new B().constructor) // Func A
     </script>
 </body>
 </html>
