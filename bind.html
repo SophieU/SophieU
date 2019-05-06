@@ -9,33 +9,17 @@
 <body>
     <button id="btn">按钮</button>
     <script>
-        var list = {
-            init:function(){
-                this.name = 'sophia';
-                this.dom = document.getElementById('btn');
-                this.bindEvent();
-            },
-            bindEvent:function(){
-                this.dom.onclick=this.showMsg.bind(this,'hello','world');
-            },
-            showMsg:function(info1,info2,event){
-                console.log(this.name,info1,info2) // sophia,hello,world
-                console.log(event) //事件在执行时，系统默认向函数中传递了事件对象
-            }
+        // 实现bind
+        Function.prototype.newBind = function (target){
+            console.log(this)
         }
-        list.init();
-        
-        function A(){
-            console.log(this.x)
+        function A (){
+            console.log('aaa')
         }
-        var x = 10; //window.x = 10;
         var obj = {
-            x :20
+            name:'hello'
         }
-        var B = A.bind(obj);
-        var b = new B();
-        console.log(b.constructor) // Func A
-        console.log(b)
+        var B = A.newBind(obj)
     </script>
 </body>
 </html>
