@@ -16,10 +16,11 @@
                 this.bindEvent();
             },
             bindEvent:function(){
-                this.dom.onclick=this.showMsg.bind(this);
+                this.dom.onclick=this.showMsg.bind(this,'hello','world');
             },
-            showMsg:function(x,y,event){
-                console.log(this.name) // sophia
+            showMsg:function(info1,info2,event){
+                console.log(this.name,info1,info2) // sophia
+                console.log(event)
             }
         }
         list.init();
@@ -29,7 +30,7 @@
             x:20,
         }
         var showMsg = function(a,b){
-            console.log(this.x,a,b) 
+            console.log(this.x,a,b)  // 20,param a,param b
         }
         var newShow = showMsg.bind(obj,'param a');
         newShow('param b');
