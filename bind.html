@@ -19,21 +19,23 @@
                 this.dom.onclick=this.showMsg.bind(this,'hello','world');
             },
             showMsg:function(info1,info2,event){
-                console.log(this.name,info1,info2) // sophia
-                console.log(event)
+                console.log(this.name,info1,info2) // sophia,hello,world
+                console.log(event) //事件在执行时，系统默认向函数中传递了事件对象
             }
         }
         list.init();
-        // 2、bind参数
-        var x = 10;
+        
+        function A(){
+            console.log(this.x)
+        }
+        var x = 10; //window.x = 10;
         var obj = {
-            x:20,
+            x :20
         }
-        var showMsg = function(a,b){
-            console.log(this.x,a,b)  // 20,param a,param b
-        }
-        var newShow = showMsg.bind(obj,'param a');
-        newShow('param b');
+        var B = A.bind(obj);
+        var b = new B();
+        console.log(b.constructor) // Func A
+        console.log(b)
     </script>
 </body>
 </html>
