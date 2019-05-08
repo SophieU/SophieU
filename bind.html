@@ -16,15 +16,23 @@
                 this.bindEvent();
             },
             bindEvent:function(){
-                this.dom.onclick=this.showMsg.bind(this,'a','b');
+                this.dom.onclick=this.showMsg.bind(this);
             },
             showMsg:function(x,y,event){
                 console.log(this.name) // sophia
-                console.log(x,y) // a b
-                console.log(event) //事件对象，调用时，默认传入且跟随在bind传入参数之后
             }
         }
         list.init();
+        // 2、bind参数
+        var x = 10;
+        var obj = {
+            x:20,
+        }
+        var showMsg = function(a,b){
+            console.log(this.x,a,b) 
+        }
+        var newShow = showMsg.bind(obj,'param a');
+        newShow('param b');
     </script>
 </body>
 </html>
