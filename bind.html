@@ -7,8 +7,24 @@
     <title>Document</title>
 </head>
 <body>
+    <button id="btn">按钮</button>
     <script>
-        
+        var list = {
+            init:function(){
+                this.name = 'sophia';
+                this.dom = document.getElementById('btn');
+                this.bindEvent();
+            },
+            bindEvent:function(){
+                this.dom.onclick=this.showMsg.bind(this,'a','b');
+            },
+            showMsg:function(x,y,event){
+                console.log(this.name) // sophia
+                console.log(x,y) // a b
+                console.log(event) //事件对象，调用时，默认传入且跟随在bind传入参数之后
+            }
+        }
+        list.init();
     </script>
 </body>
 </html>
