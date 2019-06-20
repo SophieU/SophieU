@@ -1,7 +1,7 @@
-class Test<T>{
-    zeroValue: T;
-    add: (x: T, y: T) => T;
+function createArray<T = string>(length: number, value: T): Array<T>{
+    let res: T[] = [];
+    for (let i = 0; i < length; i++){
+        res[i] = value;
+    }
+    return res;
 }
-let test = new Test<number>();
-test.zeroValue = 0;
-test.add = function (x, y) { return x + y;}
