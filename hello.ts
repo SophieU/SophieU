@@ -8,8 +8,10 @@ class Animal{
     set name(value) {
         console.log('setter '+value)
     }
+    static isAnimal(a) {
+        return a instanceof Animal;
+    }
 }
 
 let a = new Animal('Kitty');
-a.name = 'Tom';
-console.log(a.name)
+Animal.isAnimal(a);
