@@ -1,5 +1,5 @@
 class Animal{
-    public name;
+    private name;
     public constructor(name) {
         this.name = name;
     }
