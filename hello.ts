@@ -1,4 +1,7 @@
-function swap<T, U>(tuple: [T, U]): [U, T]{
-    return [tuple[1], tuple[0]];
+interface Lengthwise {
+    length: number;
 }
-swap([7, 'seven']);
+function loggingIdentity<T extends lengthwise>(arg: T): T {
+    console.log(arg.length);
+    return arg;
+}
