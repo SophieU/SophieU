@@ -4,7 +4,9 @@ class Animal{
         this.name = name;
     }
 }
-let a = new Animal('TOm');
-console.log(a.name);
-a.name = 'JAck';
-console.log(a.name)
+class Cat extends Animal{
+    constructor(name) {
+        super(name);
+        console.log(this.name);
+    }
+}
