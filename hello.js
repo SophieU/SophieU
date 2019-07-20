@@ -4,7 +4,4 @@ var Animal = /** @class */ (function () {
     }
     return Animal;
 }());
-var a = new Animal('TOm');
-console.log(a.name);
-a.name = 'JAck';
-console.log(a.name);
+var a = new Animal('Jack');

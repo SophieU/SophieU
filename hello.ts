@@ -1,12 +1,8 @@
-class Animal{
-    protected name;
+abstract class Animal{
+    public name;
     public constructor(name) {
         this.name = name;
     }
+    public abstract sayHi();
 }
-class Cat extends Animal{
-    constructor(name) {
-        super(name);
-        console.log(this.name);
-    }
-}
+let a = new Animal('Jack')
