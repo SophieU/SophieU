@@ -1,10 +1,4 @@
-type Name = string;
-type NameResolver = () => string;
-type NameOrResolver = Name | NameResolver;
-function test(name: NameOrResolver): string{
-    if (typeof name === 'string') {
-        return name;
-    } else {
-        return name();
-    }
+type EventNames = 'click' | 'scroll' | 'mousemove';
+function test(ele: Element, event: EventNames) {
+    
 }
