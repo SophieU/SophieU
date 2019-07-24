@@ -1,8 +1,3 @@
-class Point{
-    x: number;
-    y: number;
+interface SearchFunc {
+    (source: string, subString: string): boolean;
 }
-interface Points3d extends Point{
-    z: number;
-}
-let point3d: Points3d = { x: 1, y: 2, z: 3 };
