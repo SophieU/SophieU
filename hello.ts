@@ -5,4 +5,12 @@ abstract class Animal{
     }
     public abstract sayHi();
 }
-let a = new Animal('Jack')
+class Cat extends Animal{
+    public eat() {
+        console.log(`${this.name} is eatingg`)
+    }
+    public sayHi() {
+        console.log('hehe')
+    }
+}
+let cat = new Cat('Tom');
