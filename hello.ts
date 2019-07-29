@@ -1,9 +1,10 @@
-function reverse(x: number): number;
-function reverse(x: string): string;
-function reverse(x: number | string): number | string { 
-    if (typeof x === 'number') {
-        return Number(x.toString().split('').reverse().join(''))
-    } else if (typeof x === 'string') {
-        return x.toString().split('').reverse().join('')
+type Name = string;
+type NameResolver = () => string;
+type NameOrResolver = Name | NameResolver;
+function test(name: NameOrResolver): string{
+    if (typeof name === 'string') {
+        return name;
+    } else {
+        return name();
     }
 }

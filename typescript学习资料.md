@@ -22,3 +22,30 @@ let tom:Person={
     age:25
 }
 ```
+#### 5. 数组的类型
+- 【类型+方括号】表示法; `let fibonacci:number[]=[1,1,2,3,5]`
+#### 6. 函数的类型
+- 一个函数有输入和输出，要在typescript中对其进行约束，需要把输入和输出都考虑到
+```js
+function test(x:number,y:number):number{
+    return x + y;
+}
+let test2:(x:number,y:number)=>number:function(x:number,y:number):number{
+    return x+y;
+}
+```
+#### 7. 类型断言Type Assertion用来手动指定一个值的类型
+- 语法：`<类型>值` 或 `值 as 类型`
+```js
+function getLen(input:string|number):number{
+    if((<string>input).length){
+        return (<string>input).length;
+    }else{
+        return something.toString().length;
+    }
+}
+```
+#### 8. 声明文件
+- 当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全，接口提示等功能
+#### 9. 类型别名
+- `type Alias = string`  关键字`type`

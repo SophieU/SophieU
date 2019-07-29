@@ -1,8 +1,5 @@
-function reverse(x) {
-    if (typeof x === 'number') {
-        return Number(x.toString().split('').reverse().join(''));
-    }
-    else if (typeof x === 'string') {
-        return x.toString().split('').reverse().join('');
-    }
-}
+var tom = {
+    name: 'tom',
+    age: 25,
+    gender: 'man'
+};
