@@ -3,5 +3,4 @@ interface Alarm {
 }
 interface LightableAlaram extends Alram{
     lightOn();
-    lightOff();
 }
