@@ -1,12 +1,9 @@
-class Animal {
-    name: string;
-    constructor(name: string) {
-        this.name = name;
-    }
-    sayHi(): string{
-        return `My name is ${this.name}`;
+interface Alarm {
+    alert();
+}
+class Door {}
+class SecurityDoor extends Door implements Alarm{
+    alert() { 
+        console.log('lelelelele')
     }
 }
-
-let a: Animal = new Animal('Jack');
-console.log(a.sayHi())
