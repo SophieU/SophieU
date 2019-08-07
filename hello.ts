@@ -1,9 +1,18 @@
 interface Alarm {
-    alert();
+    alert()
 }
-class Door {}
-class SecurityDoor extends Door implements Alarm{
-    alert() { 
-        console.log('lelelelele')
+interface Light {
+    lightOn();
+    lightOff();
+}
+class Car implements Alarm, Light{
+    alert() {
+        console.log('lalala')
+    }
+    lightOn() {
+        console.log('car light on')
+    }
+    lightOff() {
+        console.log('car light off')
     }
 }
