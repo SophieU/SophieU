@@ -1,16 +1,12 @@
-abstract class Animal{
-    public name;
-    public constructor(name) {
+class Animal {
+    name: string;
+    constructor(name: string) {
         this.name = name;
     }
-    public abstract sayHi();
-}
-class Cat extends Animal{
-    public eat() {
-        console.log(`${this.name} is eatingg`)
-    }
-    public sayHi() {
-        console.log('hehe')
+    sayHi(): string{
+        return `My name is ${this.name}`;
     }
 }
-let cat = new Cat('Tom');
+
+let a: Animal = new Animal('Jack');
+console.log(a.sayHi())
