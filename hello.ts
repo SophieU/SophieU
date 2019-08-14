@@ -1,5 +1,3 @@
-function sayHello(person: string) { 
-    return 'Hello ' + person;
+interface SearchFunc {
+    (source: string, subString: string): boolean;
 }
-let user = 'Tom';
-console.log(sayHello(user))
