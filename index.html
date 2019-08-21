@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="https://cdn.bootcss.com/jquery/3.4.1/core.js"></script>
+    <script src="https://cdn.bootcss.com/lodash.js/4.17.15/lodash.min.js"></script>
 </head>
 
 <body>
-    <div id="test">
-        123
-    </div>
-    <script src="./hello.js"></script>
+   <script type="text/javascript">
+        var obj = {
+            name:'test',
+            age:undefined,
+            type:Symbol('test'),
+            methods:function(){}
+        }
+        var o1 = JSON.parse(JSON.stringify(obj));
+        var o2 = _.cloneDeep(obj)
+        console.log(o1)
+        console.log(o2)
+    </script>
 </body>
 </html>
