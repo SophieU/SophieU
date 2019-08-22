@@ -6,17 +6,27 @@
 </head>
 <body>
 <div id="output">0</div>
-<button onclick="add()">add</button>
+<button id="btn">add</button>
+<script src="./hello.js"></script>
 <script>
-         var timer;
-   function add(){
-       var val = document.querySelector('#output').innerText;
-       if(timer){
+    const debounce2 = (func,wait=500)=>{
+        let timer = 0;
+        return function(){
+            if(timer) clearTimeout(timer);
             timer=setTimeout(function(){
-                val = val*1+1;
-            },1000)
-       }
-   }
+                console.log(1)
+                func.apply(arguments)
+            },wait)
+        }
+    }
+   
+    var btn = document.querySelector('#btn');
+    var output = document.querySelector('#output');
+
+    btn.addEventListener('click',debounce2(function(){
+        var val = output.innerHTML;
+        output.innerHTML=val*1 +1;
+    },2000),false)
 </script>
 </body>
 </html>
