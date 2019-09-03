@@ -1,2 +1,3 @@
-import a from './hello.js'
-console.log(a)
+function create() {
+    let obj = new Object();
+}
