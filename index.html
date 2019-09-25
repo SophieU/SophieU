@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content" style="height:150px;line-height:150px;text-align:center; color: #fff;background-color:#ccc;font-size:80px;"></div>
+    
+    <script>
+        let num = 1;
+        let content = document.getElementById('content');
+
+        function count() {
+            content.innerHTML = num++;
+        };
+        content.onmousemove = throttle(count,1000);
+
+        function debounce(func,wait,immediate){
+            let timer,context,args
+            const later = ()=>setTimeout(()=>{
+                timer= null
+                if(!immediate){
+                    func.apply(context,args)
+                    context=args=null
+                }
+            },wait)
+            return function(...params){
+                if(!timer){
+                    if(immediate){
+                        timer = later()
+                        func.apply(this,params)
+                    }else{
+                        context=this
+                        args=params
+                    }
+                }else{
+                    clearTimeout(timer)
+                    timer = later()
+                }
+            }
+        }
+
+        function throttle(func,wait=50){
+            let previous = 0
+            return function(){
+                let now = new Date()
+                let args = arguments
+                if(now-previous>wait){
+                    func.apply(this,args)
+                    previous=now
+                }
+            }            
+
+        }
+    </script>
+</body>
+</html>
