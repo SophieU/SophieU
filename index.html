@@ -5,56 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .test{
+            height: 300px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .box{
+            flex: 30% 0 0;
+            background: #dcccdc;
+        }
+    </style>
 </head>
 <body>
-    <div id="content" style="height:150px;line-height:150px;text-align:center; color: #fff;background-color:#ccc;font-size:80px;"></div>
-    
+    <video width="500" height="500" controls src="http://hls01open.ys7.com/openlive/accf2cdf56d5426b85c08101d4319a26.m3u8"></video>
+    <div class="test">
+        <div class="box">
+            <h1>这是内容</h1>
+            <h1>这是内容</h1>
+            <h1>这是内容</h1>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
     <script>
-        let num = 1;
-        let content = document.getElementById('content');
-
-        function count() {
-            content.innerHTML = num++;
-        };
-        content.onmousemove = throttle(count,1000);
-
-        function debounce(func,wait,immediate){
-            let timer,context,args
-            const later = ()=>setTimeout(()=>{
-                timer= null
-                if(!immediate){
-                    func.apply(context,args)
-                    context=args=null
-                }
-            },wait)
-            return function(...params){
-                if(!timer){
-                    if(immediate){
-                        timer = later()
-                        func.apply(this,params)
-                    }else{
-                        context=this
-                        args=params
-                    }
-                }else{
-                    clearTimeout(timer)
-                    timer = later()
-                }
-            }
-        }
-
-        function throttle(func,wait=50){
-            let previous = 0
-            return function(){
-                let now = new Date()
-                let args = arguments
-                if(now-previous>wait){
-                    func.apply(this,args)
-                    previous=now
-                }
-            }            
-
-        }
+       const deepFlat = arr=>arr.reduce((a,b)=>a.concat(Array.isArray(b)?deepFlat(b):b),[])
+       let arr = [1,4,[2,3],[5,6]]
+       console.log(deepFlat(arr))
     </script>
 </body>
 </html>

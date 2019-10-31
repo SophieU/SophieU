@@ -1,8 +1,11 @@
-const delay = timeout=>new Promise(resolve=>setTimeout(resolve,timeout))
+setTimeout(function () {
+    console.log('setTimeout')
+})
+new Promise(function (resolve) {
+    console.log('promise')
+    resolve()
+}).then(function () {
+    console.log('then')
+})
 
-async function f() {
-    await delay(1000);
-    await delay(2000);
-    return 'done'
-}
-f().then(v=>console.log(v))
+console.log('console')
