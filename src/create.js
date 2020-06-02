@@ -67,7 +67,6 @@ inquirer
             
             fs.writeFile(`${projectName}/package.json`,JSON.stringify(result), 'utf-8', err=>{
                 if(err) console.log(chalk.red(err))
-                console.log('s')
                 console.log('VP8  SFU webrtc  ')
                 console.log('mysql   redis  nginx apollo')
             })
