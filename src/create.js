@@ -71,7 +71,6 @@ inquirer
                 console.log(' java   ')
                 console.log('react antd dva electron ')
                 console.log('VP8  SFU webrtc  ')
-                console.log('     ')
                 console.log('mysql   redis  nginx apollo')
             })
         })
