@@ -72,7 +72,7 @@ inquirer
                 console.log(' java      ')
                 console.log('react antd dva electron ')
                 console.log('VP8  SFU webrtc  ')
-                console.log('  Harbor Prometheus  ')
+                console.log('  Harbor   ')
                 console.log('mysql   redis  nginx apollo')
             })
         })
