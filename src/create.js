@@ -73,7 +73,7 @@ inquirer
                 console.log('react antd dva electron ')
                 console.log('VP8  SFU webrtc  ')
                 console.log('  Harbor Prometheus  ')
-                console.log('mysql treafik  redis  nginx apollo')
+                console.log('mysql   redis  nginx apollo')
             })
         })
     })
