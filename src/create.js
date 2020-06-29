@@ -69,7 +69,7 @@ inquirer
                 if(err) console.log(chalk.red(err))
                 console.log('\n')
                 console.log(chalk.green('渲染成功 k8s umi react fiddler ant-design flutter'))
-                console.log('nginx java ios    fronzenUI ')
+                console.log('nginx java ios     ')
                 console.log('react antd dva electron ')
                 console.log('VP8  SFU webrtc  ')
                 console.log('  Harbor Prometheus  ')
