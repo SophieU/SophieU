@@ -74,7 +74,7 @@ inquirer
                 console.log('RBAC')
                 console.log('ELK mcu')
                 console.log('VP8 H264 SFU webrtc SDP m3u8')
-                console.log('emqx rabbitMQ Harbor Prometheus hlem')
+                console.log('emqx rabbitMQ Harbor Prometheus hlem k8s')
             })
         })
     })
