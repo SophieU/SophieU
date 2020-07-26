@@ -72,7 +72,7 @@ inquirer
                 console.log('nginx java ios  center MUI fronzenUI flutter')
                 console.log('react antd dva electron ')
                 console.log('VP8 H264 SFU webrtc  ')
-                console.log(' rabbitMQ Harbor Prometheus hlem ')
+                console.log(' rabbitMQ Harbor Prometheus  ')
                 console.log('mysql treafik  redis etcd nginx apollo')
             })
         })
