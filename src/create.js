@@ -71,7 +71,7 @@ inquirer
                 console.log(chalk.green('渲染成功 k8s umi react fiddler ant-design flutter'))
                 console.log('nginx java ios  center MUI fronzenUI flutter')
                 console.log('react antd dva electron ')
-                console.log('VP8 H264 SFU webrtc  ')
+                console.log('VP8  SFU webrtc  ')
                 console.log('  Harbor Prometheus  ')
                 console.log('mysql treafik  redis  nginx apollo')
             })
