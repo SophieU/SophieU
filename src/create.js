@@ -73,7 +73,7 @@ inquirer
                 console.log('react antd dva electron nodeaddon')
                 console.log('RBAC')
                 console.log('ELK')
-                console.log('VP8 H264 SFU webrtc SDP')
+                console.log('VP8 H264 SFU webrtc SDP m3u8')
             })
         })
     })
