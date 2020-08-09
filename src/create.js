@@ -73,6 +73,7 @@ inquirer
                 console.log('react antd dva electron nodeaddon')
                 console.log('RBAC')
                 console.log('ELK')
+                console.log('VP8')
             })
         })
     })
