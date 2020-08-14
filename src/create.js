@@ -70,7 +70,7 @@ inquirer
                 console.log('\n')
                 console.log(chalk.green('渲染成功 k8s umi react fiddler ant-design flutter'))
                 console.log('nginx java ios android center MUI fronzenUI flutter')
-                console.log('react antd')
+                console.log('react antd dva ')
             })
         })
     })
