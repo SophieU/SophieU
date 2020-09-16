@@ -64,6 +64,7 @@ inquirer
             }
             let result = template(metaData)
             console.log(result)
+            
             fs.writeFile(`${projectName}/package.json`,JSON.stringify(result), 'utf-8', err=>{
                 if(err) console.log(chalk.red(err))
                 console.log('\n')
