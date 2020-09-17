@@ -68,7 +68,6 @@ inquirer
                 if(err) console.log(chalk.red(err))
                 console.log('\n')
                 console.log(chalk.green('渲染成功'))
-                console.log(projectName)
             })
         })
     })
