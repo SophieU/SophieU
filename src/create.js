@@ -64,7 +64,9 @@ inquirer
             }
             let result = template(metaData)
             console.log(result)
-            fs.writeFile(`${projectName}/package.json`,JSON.stringify(result), 'utf-8')
+            fs.writeFile(`${projectName}/package.json`,JSON.stringify(result), 'utf-8', err=>{
+                
+            })
         })
     })
 
