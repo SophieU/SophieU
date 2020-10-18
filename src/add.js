@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-/* 添加模板信息 */
 const inquirer = require('inquirer')
 const chalk = require('chalk')
 const fs = require('fs')
