@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 const download = require('download-git-repo')
 const template = require('../template.json')
 const ora = require('ora') // loading效果
