@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const tplObj = require('../template.json')
 const chalk = require('chalk')
 
