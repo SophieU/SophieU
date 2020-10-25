@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /* 删除模板 */
 
 const inquirer = require('inquirer')
