@@ -60,6 +60,7 @@ inquirer
                 description: 'Project description'
             }
             let result = template(metaData)
+            console.log(result)
         })
     })
 
