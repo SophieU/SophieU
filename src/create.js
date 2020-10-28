@@ -57,7 +57,7 @@ inquirer
             let metaData = {
                 name: projectName,
                 author: gitUser.name,
-                description: ''
+                description: 'Project description'
             }
             let result = template(metaData)
         })
