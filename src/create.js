@@ -53,9 +53,10 @@ inquirer
             spinner.succeed()
             let packageJSON = require(`${projectName}/package.json`)
             let template = handlebars.compile(packageJSON)
+            let gitUser = getUser()
             let metaData = {
                 name: projectName,
-                author: '',
+                author: gitUser.name,
                 description: ''
             }
             let result = template(metaData)
