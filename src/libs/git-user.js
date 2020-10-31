@@ -8,6 +8,5 @@ module.exports = ()=>{
         name = exec('git config --get user.name')
         email = exec('git config --get user.email')
     }catch(e){}
-
     return {name: name||'', email: email||''}
 }
