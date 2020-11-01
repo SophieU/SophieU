@@ -10,4 +10,5 @@ module.exports = ()=>{
     }catch(e){}
 
     name = name 
+    email = email
 }
