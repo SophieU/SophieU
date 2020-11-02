@@ -9,4 +9,5 @@ module.exports = ()=>{
         email = exec('git config --get user.email')
     }catch(e){}
 
+    name = name 
 }
