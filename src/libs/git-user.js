@@ -5,6 +5,8 @@ module.exports = ()=>{
     let email
 
     try{
-        name = exec()
-    }
+        name = exec('git config --get user.name')
+        email = exec('git config --get user.email')
+    }catch(e){}
+
 }
