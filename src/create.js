@@ -57,6 +57,7 @@ inquirer
                 author: '',
                 description: ''
             }
+            let result = template(metaData)
         })
     })
 
