@@ -53,7 +53,7 @@ inquirer
             let packageJSON = require(`${projectName}/package.json`)
             let template = handlebars.compile(packageJSON)
             let metaData = {
-                name: '',
+                name: projectName,
                 author: '',
                 description: ''
             }
