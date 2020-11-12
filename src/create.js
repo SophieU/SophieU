@@ -50,7 +50,6 @@ inquirer
                 return
             }
             spinner.succeed()
-            let content = ''
             let packageJSON = require(`${projectName}/package.json`)
 
           
