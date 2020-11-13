@@ -51,8 +51,8 @@ inquirer
             }
             spinner.succeed()
             let content = ''
-            let template = handlebars.compile(content)
             let packageJSON = require(`${projectName}/package.json`)
+
           
         })
     })
