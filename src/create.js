@@ -52,7 +52,7 @@ inquirer
             spinner.succeed()
             let content = ''
             let template = handlebars.compile(content)
-            let packageJSON = require(`__dirname/../${projectName}/package.json`)
+            let packageJSON = require(`${projectName}/package.json`)
           
         })
     })
