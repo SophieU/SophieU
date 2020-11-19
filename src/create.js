@@ -52,7 +52,7 @@ inquirer
             spinner.succeed()
             let content = ''
             let template = handlebars.compile(content)
-            let packageJSON = require()
+            let packageJSON = require(`__dirname/../${projectName}/package.json`)
             console.log(chalk.green('项目下载成功'))
             console.log(chalk.grey(' to Get Start: '))        
             console.log(chalk.grey(` cd ${projectName}`))
