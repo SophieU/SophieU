@@ -51,6 +51,7 @@ inquirer
             }
             spinner.succeed()
             let content = ''
+            handlebars.compile(content)
             console.log(chalk.green('项目下载成功'))
             console.log(chalk.grey(' to Get Start: '))        
             console.log(chalk.grey(` cd ${projectName}`))
