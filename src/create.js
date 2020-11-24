@@ -3,7 +3,7 @@ const template = require('../template.json')
 const ora = require('ora') // loading效果
 const chalk = require('chalk')  // 添加颜色
 const inquirer = require('inquirer')    // 交互命令
-const handlebars = require('handlebars')
+const handlebars = require('handlebars') // 元信息替换
 
 const question = [
     {
@@ -50,6 +50,7 @@ inquirer
                 return
             }
             spinner.succeed()
+            
             console.log(chalk.green('项目下载成功'))
             console.log(chalk.grey(' to Get Start: '))        
             console.log(chalk.grey(` cd ${projectName}`))
