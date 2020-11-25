@@ -3,6 +3,7 @@ const template = require('../template.json')
 const ora = require('ora') // loading效果
 const chalk = require('chalk')  // 添加颜色
 const inquirer = require('inquirer')    // 交互命令
+const handlebars = require('handlebars')
 
 const question = [
     {
