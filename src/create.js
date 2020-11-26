@@ -1,8 +1,8 @@
 const download = require('download-git-repo')
 const template = require('../template.json')
-const ora = require('ora')
-const chalk = require('chalk')
-const inquirer = require('inquirer')
+const ora = require('ora') // loading效果
+const chalk = require('chalk')  // 添加颜色
+const inquirer = require('inquirer')    // 交互命令
 
 const question = [
     {
