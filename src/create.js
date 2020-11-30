@@ -41,9 +41,6 @@ inquirer
         let {templateName, projectName} = answers
         const spinner = ora('项目模板下载中...')
         spinner.start()
-
-    })
-
 // download(`direct:${tempUrl}`,projectName,{clone:true}, err=>{
 //     if(err) {
 //         spinner.fail()
@@ -55,3 +52,6 @@ inquirer
 //     console.log(chalk.grey(' to Get Start: '))        
 //     console.log(chalk.grey(` cd ${projectName}`))
 // })
+    })
+
+
