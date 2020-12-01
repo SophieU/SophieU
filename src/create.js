@@ -40,10 +40,10 @@ inquirer
     .then(answers=>{
         let {templateName, projectName} = answers
         const spinner = ora('项目模板下载中...')
+        spinner.start()
 
     })
 
-// spinner.start()
 // download(`direct:${tempUrl}`,projectName,{clone:true}, err=>{
 //     if(err) {
 //         spinner.fail()
