@@ -39,9 +39,9 @@ inquirer
     .prompt(question)
     .then(answers=>{
         let {templateName, projectName} = answers
-        console.log(projectName)
+        const spinner = ora('项目模板下载中...')
+
     })
-const spinner = ora('项目模板下载中...')
 
 // spinner.start()
 // download(`direct:${tempUrl}`,projectName,{clone:true}, err=>{
