@@ -43,17 +43,15 @@ inquirer
     })
 const spinner = ora('项目模板下载中...')
 
-spinner.start()
-download(`direct:${tempUrl}`,projectName,{clone:true}, err=>{
-    if(err) {
-        spinner.fail()
-        console.log(chalk.red(`项目生成失败：${err}`))
-        return
-    }
-    spinner.succeed()
-    console.log(chalk.green('项目下载成功'))
-    console.log(chalk.grey(' to Get Start: '))        
-    console.log(chalk.grey(` cd ${projectName}`))
-})
-
-module.exports=create
+// spinner.start()
+// download(`direct:${tempUrl}`,projectName,{clone:true}, err=>{
+//     if(err) {
+//         spinner.fail()
+//         console.log(chalk.red(`项目生成失败：${err}`))
+//         return
+//     }
+//     spinner.succeed()
+//     console.log(chalk.green('项目下载成功'))
+//     console.log(chalk.grey(' to Get Start: '))        
+//     console.log(chalk.grey(` cd ${projectName}`))
+// })
