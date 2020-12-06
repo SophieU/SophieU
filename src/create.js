@@ -31,6 +31,7 @@ const question = [
                 console.log(chalk.yellow('项目名称不能为空'))
                 return
             }
+            return true
         }
     }
 ]
