@@ -27,7 +27,11 @@ const question = [
         type: 'input',
         message: '请输入项目名称',
         validate(val){
-            
+            if(val===''){
+                console.log(chalk.yellow('项目名称不能为空'))
+                console.log(chalk.grey('请通过my-cli list命令查看可用模板'))
+                return
+            }
         }
     }
 ]
