@@ -25,7 +25,10 @@ const question = [
     {
         name: 'projectName',
         type: 'input',
-     message: '请输入项目名称',
+        message: '请输入项目名称',
+        validate(val){
+            
+        }
     }
 ]
 inquirer
