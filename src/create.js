@@ -22,8 +22,11 @@ const question = [
              }
          }
     },
-    {name: 'projectName',
-     message: '请输入项目名称'}
+    {
+        name: 'projectName',
+        type: 'input',
+     message: '请输入项目名称',
+    }
 ]
 inquirer
     .prompt(question)
