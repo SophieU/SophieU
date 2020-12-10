@@ -17,10 +17,13 @@ const question = [
              }else if(!template[val]){
                  console.log(chalk.red('无此模板，请确认模板名称后重试'))
                  return
+             }else{
+                 return true
              }
          }
     },
-    {name: 'projectName', message: '请输入项目名称'}
+    {name: 'projectName',
+     message: '请输入项目名称'}
 ]
 inquirer
     .prompt(question)
