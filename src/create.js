@@ -14,6 +14,9 @@ const question = [
                  console.log(chalk.yellow('模板名称不能为空'))
                  console.log(chalk.grey('请通过my-cli list命令查看可用模板'))
                  return
+             }else if(!template[val]){
+                 console.log(chalk.red('无此模板，请确认模板名称后重试'))
+                 return
              }
          }
     },
