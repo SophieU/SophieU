@@ -11,7 +11,8 @@ const question = [
          message: '请输入模板名称',
          validate(val){
              if(val===''){
-                 console.log(chalk.yellow('模板名称不能为空，请通过my-cli list查看'))
+                 console.log(chalk.yellow('模板名称不能为空'))
+                 console.log(chalk.grey('请通过my-cli list命令查看可用模板'))
              }
          }
     },
