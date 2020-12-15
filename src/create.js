@@ -9,8 +9,10 @@ const question = [
         name: 'templateName',
         type: 'input',
          message: '请输入模板名称',
-         validate(){
-             
+         validate(val){
+             if(val===''){
+                 
+             }
          }
     },
     {name: 'projectName', message: '请输入项目名称'}
