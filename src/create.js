@@ -7,7 +7,10 @@ const inquirer = require('inquirer')
 const question = [
     {
         name: 'templateName',
-         message: '请输入模板名称'
+         message: '请输入模板名称',
+         validate(){
+             
+         }
     },
     {name: 'projectName', message: '请输入项目名称'}
 ]
