@@ -5,13 +5,17 @@ const chalk = require('chalk')
 const inquirer = require('inquirer')
 
 const question = [
-    {name: 'templateName', message: '请输入模板名称'},
+    {
+        name: 'templateName',
+         message: '请输入模板名称'
+    },
     {name: 'projectName', message: '请输入项目名称'}
 ]
 inquirer
     .prompt(question)
     .then(answers=>{
         let {templateName, projectName} = answers
+
     })
 const spinner = ora('项目模板下载中...')
 
