@@ -11,7 +11,7 @@ const question = [
 inquirer
     .prompt(question)
     .then(answers=>{
-        
+        let {templateName, projectName} = answers
     })
 const spinner = ora('项目模板下载中...')
 
