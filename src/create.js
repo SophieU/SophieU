@@ -9,7 +9,10 @@ const question = [
     {name: 'projectName', message: '请输入项目名称'}
 ]
 inquirer
-    .prompt()
+    .prompt(question)
+    .then(answers=>{
+        
+    })
 const spinner = ora('项目模板下载中...')
 
 spinner.start()
