@@ -2,6 +2,11 @@ const download = require('download-git-repo')
 const template = require('../template.json')
 const ora = require('ora')
 const chalk = require('chalk')
+const inquirer = require('inquirer')
+
+const question = [
+    {name: 'templateName', message: '请输入模板名称'}
+]
 
 const spinner = ora('项目模板下载中...')
 
