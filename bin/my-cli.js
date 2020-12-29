@@ -7,7 +7,7 @@ program.version(config.version, "-V, --version")
 
 // 定义使用方法
 program
-    .command("create <模板名称> <项目名称>")
+    .command("create")
     .description("创建一个模板项目")
     .action( () =>{
         require("../src/create")
