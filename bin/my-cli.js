@@ -9,18 +9,8 @@ program.version(config.version, "-V, --version")
 program
     .command("create <模板名称> <项目名称>")
     .description("创建一个模板项目")
-    .action( (templateName, projectName) =>{
-        if(!templateName){
-            console.log(chalk.red('请输入模板名称'))
-            console.log(chalk.yellow('通过my-cli list 命令查看当前可用模板'))
-            return
-        }
-        if(!projectName){
-            console.log(chalk.red('项目名称不能为空'))
-            return 
-        }
-        console.log(templateName,projectName)
-        require("../src/create")(templateName,projectName)
+    .action( () =>{
+        require("../src/create")
     })
 
 program
