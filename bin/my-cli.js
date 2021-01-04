@@ -7,7 +7,7 @@ program.version(config.version, "-V, --version")
 
 // 定义使用方法
 program
-    .command("create <template-name> <project-name>")
+    .command("create <模板名称> <项目名称>")
     .description("创建一个模板项目")
     .action( (templateName, projectName) =>{
         if(!templateName){
