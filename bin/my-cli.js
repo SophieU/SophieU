@@ -7,11 +7,9 @@ program.version(config.version, "-V, --version")
 
 // 定义使用方法
 program
-    .command("create <template-name> <project-name>")
+    .command("create <template-name> [project-name]")
     .description("创建一个模板项目")
-    .action( params =>{
-        let templateName = params[1]
-        let projectName = params[2]
+    .action( (templateName, projectName) =>{
         if(!templateName){
             console.log(chalk.red('请输入模板名称'))
             console.log(chalk.yellow('通过my-cli list 命令查看当前可用模板'))
