@@ -17,7 +17,7 @@ const create = function(templateName, projectName){
         spinner.succeed()
         console.log(chalk.green('项目下载成功'))
         console.log(chalk.grey('\n to Get Start: '))        
-        console.log(chalk.grey(`\n cd ${}`))
+        console.log(chalk.grey(`\n cd ${projectName} \n`))
     })
 }
 module.exports=create

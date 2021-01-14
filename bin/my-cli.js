@@ -7,7 +7,9 @@ program.version(config.version, "-V, --version")
 
 // 定义使用方法
 program
-    .command("create <template-name> [project-name]")
+    .allowUnknownOption(true)
+    .allowExcessArguments(true)
+    .command("create <template-name> <project-name>")
     .description("创建一个模板项目")
     .action( params =>{
         let templateName = params[1]
