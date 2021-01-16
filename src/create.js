@@ -14,6 +14,9 @@ const create = function(templateName, projectName){
             console.log(chalk.red(`项目生成失败：${err}`))
             return
         }
+        spinner.succeed()
+        console.log(chalk.green('项目下载成功'))
+        
     })
 }
 module.exports=create
