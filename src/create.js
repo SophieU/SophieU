@@ -12,6 +12,7 @@ const create = function(templateName, projectName){
         if(err) {
             spinner.fail()
             console.log(chalk.red(`项目生成失败：${err}`))
+            return
         }
     })
 }
