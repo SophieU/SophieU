@@ -8,7 +8,7 @@ const spinner = ora('项目模板下载中...')
 const create = function(templateName, projectName){
     const tempUrl = template[templateName]
     spinner.start()
-    download(`direct:${tempUrl}`,`${projectName}`,{clone:true}, err=>{
+    download(`direct:${tempUrl}`,projectName,{clone:true}, err=>{
         if(err){
             console.log(err)
         }
