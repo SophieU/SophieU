@@ -4,13 +4,13 @@ const ora = require('ora')
 const chalk = require('chalk')
 const program = require('commander')
 
-const tempUrl = template.admin.url
-const create = function(){
-    
-    download(`direct:${tempUrl}`,'./tmp',{clone:true}, err=>{
+const create = function(templateName, projectName){
+    const tempUrl = template[templateName]
+    download(`direct:${tempUrl}`,`${projectName}`,{clone:true}, err=>{
         console.log('回调函数')
         if(err){
             console.log(err)
         }
     })
 }
+module.exports=create

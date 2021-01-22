@@ -21,7 +21,7 @@ program
             console.log(chalk.red('项目名称不能为空'))
             return 
         }
-        // require("../src/create")
+        require("../src/create")(templateName,projectName)
     })
 
 program
