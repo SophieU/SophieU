@@ -5,10 +5,12 @@ const chalk = require('chalk')
 const program = require('commander')
 
 const tempUrl = template.admin.url
-
-download(`direct:${tempUrl}`,'./tmp',{clone:true}, err=>{
-    console.log('回调函数')
-    if(err){
-        console.log(err)
-    }
-})
+const create = function(){
+    
+    download(`direct:${tempUrl}`,'./tmp',{clone:true}, err=>{
+        console.log('回调函数')
+        if(err){
+            console.log(err)
+        }
+    })
+}
