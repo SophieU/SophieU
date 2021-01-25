@@ -17,14 +17,13 @@ program
         let projectName = params[2]
         if(!templateName){
             console.log(chalk.red('请输入模板名称'))
+            console.log(chalk.yellow('通过my-cli list 命令查看当前可用模板'))
             return
         }
         if(!projectName){
             console.log(chalk.red('项目名称不能为空'))
             return 
         }
-        console.log(params)
-        console.log(program.args)
         // require("../src/create")
     })
 
