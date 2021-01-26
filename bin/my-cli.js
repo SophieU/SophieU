@@ -13,6 +13,16 @@ program
     .command("create <template-name> [project-name]")
     .description("创建一个模板项目")
     .action( params =>{
+        let templateName = params[1]
+        let projectName = params[2]
+        if(!templateName){
+            console.log(chalk.red('请输入模板名称'))
+            return
+        }
+        if(!projectName){
+            console.log(chalk.red('项目名称不能为空'))
+            return 
+        }
         console.log(params)
         console.log(program.args)
         // require("../src/create")
