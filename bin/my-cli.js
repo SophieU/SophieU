@@ -10,7 +10,8 @@ program.version(config.version, "-V, --version")
 
 // 定义使用方法
 program
-    .command("create <template-name> [project-name]")
+    .command("create")
+    .usage("<template-name> [project-name]")
     .description("创建一个模板项目")
     .action( params =>{
         console.log(params)
