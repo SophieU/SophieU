@@ -31,6 +31,13 @@ program
     .action(()=>{
         require('../src/add')
     })
+
+program
+    .command('delete')
+    .description('删除模板')
+    .action(()=>{
+        require('../src/delete')
+    })
     
 // 解析参数
 program.parse(process.argv)
