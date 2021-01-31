@@ -30,7 +30,8 @@ inquirer
         fs.writeFile(`${__dirname}/../template.json`, JSON.stringify(tplObj), 'utf-8', err=>{
             if(err) console.log(err)
             console.log(chalk.green('模板删除成功\n'))
-            
-            
+            console.log(chalk.yellow('当前可用模板列表如下：\n'))
+            console.log(tplObj)
+
         })
     })
