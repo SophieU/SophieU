@@ -27,8 +27,10 @@ inquirer
         let {name} = answers
         delete tplObj[name]
         // 更新template.json
-        console.log(chalk.red('模板删除成功，当前'))
         fs.writeFile(`${__dirname}/../template.json`, JSON.stringify(tplObj), 'utf-8', err=>{
             if(err) console.log(err)
+            console.log(chalk.green('模板删除成功\n'))
+            
+            
         })
     })
