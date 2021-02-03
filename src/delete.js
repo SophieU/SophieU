@@ -27,4 +27,5 @@ inquirer
         let {name} = answers
         delete tplObj[name]
         // 更新template.json
+        console.log(chalk.red('模板删除成功，当前'))
     })
