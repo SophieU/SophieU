@@ -23,3 +23,8 @@ let question = [
 
 inquirer
     .prompt(question)
+    .then(answers=>{
+        let {name} = answers
+        delete tplObj[name]
+        // 更新template.json
+    })
