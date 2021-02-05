@@ -20,3 +20,6 @@ let question = [
         }
     }
 ]
+
+inquirer
+    .prompt(question)
