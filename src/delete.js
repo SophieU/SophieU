@@ -12,6 +12,10 @@ let question = [
         validate(name){
             if(name===''){
                 return 'Name is required'
+            }else if(!tplObj[name]){
+                return 'Template does not exist!'
+            }else{
+                return true
             }
         }
     }
