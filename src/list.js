@@ -1,1 +1,2 @@
-console.log('this is list.js')
+const tplObj = require('../template.json')
+
