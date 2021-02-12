@@ -2,7 +2,7 @@
 const inquirer = require('inquirer')
 const chalk = require('chalk')
 const fs = require('fs')
-const tplObj = require('../package.json')
+const tplObj = require('../template.json')
 
 let question = [
     {
