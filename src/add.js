@@ -23,7 +23,7 @@ let question = [
         type: 'input',
         message: '请输入模板地址',
         validate(url){
-            if(val==='') return 'The url is required'
+            if(url==='') return 'The url is required'
             return true
         }
     }
