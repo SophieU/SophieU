@@ -3,8 +3,6 @@ const inquirer = require('inquirer')
 const chalk = require('chalk')
 const fs = require('fs')
 const tplObj = require('../package.json')
-const { template } = require('handlebars')
-const fs = require('fs')
 
 let question = [
     {
