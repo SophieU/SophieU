@@ -25,6 +25,13 @@ program
         require('../src/list')
     })
 
+program
+    .command('add')
+    .description('添加模板')
+    .action(()=>{
+        require('../src/add')
+    })
+    
 // 解析参数
 program.parse(process.argv)
 if(!program.args.length){
