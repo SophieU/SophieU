@@ -37,5 +37,9 @@ inquirer
         tplObj[name] = url.replace(/[\u0000-\u0019]/g, '')
         fs.writeFile(`${__dirname}/../template.json`, JSON.stringify(tplObj),'utf-8',err=>{
             if(err) console.log(err)
+            console.log('\n')
+            console.log(chalk.green('模板添加成功'))
+            console.log(chalk.grey('当前本地最新模板列表如下：\n'))
+            console.log(tplObj)
         })
     })
