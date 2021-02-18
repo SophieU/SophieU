@@ -3,6 +3,8 @@ const inquirer = require('inquirer')
 const chalk = require('chalk')
 const fs = require('fs')
 const tplObj = require('../package.json')
+const { template } = require('handlebars')
+const fs = require('fs')
 
 let question = [
     {
@@ -32,5 +34,8 @@ let question = [
 inquirer
     .prompt(question).then(answers => {
         let { name, url } = answers
-        
+        tplObj[name] = url.replace(/[\u0000-\u0019]/g, '')
+        fs.writeFile(`${__dirname}/../template.json`, JSON.stringify(tplObj),'utf-8',err=>{
+            if(err) console.log(err)
+        })
     })
