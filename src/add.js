@@ -18,5 +18,19 @@ let question = [
                 return  true
             }
         }
+    },{
+        name: 'url',
+        type: 'input',
+        message: '请输入模板地址',
+        validate(url){
+            if(val==='') return 'The url is required'
+            return true
+        }
     }
 ]
+
+inquirer
+    .prompt(question).then(answers => {
+        let { name, url } = answers
+        
+    })
