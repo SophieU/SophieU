@@ -1,6 +1,9 @@
 #! /usr/bin/env node
 const program = require('commander')
 const config = require('../package.json')
+const chalk = require('chalk')
+const ora = require('ora')
+
 
 program.version(config.version, "-V, --version")
 
