@@ -10,8 +10,8 @@ program
     .description("创建一个模板项目")
     .action( params =>{
         console.log(params)
-        
-        require("../src/create")
+        console.log(program.args)
+        // require("../src/create")
     })
 
 program
