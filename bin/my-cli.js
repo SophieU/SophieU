@@ -8,7 +8,9 @@ program.version(config.version, "-V, --version")
 program
     .command("create <template-name> [project-name]")
     .description("创建一个模板项目")
-    .action(()=>{
+    .action( params =>{
+        console.log(params)
+        
         require("../src/create")
     })
 
