@@ -1,1 +1,2 @@
-console.log('this is create.js')
+const download = require('download-git-repo')
+const template = require('../template.json')
