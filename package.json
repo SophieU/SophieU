@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/SophieU/SophieU#readme",
   "dependencies": {
-    "commander": "^7.2.0"
+    "commander": "^7.2.0",
+    "download-git-repo": "^3.0.2"
   }
 }
