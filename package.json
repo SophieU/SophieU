@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "my-cli":"./bin/my-cli.js"
+    "my-cli": "./bin/my-cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
