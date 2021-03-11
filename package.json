@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/SophieU/SophieU/issues"
   },
-  "homepage": "https://github.com/SophieU/SophieU#readme"
+  "homepage": "https://github.com/SophieU/SophieU#readme",
+  "dependencies": {
+    "commander": "^7.2.0"
+  }
 }
