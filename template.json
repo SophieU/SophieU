@@ -1,3 +1,10 @@
 {
+<<<<<<< HEAD
 
+=======
+    "admin":{
+        "description": "后台管理系统类模板",
+        "url": "https://gitee.com/cy-edu/cli-template-demo.git"
+    }
+>>>>>>> 00a2808ca303b4c62cd25a5ad061e7eb1064a95a
 }
