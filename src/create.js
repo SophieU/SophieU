@@ -54,8 +54,9 @@ inquirer
                 return
             }
             spinner.succeed()
-            let packageJSON = require(`${projectName}/package.json`)
-            let template = handlebars.compile(packageJSON)
+            let currentPath = process.cwd()
+            let packageJSON = require(`${currentPath}/${projectName}/package.json`)
+            let template = handlebars.compile(JSON.stringify(packageJSON))
             let gitUser = getUser()
             let metaData = {
                 name: projectName,
@@ -63,9 +64,8 @@ inquirer
                 description: 'Project description'
             }
             let result = template(metaData)
-            console.log(result)
             
-            fs.writeFile(`${projectName}/package.json`,JSON.stringify(result), 'utf-8', err=>{
+            fs.writeFile(`${currentPath}/${projectName}/package.json`,result, 'utf-8', err=>{
                 if(err) console.log(chalk.red(err))
                 console.log(chalk.green('渲染成功'))
             })
