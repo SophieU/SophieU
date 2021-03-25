@@ -7,7 +7,6 @@ const chalk = require('chalk')  // 添加颜色
 const inquirer = require('inquirer')    // 交互命令
 const handlebars = require('handlebars') // 元信息替换
 const getUser = require('./libs/git-user')
-const fs = require('fs')
 const generator = require('./libs/generator')
 
 const question = [
