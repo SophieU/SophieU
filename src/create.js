@@ -8,6 +8,7 @@ const inquirer = require('inquirer')    // 交互命令
 const handlebars = require('handlebars') // 元信息替换
 const getUser = require('./libs/git-user')
 const fs = require('fs')
+const generator = require('./libs/generator')
 
 const question = [
     {
@@ -61,14 +62,9 @@ inquirer
             let metaData = {
                 name: projectName,
                 author: gitUser.name,
-                description: 'Project description'
+                description: '这是默认项目描述呀'
             }
-            let result = template(metaData)
-            
-            fs.writeFile(`${currentPath}/${projectName}/package.json`,result, 'utf-8', err=>{
-                if(err) console.log(chalk.red(err))
-                console.log(chalk.green('渲染成功'))
-            })
+            generator(metaData, `${currentPath}/${projectName}`,`${currentPath}/${projectName}`)
         })
     })
 
